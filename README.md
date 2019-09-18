@@ -5,7 +5,7 @@
 
 ## Team Members:
  * Fadi
- * Hasim
+ * Hashim
  * Mosa
  * Fares
 
@@ -28,12 +28,12 @@ The user should have an account and can search for a specific service then he se
 
 
 ## Uuser story:
-* As a user i can create an account 
-* As a user i can login with registered account
-* As a user i want to browse the app and search about the required service
-* As a user i can select handyman from the search list 
-* As a user i want to open the selected handyman profile
-* As a user i want to start a chat with the selected handyman
-* As a user i want to hire the selected handyman
-* As a user i want to fill the contract details and submit it 
-* As a user i want to rate the hired handyman after finish the job
+* As a user I can create an account 
+* As a user I can login with registered account
+* As a user I want to browse the app and search about the required service
+* As a user I can select handyman from the search list 
+* As a user I want to open the selected handyman profile
+* As a user I want to start a chat with the selected handyman
+* As a user I want to hire the selected handyman
+* As a user I want to fill the contract details and submit it 
+* As a user I want to rate the hired handyman after finish the job
