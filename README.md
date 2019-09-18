@@ -15,7 +15,7 @@
   * The user need to know the professional handy-mans quickly to save his time.
 
 ## The Solution:
-  * The user can create an account on Handy-man App then browse the required handy-man page.
+   * The user can create an account at Handy-man website then browse the required handy-man page.
 
   * The user can see profile any handy-man on Handy-man App and see his works.
 
