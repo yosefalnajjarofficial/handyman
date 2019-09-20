@@ -28,7 +28,7 @@
 
 The user should have an account and he can search for a specific service then he select a handyman and chat with him then he can hire him and then he can fill the contract details and send it to the selected handyman and then he wait the handyman to accept or declined the job and after the job id done the user can rate the handyman.
 
-## Uuser story:
+## User story:
 
 - As a user I can create an account .
 - As a user I can login with registered account.
