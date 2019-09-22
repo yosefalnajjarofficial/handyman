@@ -1,0 +1,39 @@
+{
+  "name": "handyman",
+  "version": "1.0.0",
+  "description": "## Prototype Link: [Here](https://www.figma.com/proto/bE8eAbNWZAv7i0O78jKiHK/Untitled?node-id=382%3A4&scaling=scale-down)",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test node ./server/tests | tap-spec",
+    "dev": "NODE_ENV=development ./server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GSG-G7/handyman.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GSG-G7/handyman/issues"
+  },
+  "homepage": "https://github.com/GSG-G7/handyman#readme",
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "nodemon": "^1.19.2",
+    "supertest": "^4.0.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.11.0"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^7.12.1",
+    "yup": "^0.27.0"
+  }
+}
