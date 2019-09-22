@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users,handyman,services jobs;
+DROP TABLE IF EXISTS users,handyman,services, jobs;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
