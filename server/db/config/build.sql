@@ -25,7 +25,7 @@ CREATE TABLE handyman(
   description TEXT NOT NULL
 );
 
-CREATE TABLE jobs (
+CREATE TABLE jobs(
   id SERIAL PRIMARY KEY NOT NULL, 
   client_id INTEGER REFERENCES users(id), 
   handyman_id INTEGER REFERENCES handyman(handyman_id), 
