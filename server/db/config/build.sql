@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users,handyman,services jobs;
+DROP TABLE IF EXISTS users, handyman, services, jobs;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
@@ -22,7 +22,7 @@ CREATE TABLE handyman(
   handyman_id INTEGER PRIMARY KEY REFERENCES users(id),
   job_title INTEGER REFERENCES services(id),
   hour_rate INTEGER NOT NULL,
-  description VARCHAR NOT NULL
+  description TEXT NOT NULL
 );
 
 CREATE TABLE jobs (
@@ -33,9 +33,9 @@ CREATE TABLE jobs (
   dead_line DATE NOT NULL, 
   price INTEGER NOT NULL, 
   status VARCHAR(255) NOT NULL, 
-  message VARCHAR, 
+  message TEXT, 
   street VARCHAR(255) NOT NULL, 
-  building_number VARCHAR(255) NOT NULL, 
+  building_number INTEGER NOT NULL, 
   flat_number VARCHAR(255) NOT NULL
 );
 
