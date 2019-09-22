@@ -1,7 +1,7 @@
 BEGIN;
 INSERT INTO users (username,email,phone,password,country,city,is_handyman) VALUES ('mossa','mossa123@gmail.com',11111111,'mmm123','palestine','gaza',true);
 
-INSERT INTO handyman (handyman_id, job_title,hour_rate,description) VALUES (1,'cooker',15,'good worker');
+INSERT INTO handyman (handyman_id, job_title,hour_rate,description) VALUES (1,1,15,'good worker');
 
 INSERT INTO services (name) VALUES ('cooker');
 
