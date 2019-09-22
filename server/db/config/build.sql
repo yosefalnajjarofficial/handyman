@@ -29,7 +29,7 @@ CREATE TABLE jobs(
   id SERIAL PRIMARY KEY NOT NULL, 
   client_id INTEGER REFERENCES users(id), 
   handyman_id INTEGER REFERENCES handyman(handyman_id), 
-  description VARCHAR NOT NULL, 
+  description TEXT NOT NULL, 
   dead_line DATE NOT NULL, 
   price INTEGER NOT NULL, 
   status VARCHAR(255) NOT NULL, 
