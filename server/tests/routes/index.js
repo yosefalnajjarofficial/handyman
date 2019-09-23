@@ -1,3 +1,4 @@
+require('./postJob');
 const tape = require('tape');
 
 tape('Simple pass test', (t) => {
