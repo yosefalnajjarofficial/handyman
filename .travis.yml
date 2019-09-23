@@ -2,12 +2,11 @@ language: node_js
 node_js:
   - 'node'
 before_script:
-  - 'psql -c "CREATE DATABASE db_travis;" -U postgres'
-  - 'psql -c "CREATE USER city WITH PASSWORD ''123'';" -U postgres'
+  - 'psql -c "CREATE DATABASE test_handyman;" -U postgres'
+  - 'psql -c "CREATE USER mosssa WITH PASSWORD ''123'';" -U postgres'
 env:
   global:
     - PGPORT=5432
-    - SECRET=Mossa
 services:
   - postgresql
 test:
