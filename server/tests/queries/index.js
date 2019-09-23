@@ -1,3 +1,1 @@
-const tape = require('tape');
-
-const { getJobsQuery } = require('./getJobQuery');
+require('./getJobQuery');
