@@ -1,6 +1,3 @@
-const dbconnection = require('../config/connection');
+const connection = require('../config/connection');
 
-exports.getJobs = (id) => dbconnection.query({
-  text: 'SELECT * FROM jobs WHERE client_id = $1',
-  values: [id],
-});
+exports.getJobs = (id) => connection.query('SELECT * FROM jobs WHERE client_id = $1', [id]);
