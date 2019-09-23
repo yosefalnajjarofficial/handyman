@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - 'node'
+before_script:
+  - 'psql -c "CREATE DATABASE test_handyman;" -U postgres'
+  - 'psql -c "CREATE USER handyman WITH PASSWORD ''123'';" -U postgres'
+env:
+  global:
+    - PGPORT=5432
+services:
+  - postgresql
+test:
+  adapter: postgresql
+  database: test_handyman
