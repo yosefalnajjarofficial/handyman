@@ -1,14 +1,12 @@
 const jwt = require('jsonwebtoken');
-require('dotenv').config();
-
 
 exports.unlockCookie = (req, res, next) => {
-  jwt.verify(req.cookies.handyman, process.env.PRIVATEKEY, (err, decoded) => {
+  jwt.verify(req.cookies.jwt, process.env.PRIVATEKEY, (err, unlockedCookie) => {
     if (err) {
-      res.clearCookie('handyman');
-      res.status(401).send({ error: 'Please login again' });
+      res.clearCookie('jwt');
+      res.status(401).send({ error: 'unauthorized', statusCode: 401 });
     } else {
-      req.user = decoded;
+      req.user = unlockedCookie;
       next();
     }
   });
