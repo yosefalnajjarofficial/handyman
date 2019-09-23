@@ -1,1 +1,1 @@
-require('./getJobQuery');
+require('./getJob');
