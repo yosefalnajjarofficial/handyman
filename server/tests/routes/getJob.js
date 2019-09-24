@@ -5,7 +5,7 @@ const app = require('../../app');
 const dbBuild = require('../../db/config/build.js');
 const insertFakeData = require('../../db/config/insertFakeData');
 
-exports.getJob = test('testing for route /jobs at GET method', async (t) => {
+test('testing for route /jobs at GET method', async (t) => {
   await dbBuild();
   await insertFakeData();
   supertest(app)
