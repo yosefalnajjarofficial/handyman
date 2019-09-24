@@ -5,7 +5,7 @@ const { handymanSchema } = require('../validationSchemas/handymanSchema');
 const { clientSchema } = require('../validationSchemas/clientSchema');
 const { createToken } = require('../utils/cookie');
 
-exports.signup = async (req, res, next) => {
+module.exports = async (req, res, next) => {
   try {
     if (req.body.isHandyman === 'false') await clientSchema.validate(req.body);
     else await handymanSchema.validate(req.body);
