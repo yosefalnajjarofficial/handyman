@@ -1,7 +1,7 @@
 const { postJob } = require('../../db/queries/postJob');
 const { newJobSchema } = require('../ValidationSchemas/newJobSchema');
 
-exports.postJob = async (req, res, next) => {
+module.exports = async (req, res, next) => {
   req.body.clientId = req.user.id;
   try {
     await newJobSchema.validate(req.body);
