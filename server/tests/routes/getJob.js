@@ -16,8 +16,8 @@ exports.getJob = test('testing for route /jobs at GET method', async (t) => {
       if (err) {
         t.error(err);
       } else {
-        const jonObjectLength = Object.keys(res.body.data[0]).length;
-        t.equal(jonObjectLength, 11, 'should be equal the length of object keys which in database');
+        const jobObjectLength = Object.keys(res.body.data[0]).length;
+        t.equal(jobObjectLength, 11, 'should be equal the length of object keys which in database');
         t.end();
       }
     });

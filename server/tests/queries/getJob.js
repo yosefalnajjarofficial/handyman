@@ -17,3 +17,4 @@ exports.getJobsQuery = test('testing for the length of jobs information from dat
     t.end();
   }
 });
+test.onFinish(() => process.exit(0));
