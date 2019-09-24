@@ -4,7 +4,7 @@ const dbBuild = require('../../db/config/build.js');
 const insertFakeData = require('../../db/config/insertFakeData');
 const { getProfile } = require('../../db/queries/getProfile');
 
-exports.getProfile = test('testing for getProfile query database', async (t) => {
+test('testing for getProfile query database', async (t) => {
   try {
     await dbBuild();
     await insertFakeData();
@@ -17,4 +17,5 @@ exports.getProfile = test('testing for getProfile query database', async (t) => 
     t.end();
   }
 });
+
 test.onFinish(() => process.exit(0));
