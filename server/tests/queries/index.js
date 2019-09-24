@@ -1,1 +1,2 @@
 require('./signupQuery');
+require('./getJob');
