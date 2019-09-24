@@ -5,8 +5,8 @@ exports.postJob = async (req, res, next) => {
   req.body.clientId = req.user.id;
   try {
     await newJobSchema.validate(req.body);
-    await postJob(req.body);
-    res.send({ message: 'success', statusCode: 200 });
+    const data = await postJob(req.body);
+    res.send({ data: data.rows[0], statusCode: 200 });
   } catch (err) {
     if (err.name === 'ValidationError') {
       res.send({ message: err.message, statusCode: 400 });
