@@ -6,7 +6,7 @@ exports.clientSchema = yup.object({
   password: yup.string().min(8).required(),
   confirmPassword: yup.string().min(8).required(),
   phone: yup.number().positive().integer().min(10)
-    .required(),
+.required(),
   country: yup.string().min(3).required(),
   city: yup.string().min(3).required(),
   isHandyman: yup.boolean().required(),
