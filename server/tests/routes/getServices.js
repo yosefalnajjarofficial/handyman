@@ -5,7 +5,7 @@ const app = require('./../../app');
 const dbBuild = require('../../db/config/build.js');
 const insertFakeData = require('../../db/config/insertFakeData');
 
-test('Status Code equal 200', async (t) => {
+test('Test for services route', async (t) => {
   await dbBuild();
   await insertFakeData();
   supertest(app)
@@ -17,8 +17,8 @@ test('Status Code equal 200', async (t) => {
         t.error(err);
         t.end();
       } else {
-        const actual = !!(res.body.data.length);
-        t.deepEqual(actual, true, 'Number of items should not equal zero');
+        const actual = Object.keys(res.body.data[0]).length;
+        t.deepEqual(actual, 2, 'Number of keys should be 2');
         t.end();
       }
     });
