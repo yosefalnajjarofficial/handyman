@@ -1,0 +1,1 @@
+exports.getProfile = require('./getProfile');
