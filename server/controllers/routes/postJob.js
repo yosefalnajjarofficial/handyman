@@ -5,15 +5,15 @@ exports.postJob = async (req, res, next) => {
   const { clientId } = req.cookies;
   req.body.clientId = clientId;
   try {
-    const valid = await newJobSchema.isValid(req.body);
-    if (valid) {
-      await postJob(req.body);
-      res.set('Content-Type', 'application/json');
-      res.send({ message: 'success', statusCode: 200 });
-    } else {
-      res.send({ message: 'failed', statusCode: 400 });
-    }
+    await newJobSchema.validate(req.body);
+    await postJob(req.body);
+    res.set('Content-Type', 'application/json');
+    res.send({ message: 'success', statusCode: 200 });
   } catch (err) {
-    next(err);
+    if (err.name === 'ValidationError') {
+      res.send({ message: err.message, statusCode: 400 });
+    } else {
+      next(err);
+    }
   }
 };
