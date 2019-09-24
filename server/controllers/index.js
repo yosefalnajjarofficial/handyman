@@ -8,8 +8,8 @@ const {
 } = require('./routes');
 
 router.get('/service/:id', oneService);
-router.use(unlockCookie);
 router.get('/profile/:id', profile);
+router.use(unlockCookie);
 router.get('/jobs', userJobs);
 router.get('/logout', logout);
 
