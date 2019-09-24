@@ -31,7 +31,6 @@ module.exports = async (req, res, next) => {
     res.cookie('jwt', token);
 
     if (handyman.rows) user = { ...user, ...handyman };
-
     res.send({ data: user, statusCode: 200 });
   } catch (e) {
     if (e.name === 'ValidationError' || e.code === '23505') { // dublicate key error code

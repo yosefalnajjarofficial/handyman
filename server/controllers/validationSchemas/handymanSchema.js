@@ -6,6 +6,7 @@ exports.handymanSchema = yup.object({
   password: yup.string().min(8).required(),
   confirmPassword: yup.string().min(8).required(),
   phone: yup.number().positive().min(10).required(),
+  isHndyman: yup.boolean().required(),
   country: yup.string().min(3).required(),
   city: yup.string().min(3).required(),
   jobTitle: yup.number().required(),

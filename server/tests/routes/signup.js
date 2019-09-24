@@ -5,7 +5,8 @@ const app = require('../../app');
 tape.test('signup with a client', (t) => {
   const user = {
     username: 'fadi',
-    password: '123',
+    password: '123456789',
+    confirmPassword: '123456789',
     email: 'fadi1221212333@gmail.com',
     phone: 12121122,
     country: 'gaza',
@@ -22,7 +23,7 @@ tape.test('signup with a client', (t) => {
         t.error(err);
         t.end();
       } else {
-        t.ok(res);
+        t.equals(Object.keys(res.body.data).length, 7, 'sohlud pass');
         t.end();
       }
     });
