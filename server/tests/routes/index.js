@@ -1,2 +1,2 @@
+require('./getProfile');
 require('./getJob');
-
