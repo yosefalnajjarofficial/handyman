@@ -1,9 +1,11 @@
 const tape = require('tape');
+
 const dbBuild = require('../../db/config/build');
 const insertFakeData = require('../../db/config/insertFakeData');
 const { postJob } = require('../../db/queries/postJob');
 
 tape('test adding the job contract', async (t) => {
+  const expected = 2;
   const fakeData = {
     clientId: 2,
     handymanId: 1,
@@ -15,7 +17,7 @@ tape('test adding the job contract', async (t) => {
     buildingNumber: '111',
     flatNumber: '222',
   };
-  const expected = 2;
+
   try {
     await dbBuild();
     await insertFakeData();

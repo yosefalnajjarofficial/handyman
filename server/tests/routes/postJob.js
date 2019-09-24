@@ -1,5 +1,6 @@
 const tape = require('tape');
 const request = require('supertest');
+
 const app = require('../../app');
 
 tape('Test Hire route', (t) => {
