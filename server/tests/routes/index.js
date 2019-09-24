@@ -1,1 +1,2 @@
 require('./postJob');
+require('./getJob');
