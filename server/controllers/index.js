@@ -4,10 +4,10 @@ const router = express.Router();
 
 const { unlockCookie } = require('./middleware/unlockCookie');
 const {
-  profile, logout, userJobs, getServices,
+  profile, logout, userJobs, services,
 } = require('./routes');
 
-router.get('/services', getServices);
+router.get('/services', services);
 router.use(unlockCookie);
 router.get('/profile/:id', profile);
 router.get('/jobs', userJobs);
