@@ -11,12 +11,12 @@ INSERT INTO handyman (handyman_id, job_title,hour_rate,description)
 VALUES (1,1,15,'good builder');
 
 INSERT INTO jobs (client_id,handyman_id,description,dead_line,price,status,message,street,building_number,flat_number) 
-VALUES (2,1,'build the house','12-12-2020',15,'pending','build my house','omar el mukhtar','123','12');
+VALUES (2,1,'build the house','2019-09-24T07:02:08.773Z',15,'pending','build my house','omar el mukhtar','123','12');
 
 INSERT INTO jobs (client_id,handyman_id,description,dead_line,price,status,message,street,building_number,flat_number) 
-VALUES (2,1,'build the flat','20-1-2020',15,'accepted','build the flat','omar el mukhtar','12','142');
+VALUES (2,1,'build the flat','2019-09-24T07:02:08.773Z',15,'accepted','build the flat','omar el mukhtar','12','142');
 
 INSERT INTO jobs (client_id,handyman_id,description,dead_line,price,status,message,street,building_number,flat_number) 
-VALUES (2,1,'build the flat','10-12-2019',20,'decliend','build the room','omar el mukhtar','132','1422');
+VALUES (2,1,'build the flat','2019-09-24T07:02:08.773Z',20,'decliend','build the room','omar el mukhtar','132','1422');
 
 COMMIT;
