@@ -7,7 +7,7 @@ const { createToken } = require('../utils/cookie');
 
 module.exports = async (req, res, next) => {
   try {
-    if (req.body.isHandyman === 'false') await clientSchema.validate(req.body);
+    if (req.body.isHandyman === false) await clientSchema.validate(req.body);
     else await handymanSchema.validate(req.body);
 
     req.body.password = await hashPassowrd(req.body.password);
@@ -16,7 +16,7 @@ module.exports = async (req, res, next) => {
     delete user.password;
 
     let handyman = '';
-    if (req.body.isHandyman === 'true') {
+    if (req.body.isHandyman === true) {
       req.body.id = user.id;
       handyman = (await addHandyman(req.body)).rows[0];
       delete handyman.handyman_id;
