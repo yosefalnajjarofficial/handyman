@@ -1,4 +1,5 @@
 const express = require('express');
+
 const { signup } = require('./routes/signup');
 
 const logout = require('../controllers/routes/getLogout');

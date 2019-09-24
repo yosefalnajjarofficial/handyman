@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
 
-const addUser = ({
+exports.addUser = ({
   username,
   email,
   phone,
@@ -23,5 +23,3 @@ const addUser = ({
   };
   return connection.query(sql);
 };
-
-module.exports = addUser;

@@ -1,13 +1,9 @@
 const tape = require('tape');
+
 const build = require('../../db/config/build');
 const fakeData = require('../../db/config/insertFakeData');
-const addUser = require('../../db/queries/addUser');
-const addHandyman = require('../../db/queries/addHandyman');
-
-tape('Simple pass test', (t) => {
-  t.equal(1, 1, 'one should equal one');
-  t.end();
-});
+const { addUser } = require('../../db/queries/addUser');
+const { addHandyman } = require('../../db/queries/addHandyman');
 
 tape('add a user to table users', async (t) => {
   await build();
