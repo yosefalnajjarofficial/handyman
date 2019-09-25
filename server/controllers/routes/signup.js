@@ -9,8 +9,8 @@ module.exports = async (req, res, next) => {
   const user = req.body;
   const { isHandyman } = user;
   try {
-    if (!isHandyman) await clientSchema.validate(user);
-    else await handymanSchema.validate(user);
+    await clientSchema.validate(user);
+    if (isHandyman) await handymanSchema.validate(user);
 
     user.password = await hashPassowrd(user.password);
 
