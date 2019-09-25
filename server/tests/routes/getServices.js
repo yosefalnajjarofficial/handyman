@@ -18,7 +18,7 @@ test('Test for services route', async (t) => {
         t.end();
       } else {
         const actual = Object.keys(res.body.data[0]).length;
-        t.deepEqual(actual, 2, 'Number of keys should be 2');
+        t.equal(actual, 2, 'Number of keys should be 2');
         t.end();
       }
     });
