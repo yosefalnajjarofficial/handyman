@@ -1,5 +1,5 @@
 const { postJob } = require('../../db/queries/postJob');
-const { newJobSchema } = require('../ValidationSchemas/newJobSchema');
+const { newJobSchema } = require('../validationSchemas/newJobSchema');
 
 module.exports = async (req, res, next) => {
   const user = req.body;

@@ -1,9 +1,9 @@
 BEGIN;
 
 INSERT INTO users (username,email,phone,password,country,city,is_handyman) 
-VALUES ('mossa','mossa123@gmail.com',11111111,'mmm123','palestine','gaza',true);
+VALUES ('mossa','skdrow@gmail.com',11111111,'$2b$10$M860UeVT4eD5dgCm8pbK6uFxrrL.8U6ZNntwcf7GtZzl.GUs/qNXi','palestine','gaza',true);
 
-INSERT INTO users (username,email,phone,password,country,city,is_handyman) VALUES ('fadi','fadi123@gmail.com',22222222,'fff123','palestine','gaza',false);
+INSERT INTO users (username,email,phone,password,country,city,is_handyman) VALUES ('fadi','fadi123222@gmail.com',22222222,'$2b$10$ln/KSWd8dPCllY.EkqCM1ObIyFSiLDnwU9L2zfsa8.bCqhM1HWhLG','palestine','gaza',false);
 
 INSERT INTO services (name) VALUES ('builder');
 
