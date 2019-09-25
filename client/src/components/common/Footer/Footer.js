@@ -1,13 +1,14 @@
 import React from 'react';
 
-import './style.css'
+import './style.css';
 
-const Footer = props => {
+const year = new Date().toString().split(' ')[3];
+const Footer = () => {
   return (
-    <footer className='footer'>
-      CopyRight &copy;{(new Date()).toString().split(' ')[3]} All rights reserved | Handyman
+    <footer className="footer">
+      CopyRight &copy;{year} All rights reserved | Handyman
     </footer>
   );
-}
+};
 
 export default Footer;
