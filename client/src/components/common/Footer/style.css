@@ -3,5 +3,6 @@
   background: var(--main-color);
   padding: 10px 0;
   text-align: center;
-  font-family: var(--head-font)
+  font-family: var(--head-font);
+  font-size: 13px;
 }
