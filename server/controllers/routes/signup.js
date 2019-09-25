@@ -6,34 +6,36 @@ const { clientSchema } = require('../validationSchemas/clientSchema');
 const { createToken } = require('../utils/cookie');
 
 module.exports = async (req, res, next) => {
+  const user = req.body;
+  const { isHandyman } = user;
   try {
-    if (req.body.isHandyman === false) await clientSchema.validate(req.body);
-    else await handymanSchema.validate(req.body);
+    if (!isHandyman) await clientSchema.validate(user);
+    else await handymanSchema.validate(user);
 
-    req.body.password = await hashPassowrd(req.body.password);
+    user.password = await hashPassowrd(user.password);
 
-    let user = (await addUser(req.body)).rows[0];
-    delete user.password;
+    let addedUser = (await addUser(user)).rows[0];
+    delete addedUser.password;
 
-    let handyman = '';
-    if (req.body.isHandyman === true) {
-      req.body.id = user.id;
-      handyman = (await addHandyman(req.body)).rows[0];
-      delete handyman.handyman_id;
+    let addedHandyman = '';
+    if (isHandyman) {
+      user.id = addedUser.id;
+      addedHandyman = (await addHandyman(user)).rows[0];
+      delete addedHandyman.handyman_id;
     }
 
     const token = await createToken({
-      id: user.id,
-      email: user.email,
-      username: user.username,
-      isHandyman: user.is_handyman,
+      id: addedUser.id,
+      email: addedUser.email,
+      username: addedUser.username,
+      isHandyman: addedUser.is_handyman,
     });
     res.cookie('jwt', token);
 
-    if (handyman.rows) user = { ...user, ...handyman };
-    res.send({ data: user, statusCode: 200 });
+    if (addedHandyman) addedUser = { ...addedUser, ...addedHandyman };
+    res.send({ data: addedUser, statusCode: 200 });
   } catch (e) {
-    if (e.name === 'ValidationError' || e.code === '23505') { // dublicate key error code
+    if (e.name === 'ValidationError' || e.code === '23505') {
       res.status(400).send({
         message: e.message,
         statusCode: 400,

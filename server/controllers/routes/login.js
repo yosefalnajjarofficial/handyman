@@ -10,11 +10,10 @@ module.exports = async (req, res, next) => {
     await loginSchema.validate(req.body);
     const user = (await getUserByEmail(email)).rows[0];
     if (!user) {
-      throw new Error('email dosen\'t exsists');
+      throw new Error('incorrect username or password');
     }
-    console.log(password);
-    console.log(user.password);
-    const authed = await comparePassword(password, user.passowrd);
+
+    const authed = await comparePassword(password, user.password);
     if (authed) {
       res.cookie('jwt', await createToken({
         id: user.id,
@@ -22,16 +21,18 @@ module.exports = async (req, res, next) => {
         username: user.username,
         isHandyman: user.is_handyman,
       }));
+      res.send({ message: 'login successfuly', statusCode: 200 });
     } else {
-      throw new Error('incorrect password');
+      throw new Error('incorrect username or password');
     }
   } catch (e) {
-    if (e.name === 'validationError') {
+    if (e.name === 'validationError' || e.message === 'incorrect username or password') {
       res.status(400).send({
         message: e.message,
         statusCode: 400,
       });
+    } else {
+      next(e);
     }
-    next(e);
   }
 };

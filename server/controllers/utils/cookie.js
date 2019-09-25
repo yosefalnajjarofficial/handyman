@@ -6,3 +6,10 @@ exports.createToken = (payloads) => new Promise((resolve, reject) => {
     else resolve(token);
   });
 });
+
+exports.verfiyToken = (token) => new Promise((resolve, reject) => {
+  jwt.verify(token, process.env.SECRET, (err, decoded) => {
+    if (err) reject(err);
+    else resolve(decoded);
+  });
+});
