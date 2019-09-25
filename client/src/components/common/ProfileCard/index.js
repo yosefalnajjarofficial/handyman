@@ -5,8 +5,7 @@ import './style.css';
 import handymanImg from '../../../assets/handyman.png';
 import Button from '../Button';
 
-const ProfileCard = props => {
-  const { username, service, country, city, hourRate, bio } = props;
+const ProfileCard = ({ username, service, country, city, hourRate, bio }) => {
   return (
     <div className="card">
       <div className="card__header">
