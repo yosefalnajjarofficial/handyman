@@ -4,19 +4,17 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-const ServiceCard = ({ serviceName, onServiceClick }) => {
+const ServiceCard = ({ serviceName, onServiceClick, serviceImage }) => {
   return (
-    <div role="button" className="card service-card" onClick={onServiceClick}>
-      <div className="image-container">
+    <div className="serviceCard" onClick={onServiceClick}>
+      <div className="serviceCard-container">
         <img
-          className="card-image"
-          src="https://image.flaticon.com/icons/svg/307/307892.svg"
+          className="serviceCard-image"
+          src={serviceImage}
           alt={`${serviceName} card`}
         />
       </div>
-      <div className="tilte-container">
-        <h1 className="service-title">{serviceName}</h1>
-      </div>
+      <h1 className="serviceCard-title">{serviceName}</h1>
     </div>
   );
 };
@@ -24,6 +22,7 @@ const ServiceCard = ({ serviceName, onServiceClick }) => {
 ServiceCard.propTypes = {
   serviceName: PropTypes.string.isRequired,
   onServiceClick: PropTypes.func.isRequired,
+  serviceImage: PropTypes.string.isRequired,
 };
 
 export default ServiceCard;
