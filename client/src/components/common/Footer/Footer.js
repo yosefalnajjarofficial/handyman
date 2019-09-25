@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './footer.css'
+import './style.css'
 
 const Footer = props => {
   return (
     <footer className='footer'>
-      CopyRight &copy;{props.year} All rights reserved | {props.title}
+      CopyRight &copy;{(new Date()).toString().split(' ')[3]} All rights reserved | Handyman
     </footer>
   );
 }
