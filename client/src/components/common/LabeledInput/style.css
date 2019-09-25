@@ -1,17 +1,18 @@
 .input-label{
-  color:#333;
-  display:block;
-  font-size:18px;
-  font-family: 'Crimson Text', sans-serif;
-  margin-left: 5px;
+  color: #333;
+  display: block;
+  font-size: 18px;
+  font-family: var(--text-font);
 }
 
 .input-filed{
-  display:block;
-  border:none;
+  display: block;
+  border: none;
   border-radius: 5px;
-  padding:5px;
-  outline:none;
+  padding: 10px;
+  outline: none;
   height: 33px;
-  background:#ccc;
+  background: #eee;
+  color: #555;
+  margin-top: 3px;
 }
