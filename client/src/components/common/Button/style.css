@@ -2,7 +2,12 @@
     text-align: center;
     text-decoration: none;
     display: block;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px 10px;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 3px;
   }
