@@ -4,7 +4,7 @@ const dbBuild = require('../../db/config/build.js');
 const insertFakeData = require('../../db/config/insertFakeData');
 const { getJobs } = require('../../db/queries/getJobs');
 
-test('testing for the length of jobs information from database', async (t) => {
+exports.getJobsQuery = test('testing for the length of jobs information from database', async (t) => {
   try {
     const expectedKeys = 11;
     await dbBuild();
@@ -17,5 +17,4 @@ test('testing for the length of jobs information from database', async (t) => {
     t.end();
   }
 });
-
 test.onFinish(() => process.exit(0));
