@@ -8,8 +8,10 @@
 
 .input-filed{
   display:block;
-  border-radius: 10px;
+  border:none;
+  border-radius: 5px;
   padding:5px;
   outline:none;
   height: 33px;
+  background:#ccc;
 }
