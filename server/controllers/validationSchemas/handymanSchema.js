@@ -4,7 +4,7 @@ exports.handymanSchema = yup.object({
   username: yup.string().min(3).required(),
   email: yup.string().email().required(),
   password: yup.string().min(8).required(),
-  confirmPassword: yup.string().min(8).required(),
+  confirmPassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords must match'),
   phone: yup.number().positive().min(10).required(),
   isHndyman: yup.boolean().required(),
   country: yup.string().min(3).required(),
