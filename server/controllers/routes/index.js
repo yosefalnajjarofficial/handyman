@@ -5,3 +5,4 @@ exports.signup = require('./signup');
 exports.addJob = require('./postJob');
 exports.services = require('./getServices');
 exports.oneService = require('./getOneService');
+exports.login = require('./login');
