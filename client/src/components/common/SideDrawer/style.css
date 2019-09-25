@@ -1,0 +1,50 @@
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.aside {
+  width: 100%;
+  float: right;
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: rgba(0, 0, 0, .5);
+  position: relative;
+}
+
+.ul{
+  min-height: 100vh;
+  list-style: none;
+  width: 80%;
+  font-family: var(--text-font);
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--secondery-color);
+  text-transform: capitalize;
+  float: right;
+  padding: 10vh 0;
+  background: rgba(44, 0, 62, .85);
+}
+
+.ul a:last-of-type {
+  border-bottom: none
+}
+
+.ul a {
+  padding: 25px 10px 5px 20px;
+  border-bottom: 1px solid var(--secondery-color);
+  text-align: left;
+  display: block
+  }
+
+.img{
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 calc(25% - 20px);
+}
