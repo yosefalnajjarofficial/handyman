@@ -4,7 +4,16 @@ import PropTypes from 'prop-types';
 import './style.css';
 
 const JobCard = props => {
-  const { description, dead_line, price, status, message } = props;
+  const {
+    description,
+    dead_line,
+    price,
+    status,
+    message,
+    street,
+    building_number,
+    flat_number,
+  } = props;
   return (
     <React.Fragment>
       <h3></h3>
