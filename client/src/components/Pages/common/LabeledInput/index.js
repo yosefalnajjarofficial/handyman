@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import './style.css';
 
 const LabeldInput = ({
@@ -12,10 +13,8 @@ const LabeldInput = ({
   name,
 }) => {
   return (
-    <div>
-      <label htmlFor={htmlFor} className="input-label">
-        {label}
-      </label>
+    <label htmlFor={htmlFor} className="input-label">
+      {label}
       <input
         id={id}
         type={type}
@@ -23,7 +22,7 @@ const LabeldInput = ({
         placeholder={placeHolder}
         name={name}
       />
-    </div>
+    </label>
   );
 };
 
