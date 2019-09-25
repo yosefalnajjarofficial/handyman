@@ -2,14 +2,15 @@ const { postJob } = require('../../db/queries/postJob');
 const { newJobSchema } = require('../ValidationSchemas/newJobSchema');
 
 module.exports = async (req, res, next) => {
-  req.body.clientId = req.user.id;
+  const user = req.body;
+  user.clientId = req.user.id;
   try {
-    await newJobSchema.validate(req.body);
-    const data = await postJob(req.body);
-    res.send({ data: data.rows[0], statusCode: 200 });
+    await newJobSchema.validate(user);
+    const jobInfo = await postJob(user);
+    res.send({ data: jobInfo.rows[0], statusCode: 200 });
   } catch (err) {
     if (err.name === 'ValidationError') {
-      res.send({ message: err.message, statusCode: 400 });
+      res.status(400).send({ message: err.message, statusCode: 400 });
     } else {
       next(err);
     }
