@@ -1,6 +1,6 @@
 const yup = require('yup');
 
-exports.handymanSchema = yup.object({
+module.exports = yup.object({
   country: yup.string().min(3).required(),
   city: yup.string().min(3).required(),
   jobTitle: yup.number().required(),

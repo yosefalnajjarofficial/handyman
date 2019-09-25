@@ -1,15 +1,15 @@
 const { hashPassowrd } = require('../utils/password');
 const { addUser } = require('../../db/queries/addUser');
 const { addHandyman } = require('../../db/queries/addHandyman');
-const { handymanSchema } = require('../validationSchemas/handymanSchema');
-const { clientSchema } = require('../validationSchemas/clientSchema');
+const handymanSchema = require('../validationSchemas/handymanSchema');
+const userSchema = require('../validationSchemas/userSchema');
 const { createToken } = require('../utils/cookie');
 
 module.exports = async (req, res, next) => {
   const user = req.body;
   const { isHandyman } = user;
   try {
-    await clientSchema.validate(user);
+    await userSchema.validate(user);
     if (isHandyman) await handymanSchema.validate(user);
 
     user.password = await hashPassowrd(user.password);
