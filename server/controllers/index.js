@@ -8,8 +8,6 @@ const {
 } = require('./routes');
 
 router.post('/signup', signup);
-router.use(unlockCookie);
-
 router.get('/service/:id', oneService);
 router.get('/profile/:id', profile);
 router.use(unlockCookie);
