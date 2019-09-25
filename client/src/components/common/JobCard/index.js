@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import './style.css';
+import handymanImg from '../../../assets/handyman.png';
 
 const JobCard = ({
   username,
@@ -16,18 +17,23 @@ const JobCard = ({
 }) => {
   return (
     <div className="card">
-      <h3 className="card__username">{username}</h3>
-      <h4 className="card__body">Description: {description} </h4>
-      <h4 className="card__body">Time: {deadLine}</h4>
-      <h4 className="card__body">price: {price}$</h4>
-      <h4 className="card__body">
-        Adress:{street} / {buildingNumber} / {flatNumber}
-      </h4>
-      {message ? <h4 className="card__body">Message :{message}</h4> : null}
-      <h4 className="card__status">
-        <h4>Status: </h4>
-        <h4 className={`status ${status}`}> {status}</h4>
-      </h4>
+      <div className="card__header">
+        <img className src={handymanImg} alt="handyman" />
+        <h3 className="card__header--username">{username}</h3>
+      </div>
+      <div className="card__body">
+        <h4>Description: {description} </h4>
+        <h4>Time: {deadLine}</h4>
+        <h4>price: {price}$</h4>
+        <h4>
+          Adress:{street} / {buildingNumber} / {flatNumber}
+        </h4>
+        {message ? <h4>Message :{message}</h4> : null}
+        <h4 className="card__status">
+          <h4>Status: </h4>
+          <h4 className={`status ${status}`}> {status}</h4>
+        </h4>
+      </div>
     </div>
   );
 };
