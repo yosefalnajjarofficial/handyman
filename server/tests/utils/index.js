@@ -2,11 +2,6 @@ const tape = require('tape');
 
 const { hashPassowrd } = require('../../controllers/utils/password');
 
-tape('Simple pass test', (t) => {
-  t.equal(1, 1, 'one should equal one');
-  t.end();
-});
-
 tape('type of algorithim used in hash passwords function', async (t) => {
   try {
     const hashed = await hashPassowrd('mmm123');

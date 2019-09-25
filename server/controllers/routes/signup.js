@@ -34,7 +34,7 @@ module.exports = async (req, res, next) => {
     res.send({ data: user, statusCode: 200 });
   } catch (e) {
     if (e.name === 'ValidationError' || e.code === '23505') { // dublicate key error code
-      res.send({
+      res.status(400).send({
         message: e.message,
         statusCode: 400,
       });
