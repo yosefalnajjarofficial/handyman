@@ -1,27 +1,26 @@
-.service-card{
-  background: #E5E5E5;
-  width: 45%;
+.serviceCard{
+  background: var(--secondery-color);
+  width: 40%;
   height: 100px;
   margin: 2%; 
   overflow: hidden;
   border-radius: 8px;
   cursor: pointer;
+  color:var(--text-color);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
-.image-container{
+.serviceCard-container{
 width: 50%;
 margin: auto;
 background-color: white;
 }
-.card-image{
+.serviceCard-image{
   width: 80%;
     margin: auto;
     display: block;
 }
-.tilte-container{
-  font-size: 10px;
-  text-align: center
-}
-.service-title{
-  margin: 4%
+.serviceCard-title{
+  font-size: 15px;
+  text-align: center;
+  margin: 10% 0
 }
