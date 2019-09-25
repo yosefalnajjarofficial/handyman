@@ -1,4 +1,3 @@
-const jwt = require('jsonwebtoken');
 const { verfiyToken } = require('../utils/cookie');
 
 exports.unlockCookie = async (req, res, next) => {

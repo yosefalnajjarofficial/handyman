@@ -1,6 +1,6 @@
 const yup = require('yup');
 
-exports.clientSchema = yup.object({
+module.exports = yup.object({
   username: yup.string().min(3).required(),
   email: yup.string().email().required(),
   password: yup.string().min(8).required(),
