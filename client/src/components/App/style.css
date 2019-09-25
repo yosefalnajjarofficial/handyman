@@ -1,0 +1,14 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root{
+  --head-font: 'Roboto', sans-serif;
+  --text-font: 'Crimson Text', serif;
+  --main-color: #2C003E;
+  --secondery-color: #EFEFEF;
+  --msg-btn: #F7E273;
+  --text-color: #343434;
+}
