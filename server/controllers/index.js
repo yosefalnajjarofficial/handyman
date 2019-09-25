@@ -7,7 +7,6 @@ const {
   profile, logout, userJobs, services, oneService,
 } = require('./routes');
 
-
 router.get('/services', services);
 router.get('/service/:id', oneService);
 router.get('/profile/:id', profile);
