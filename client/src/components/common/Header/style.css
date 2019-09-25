@@ -1,0 +1,19 @@
+.main-nav{
+  display:flex;
+  align-items: center;
+  justify-content: space-around;
+  background: #2C003E;
+  height:50px;
+}
+.main-nav__heading{
+  color:#fff;
+  font-size: 30px;
+}
+.fa-arrow-left{
+  color:#fff;
+  font-size: 20px;
+}
+.fa-bars{
+  color:white;
+  font-size: 20px;
+}
