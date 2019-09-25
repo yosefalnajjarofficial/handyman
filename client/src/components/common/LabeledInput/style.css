@@ -15,5 +15,5 @@
   color: var(--text-color);
   margin-top: 3px;
   width: 85%;
-  background: #eee;
+  background: var(--secondery-color);
 }
