@@ -12,6 +12,7 @@
 .card__header{
     position: relative;
 }
+
 .card__header img{
     border-radius: 40px;
     float:left;
