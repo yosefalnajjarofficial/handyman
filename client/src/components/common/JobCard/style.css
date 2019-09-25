@@ -11,12 +11,10 @@
 
 .card__username{
     padding-bottom: 1.5rem;
-    color:#343434;
 }
 
 .card__body{
     padding: 0.2rem;
-    color:#343434;
 }
 
 .card__status{
@@ -24,26 +22,23 @@
     display: flex;
 }
 
-.pending{
-    background-color: #FED605;
+.status{
     width: 5rem;
     border-radius: 3px;
     text-align: center;
-    color: black
+}
+
+.pending{
+    background-color: #FED605;
+    color: #000;
 }
 
 .accepted{
     background-color: #089A16;
-    width: 3.7rem;
-    border-radius: 3px;
-    text-align: center;
-    color:white;
+    color:#FFF;
 }
 
 .decliend{
     background-color: #E52929;
-    width: 3.7rem;
-    border-radius: 3px;
-    text-align: center;
-    color: white;
+    color: #FFF;
 }

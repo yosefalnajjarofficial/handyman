@@ -23,10 +23,10 @@ const JobCard = ({
       <h4 className="card__body">
         Adress:{street} / {buildingNumber} / {flatNumber}
       </h4>
-      {message ? <h4 className="card__body">Message :{message}</h4> : ''}
+      {message ? <h4 className="card__body">Message :{message}</h4> : null}
       <h4 className="card__status">
         <h4>Status: </h4>
-        <h4 className={status}> {status}</h4>
+        <h4 className={`status ${status}`}> {status}</h4>
       </h4>
     </div>
   );
