@@ -9,16 +9,19 @@
   color:var(--text-color);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
+
 .serviceCard-container{
-width: 50%;
-margin: auto;
-background-color: white;
+  width: 50%;
+  margin: auto;
+  background-color: white;
 }
+
 .serviceCard-image{
   width: 80%;
-    margin: auto;
-    display: block;
+  margin: auto;
+  display: block;
 }
+
 .serviceCard-title{
   font-size: 15px;
   text-align: center;
