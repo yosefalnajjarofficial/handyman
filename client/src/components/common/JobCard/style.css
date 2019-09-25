@@ -1,7 +1,7 @@
 .card{
     background: var(--secondery-color);
     width: 25rem;
-    height: 14rem;
+    height: 18rem;
     margin: 2%; 
     border-radius: 8px;
     color:var(--text-color);
@@ -9,12 +9,29 @@
     padding: 0.7rem;
 }
 
-.card__username{
-    padding-bottom: 1.5rem;
+.card__header{
+    position: relative;
+}
+.card__header img{
+    border-radius: 40px;
+    float:left;
+    position: absolute;
+    top: -0.5rem;
+    left: 0.7rem;
+}
+
+.card__header--username{
+    position: absolute;
+    left: 9rem;
+    top: 0.8rem;
 }
 
 .card__body{
     padding: 0.2rem;
+    margin-top: 7rem;
+}
+.card__body h4{
+    padding:0.2rem
 }
 
 .card__status{
