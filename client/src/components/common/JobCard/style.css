@@ -8,18 +8,22 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
     padding: 0.7rem;
 }
+
 .card__username{
     padding-bottom: 1.5rem;
     color:#343434;
 }
+
 .card__body{
     padding: 0.2rem;
     color:#343434;
 }
+
 .card__status{
     padding: 0.2rem;
     display: flex;
 }
+
 .pending{
     background-color: #FED605;
     width: 5rem;
@@ -27,6 +31,7 @@
     text-align: center;
     color: black
 }
+
 .accepted{
     background-color: #089A16;
     width: 3.7rem;
@@ -34,6 +39,7 @@
     text-align: center;
     color:white;
 }
+
 .decliend{
     background-color: #E52929;
     width: 3.7rem;
