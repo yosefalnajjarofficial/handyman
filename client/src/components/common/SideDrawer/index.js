@@ -18,9 +18,10 @@ const SideDrawer = ({ loggedIN, className }) => {
     'jobs',
     'logOut',
   ];
+
   const items = arr =>
     arr.map(ele => (
-      <a href={ele} key={ele.toString()}>
+      <a href={typeof ele === 'object' ? 'profile' : ele} key={ele.toString()}>
         <li>{ele}</li>
       </a>
     ));
