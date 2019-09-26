@@ -1,6 +1,6 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
+
 import Button from '../Button';
 import './style.css';
 
@@ -10,7 +10,8 @@ const SliderCard = ({
   handymanName,
   handymanService,
   handymanBio,
-  buttonFunction,
+  onMessageButtonClick,
+  onHireButtonClick,
 }) => {
   return (
     <div className="sliderCard" onClick={onSliderCardClick}>
@@ -31,13 +32,13 @@ const SliderCard = ({
           <div>
             <Button
               className="sliderCard-btn sliderCard-message"
-              buttonFunction={buttonFunction}
+              buttonFunction={onMessageButtonClick}
             >
               Message
             </Button>
             <Button
               className="sliderCard-btn sliderCard-hire"
-              buttonFunction={buttonFunction}
+              buttonFunction={onHireButtonClick}
             >
               Hire
             </Button>
@@ -54,7 +55,8 @@ SliderCard.propTypes = {
   handymanName: PropTypes.string.isRequired,
   handymanService: PropTypes.string.isRequired,
   handymanBio: PropTypes.string.isRequired,
-  buttonFunction: PropTypes.func.isRequired,
+  onMessageButtonClick: PropTypes.func.isRequired,
+  onHireButtonClick: PropTypes.func.isRequired,
 };
 
 export default SliderCard;
