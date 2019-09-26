@@ -13,6 +13,7 @@ a{
   justify-content: flex-end;
   background: rgba(0, 0, 0, .5);
   position: relative;
+  transition: all .5s ease-in-out;
 }
 
 .ul{
@@ -27,6 +28,7 @@ a{
   float: right;
   padding: 10vh 0;
   background: rgba(44, 0, 62, .85);
+  transition: all .5s ease-in-out;
 }
 
 .ul a:last-of-type {
@@ -48,5 +50,9 @@ a{
   display: inline-block;
   margin-left: calc(25% + 10px);
   margin-bottom: 10px;
+}
 
+.hidden{
+  width: 0%;
+  transition: all .5s ease-in-out
 }
