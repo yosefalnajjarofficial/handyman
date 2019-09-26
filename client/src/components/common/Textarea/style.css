@@ -1,0 +1,21 @@
+.label{
+  display: block;
+  min-height: 200px;
+  width: 90%;
+  margin: 10px 5%;
+  font-family: var(--text-font);
+  color: var(--text-color)
+}
+
+.textarea{
+  display: block;
+  width: 100%;
+  min-height:200px;
+  resize: vertical;
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  background: var(--secondery-color);
+  color: var(--text-color)
+}
