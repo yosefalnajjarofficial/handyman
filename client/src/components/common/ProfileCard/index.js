@@ -11,38 +11,47 @@ const ProfileCard = ({
   city,
   hourRate,
   bio,
-  handymanImg,
-  buttonMessage,
-  buttonHire,
+  onClickMessage,
+  onClickHire,
 }) => {
   return (
     <div className="card">
       <div className="card__header">
-        <img
-          className="card__header--img"
-          src={handymanImg}
-          alt={`${username} profile`}
-        />
+        <div className="imageContainer">
+          <img
+            className="card__header--img"
+            src="https://image.flaticon.com/icons/svg/307/307892.svg"
+            alt={`${username} profile`}
+          />
+        </div>
         <div className="card__header--info">
-          <h3>{username}</h3>
-          <h4>{service}</h4>
-          <h4>
+          <h4 className="card_name">{username}</h4>
+          <h5 className="card_service">{service}</h5>
+          <h5 className="card_service">
             {country}, {city}
-          </h4>
-          <h4>{hourRate}$/hr</h4>
-          <div className="btn-container">
-            <Button className="message" buttonFunction={buttonMessage}>
-              {' '}
-              massege{' '}
-            </Button>
-            <Button className="hire" buttonFunction={buttonHire}>
-              {' '}
-              hire{' '}
-            </Button>
-          </div>
+          </h5>
         </div>
       </div>
-      <h4 className="bio">{bio}</h4>
+      <div className="card-btnContainer">
+        <Button className="card-rate" buttonFunction={onClickHire}>
+          rate
+        </Button>
+        <Button className="card-btn message" buttonFunction={onClickMessage}>
+          Massege
+        </Button>
+        <Button className="card-btn hire" buttonFunction={onClickHire}>
+          Hire
+        </Button>
+      </div>
+      <div className="middle">
+        <div className="middle-container">
+          <span className="hour-rate">{hourRate}$/hr</span>
+        </div>
+      </div>
+      <div className="bio-container">
+        <h4>Bio: </h4>
+        <p className="bio">{bio}</p>
+      </div>
     </div>
   );
 };
@@ -54,9 +63,8 @@ ProfileCard.propTypes = {
   city: PropTypes.string.isRequired,
   hourRate: PropTypes.number.isRequired,
   bio: PropTypes.string.isRequired,
-  handymanImg: PropTypes.string.isRequired,
-  buttonMessage: PropTypes.func.isRequired,
-  buttonHire: PropTypes.func.isRequired,
+  onClickMessage: PropTypes.func.isRequired,
+  onClickHire: PropTypes.func.isRequired,
 };
 
 export default ProfileCard;
