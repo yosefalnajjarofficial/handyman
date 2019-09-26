@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
-import Star from '../Star/index';
+import Star from '../Star';
 import './style.css';
 
 const SliderCard = ({
