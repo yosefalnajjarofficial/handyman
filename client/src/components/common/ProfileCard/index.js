@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
+import Star from '../Star';
 import './style.css';
 
 const ProfileCard = ({
@@ -33,9 +34,9 @@ const ProfileCard = ({
         </div>
       </div>
       <div className="card-btnContainer">
-        <Button className="card-rate" buttonFunction={onClickHire}>
-          rate
-        </Button>
+        {[1, 1, 1, 1].map(() => (
+          <Star />
+        ))}
         <Button className="card-btn message" buttonFunction={onClickMessage}>
           Massege
         </Button>
