@@ -8,16 +8,18 @@
 }
 
 .sliderCard-container{
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding: 1px;
+  border: 1px solid var(--main-color);
+  border-radius: 50%;
 }
 
 .sliderCard-image{
   width: 100%;
   border-radius: 50%;
-  border: 1px solid var(--main-color);
   background: linear-gradient(var(--main-color), var(--msg-btn));
 }
 
