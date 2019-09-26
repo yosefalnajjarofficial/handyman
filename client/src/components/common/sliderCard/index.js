@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from '../Button';
+import Star from '../Star/index';
 import './style.css';
 
 const SliderCard = ({
@@ -12,7 +13,9 @@ const SliderCard = ({
   handymanBio,
   onMessageButtonClick,
   onHireButtonClick,
+  rate,
 }) => {
+  const starNumber = Array(rate).fill(1);
   return (
     <div className="sliderCard" onClick={onSliderCardClick}>
       <div className="sliderCard-container">
@@ -30,6 +33,12 @@ const SliderCard = ({
         </div>
         <div className="sliderCard-callToAction">
           <div>
+            <div className="rating-container">
+              {starNumber.map(() => (
+                <Star />
+              ))}
+            </div>
+
             <Button
               className="sliderCard-btn sliderCard-message"
               buttonFunction={onMessageButtonClick}
@@ -57,6 +66,7 @@ SliderCard.propTypes = {
   handymanBio: PropTypes.string.isRequired,
   onMessageButtonClick: PropTypes.func.isRequired,
   onHireButtonClick: PropTypes.func.isRequired,
+  rate: PropTypes.number.isRequired,
 };
 
 export default SliderCard;
