@@ -24,7 +24,7 @@ const ProfileCard = ({
           alt={`${username} profile`}
         />
         <div className="card__header--info">
-          <h3 className>{username}</h3>
+          <h3>{username}</h3>
           <h4>{service}</h4>
           <h4>
             {country}, {city}
