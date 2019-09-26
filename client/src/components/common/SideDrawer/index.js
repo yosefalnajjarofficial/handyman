@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-const SideDrawer = ({ loggedIN }) => {
+const SideDrawer = ({ loggedIN, className }) => {
   const notLogedArr = ['Home', 'Services', 'Sign Up', 'Log In'];
   const logedArr = [
     <img
@@ -26,12 +26,15 @@ const SideDrawer = ({ loggedIN }) => {
     ));
 
   return (
-    <aside className="aside">
+    <aside className={className}>
       <ul className="ul">{loggedIN ? items(logedArr) : items(notLogedArr)}</ul>
     </aside>
   );
 };
 
-SideDrawer.propTypes = { loggedIN: PropTypes.bool.isRequired };
+SideDrawer.propTypes = {
+  loggedIN: PropTypes.bool.isRequired,
+  className: PropTypes.string.isRequired,
+};
 
 export default SideDrawer;
