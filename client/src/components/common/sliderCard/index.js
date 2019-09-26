@@ -1,6 +1,7 @@
 import React from 'react';
 
-// import Button from '../button';
+import PropTypes from 'prop-types';
+import Button from '../Button';
 import './style.css';
 
 const SliderCard = ({
@@ -9,33 +10,51 @@ const SliderCard = ({
   handymanName,
   handymanService,
   handymanBio,
+  buttonFunction,
 }) => {
   return (
-    <div className="slider-card" onClick={onSliderCardClick}>
-      <div className="image-container">
+    <div className="sliderCard" onClick={onSliderCardClick}>
+      <div className="sliderCard-container">
         <img
-          className="handyman-image"
+          className="sliderCard-image"
           src={imageSrc}
           alt="Slider Card for handyman details"
         />
       </div>
-      <div className="card-content">
-        <div className="card-info">
-          <h1 className="card-title">{handymanName}</h1>
-          <span className="card-handyman-service">{handymanService}</span>
-          <p className="card-bio">{handymanBio}</p>
+      <div className="sliderCard-content">
+        <div className="sliderCard-info">
+          <h1 className="sliderCard-title">{handymanName}</h1>
+          <span className="sliderCard-service">{handymanService}</span>
+          <p className="sliderCard-bio">{handymanBio}</p>
         </div>
-        <div className="call-to-action">
+        <div className="sliderCard-callToAction">
           <div>
-            <button className="message">Message</button>
-            <button>Hire</button>
+            <Button
+              className="sliderCard-btn sliderCard-message"
+              buttonFunction={buttonFunction}
+            >
+              Message
+            </Button>
+            <Button
+              className="sliderCard-btn sliderCard-hire"
+              buttonFunction={buttonFunction}
+            >
+              Hire
+            </Button>
           </div>
-          {/* <Button />
-          <Button /> */}
         </div>
       </div>
     </div>
   );
+};
+
+SliderCard.propTypes = {
+  imageSrc: PropTypes.string.isRequired,
+  onSliderCardClick: PropTypes.func.isRequired,
+  handymanName: PropTypes.string.isRequired,
+  handymanService: PropTypes.string.isRequired,
+  handymanBio: PropTypes.string.isRequired,
+  buttonFunction: PropTypes.func.isRequired,
 };
 
 export default SliderCard;
