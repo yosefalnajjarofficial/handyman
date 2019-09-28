@@ -1,6 +1,6 @@
 .sliderCard{
   display: flex;
-  background-color: #EFEFEF;
+  background-color: var(--secondery-color);
   padding:2% 4%;
   border-radius: 3px;
   margin:4% auto;
