@@ -4,11 +4,9 @@
     padding-top: 70px;
 }
 
-
 .card{
     padding:  0 20px;
     background: var(--secondery-color);
-
 }
 
 .card__img{
@@ -27,22 +25,19 @@
     border-radius: 50%;
 }
 
-
 .card__header{
     text-align: center;
     text-transform: capitalize;
 }
+
 .rating-container{
     display: flex;
     margin-left: 38%;
-  }
-
-
+}
 
 .card__body{
     padding: 10px 0;
 }
-
 
 .card__body h4{
     color: var(--text-color);
