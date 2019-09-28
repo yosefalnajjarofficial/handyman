@@ -14,7 +14,9 @@ const ProfileCard = ({
   bio,
   onClickMessage,
   onClickHire,
+  rate,
 }) => {
+  const starNumber = Array(rate).fill(1);
   return (
     <div className="card">
       <div className="card__header">
@@ -34,18 +36,18 @@ const ProfileCard = ({
         </div>
       </div>
       <div className="card-btnContainer">
-        {[1, 1, 1, 1].map(() => (
+        {starNumber.map(() => (
           <Star />
         ))}
-        <Button className="card-btn message" buttonFunction={onClickMessage}>
+        <Button className="card-btn message" onClick={onClickMessage}>
           Massege
         </Button>
-        <Button className="card-btn hire" buttonFunction={onClickHire}>
+        <Button className="card-btn hire" onClick={onClickHire}>
           Hire
         </Button>
       </div>
-      <div className="middle">
-        <div className="middle-container">
+      <div>
+        <div className="hr-container">
           <span className="hour-rate">{hourRate}$/hr</span>
         </div>
       </div>
@@ -66,6 +68,7 @@ ProfileCard.propTypes = {
   bio: PropTypes.string.isRequired,
   onClickMessage: PropTypes.func.isRequired,
   onClickHire: PropTypes.func.isRequired,
+  rate: PropTypes.number.isRequired,
 };
 
 export default ProfileCard;
