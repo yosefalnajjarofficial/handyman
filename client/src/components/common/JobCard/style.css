@@ -32,7 +32,10 @@
     text-align: center;
     text-transform: capitalize;
 }
-
+.rating-container{
+    display: flex;
+    margin-left: 38%;
+  }
 
 
 
