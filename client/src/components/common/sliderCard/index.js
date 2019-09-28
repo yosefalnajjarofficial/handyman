@@ -6,7 +6,6 @@ import Star from '../Star';
 import './style.css';
 
 const SliderCard = ({
-  imageSrc,
   onSliderCardClick,
   handymanName,
   handymanService,
@@ -21,7 +20,7 @@ const SliderCard = ({
       <div className="sliderCard-container">
         <img
           className="sliderCard-image"
-          src={imageSrc}
+          src="https://image.flaticon.com/icons/svg/307/307892.svg"
           alt="Slider Card for handyman details"
         />
       </div>
@@ -41,13 +40,13 @@ const SliderCard = ({
 
             <Button
               className="sliderCard-btn sliderCard-message"
-              buttonFunction={onMessageButtonClick}
+              onClick={onMessageButtonClick}
             >
               Message
             </Button>
             <Button
               className="sliderCard-btn sliderCard-hire"
-              buttonFunction={onHireButtonClick}
+              onClick={onHireButtonClick}
             >
               Hire
             </Button>
@@ -59,7 +58,6 @@ const SliderCard = ({
 };
 
 SliderCard.propTypes = {
-  imageSrc: PropTypes.string.isRequired,
   onSliderCardClick: PropTypes.func.isRequired,
   handymanName: PropTypes.string.isRequired,
   handymanService: PropTypes.string.isRequired,
