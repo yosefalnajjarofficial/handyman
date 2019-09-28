@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import Star from '../'
+import Star from '../Star';
 import handymanImg from '../../../assets/handyman.png';
 import './style.css';
 
@@ -17,7 +17,7 @@ const JobCard = ({
   flatNumber,
   rate,
 }) => {
-  // const starNumber = Array(rate).fill(1);
+  const starNumber = Array(rate).fill(1);
   return (
     <section className="parent-card">
       <div className="card">
@@ -27,11 +27,11 @@ const JobCard = ({
 
         <section className="card__header">
           <h3 className="card__header--username">{username}</h3>
-          {/* <div className="rating-container">
+          <div className="rating-container">
             {starNumber.map(() => (
               <Star />
             ))}
-          </div> */}
+          </div>
         </section>
 
         <div className="card__body">
