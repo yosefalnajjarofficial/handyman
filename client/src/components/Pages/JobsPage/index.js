@@ -11,7 +11,6 @@ class JobPage extends React.Component {
 
   async componentDidMount() {
     const response = await axios.get('/api/v1/jobs');
-    console.log(response.data.data);
     this.setState({
       jobsData: response.data.data,
       statusCode: response.data.statusCode,
@@ -19,7 +18,6 @@ class JobPage extends React.Component {
   }
 
   render() {
-    // return <h1>hiiiiiiiiiiiiiiii</h1>;
     return this.state.jobsData.map(job => (
       <JobCard
         username={job.username}
