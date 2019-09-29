@@ -1,27 +1,27 @@
 import React from 'react';
-import Button from '../Button';
+import PropTypes from 'prop-types';
 
 import './style.css';
 
-const test = () => {
-  console.log(true);
-  return true;
-};
-
-const SerchInput = () => {
+const SearchInput = ({ onChange, placeholder, name }) => {
   return (
     <form className="form">
       <input
         type="search"
-        name="search"
+        name={name}
         className="search-input"
-        placeholder="Search"
+        placeholder={placeholder}
+        onChange={onChange}
       />
-      <Button className="search-btn" buttonFunction={test}>
-        <i className="fas fa-search"></i>
-      </Button>
+      <i className="fas fa-search search-btn"></i>
     </form>
   );
 };
 
-export default SerchInput;
+SearchInput.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
+export default SearchInput;
