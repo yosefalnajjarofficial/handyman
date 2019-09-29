@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './style.css';
 import Button from '../Button';
 import Star from '../Star';
+import './style.css';
 
 const HandymanCard = ({
   imageSrc,
@@ -41,10 +41,10 @@ const HandymanCard = ({
         </div>
         <p className="card--bio">{handymanBio}</p>
         <div className="card__button-container">
-          <Button className="hire--btn" butttonFunction={hireHandler}>
+          <Button className="hire--btn" onClick={hireHandler}>
             Hire
           </Button>
-          <Button className="message--btn" butttonFunction={messageHandler}>
+          <Button className="message--btn" onClick={messageHandler}>
             Message
           </Button>
         </div>
