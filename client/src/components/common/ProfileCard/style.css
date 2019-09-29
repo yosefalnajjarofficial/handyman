@@ -28,6 +28,13 @@
     background-color: linear;
 }
 
+.stars{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    
+}
+
 .card__header--info{
     padding: 4% 0 0 18%;
     display: flex;
