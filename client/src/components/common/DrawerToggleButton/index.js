@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-const DrawerToggleButton = ({ clicked, className }) => {
+const DrawerToggleButton = ({ onClick, className }) => {
   return (
-    <article className={className} onClick={clicked}>
+    <article className={className} onClick={onClick}>
       <span className="first"></span>
       <span className="second"></span>
       <span className="last"></span>
@@ -14,7 +14,7 @@ const DrawerToggleButton = ({ clicked, className }) => {
 };
 
 DrawerToggleButton.propTypes = {
-  clicked: PropTypes.func.isRequired,
+  onClick: PropTypes.func.isRequired,
   className: PropTypes.string.isRequired,
 };
 
