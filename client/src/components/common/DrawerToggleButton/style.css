@@ -22,17 +22,17 @@
   transition: all .5s ease-in-out;
 }
 
-.parent .first{
+.parent .btnSide__first{
   transform: rotate(45deg);
   position: relative;
   top: 17px
 }
 
-.parent .second{
+.parent .btnSide__second{
   opacity: 0;
 }
 
-.parent .last{
+.parent .btnSide__last{
   transform: rotate(-45deg);
   position: relative;
   top: -17px;

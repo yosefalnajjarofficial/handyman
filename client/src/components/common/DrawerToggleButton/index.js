@@ -5,11 +5,11 @@ import './style.css';
 
 const DrawerToggleButton = ({ onClick, className }) => {
   return (
-    <article className={className} onClick={onClick}>
-      <span className="first"></span>
-      <span className="second"></span>
-      <span className="last"></span>
-    </article>
+    <section className={className} onClick={onClick}>
+      <span className="btnSide__first"></span>
+      <span className="btnSide__second"></span>
+      <span className="btnSide__last"></span>
+    </section>
   );
 };
 

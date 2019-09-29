@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import './style.css';
 
 const SideDrawer = ({ loggedIN, className }) => {
-  const notLogedArr = ['Home', 'Services', 'Sign Up', 'Log In'];
-  const logedArr = [
+  const notLoggedItems = ['Home', 'Services', 'Sign Up', 'Log In'];
+  const loggedItems = [
     <img
       src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg"
       alt="UserImage"
-      className="img"
+      className="profile-img"
     />,
     'home',
     'services',
@@ -19,16 +19,23 @@ const SideDrawer = ({ loggedIN, className }) => {
     'logOut',
   ];
 
-  const items = arr =>
-    arr.map(ele => (
-      <a href={typeof ele === 'object' ? 'profile' : ele} key={ele.toString()}>
-        <li>{ele}</li>
+  const sideDrawerItems = array =>
+    array.map(element => (
+      <a
+        href={typeof element === 'object' ? 'profile' : element}
+        key={element.toString()}
+      >
+        <li>{element}</li>
       </a>
     ));
 
   return (
     <aside className={className}>
-      <ul className="ul">{loggedIN ? items(logedArr) : items(notLogedArr)}</ul>
+      <ul className="ul">
+        {loggedIN
+          ? sideDrawerItems(loggedItems)
+          : sideDrawerItems(notLoggedItems)}
+      </ul>
     </aside>
   );
 };
