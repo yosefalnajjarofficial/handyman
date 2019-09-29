@@ -26,7 +26,7 @@ const selectOption = ({ label, selectName, options }) => {
 selectOption.propTypes = {
   label: PropTypes.string.isRequired,
   selectName: PropTypes.string.isRequired,
-  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  options: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default selectOption;
