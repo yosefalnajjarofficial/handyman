@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
 
 import ProfileCard from '../../common/ProfileCard';
 
@@ -9,34 +8,35 @@ class Profile extends React.Component {
   state = {
     profileData: {},
     statusCode: '',
-    redirectHire: false,
   };
 
   async componentDidMount() {
-    const { id } = this.props;
-    const response = await axios.get(`/api/v1/profile/${id}`);
-    this.setState({
-      profileData: response.data.data,
-      statusCode: response.data.statusCode,
-    });
+    try {
+      const { id } = this.props;
+      const response = await axios.get(`/api/v1/profile/${id}`);
+      this.setState({
+        profileData: response.data.data,
+        statusCode: response.data.statusCode,
+      });
+    } catch (e) {
+      console.log(e);
+    }
   }
 
-  setRedirect = () => {
-    this.setState({
-      redirectHire: true,
-    });
+  handleHire = () => {
+    const { history } = this.props;
+    history.push('/hire');
   };
 
-  handleHire = () => {
-    const { redirectHire } = this.state;
-    if (redirectHire) {
-      return <Redirect to="/hire" />;
-    }
-    return null;
+  handleMessage = () => {
+    return undefined;
   };
 
   render() {
     const { profileData, statusCode } = this.state;
+    if (!statusCode) {
+      return <h3>...Loading</h3>;
+    }
     const {
       username,
       service,
@@ -46,20 +46,17 @@ class Profile extends React.Component {
       description,
     } = profileData;
     return (
-      <React.Fragment>
-        {this.handleHire()}
-        <ProfileCard
-          username={username}
-          service={service}
-          country={country}
-          city={city}
-          hourRate={hour_rate}
-          bio={description}
-          onClickMessage={undefined}
-          onClickHire={this.setRedirect}
-          rate={5}
-        />
-      </React.Fragment>
+      <ProfileCard
+        username={username}
+        service={service}
+        country={country}
+        city={city}
+        hourRate={hour_rate}
+        bio={description}
+        onClickMessage={this.handleMessage}
+        onClickHire={this.handleHire}
+        rate={5}
+      />
     );
   }
 }
