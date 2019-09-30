@@ -1,0 +1,8 @@
+.card-parent {
+  width: 94%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  min-height: calc(91vh - 85px)
+}
