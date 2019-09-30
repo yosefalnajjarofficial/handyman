@@ -1,10 +1,10 @@
-.form{
+.searchForm {
   display: flex;
   justify-content: center;
   margin: 20px auto;
 }
 
-.search-input{
+.search-input {
   width: 85%;
   border-radius: 8px;
   font-size: 20px;
@@ -13,8 +13,7 @@
   background-color: var(--secondery-color);
 }
 
-
-.search-btn{
+.search-btn {
   width: 9%;
   border: transparent;
   border-radius: 0 8px;
@@ -27,5 +26,3 @@
   justify-content: center;
   align-items: center;
 }
-
-
