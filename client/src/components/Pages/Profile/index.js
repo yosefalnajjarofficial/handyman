@@ -14,12 +14,16 @@ class Profile extends React.Component {
     try {
       const { id } = this.props;
       const response = await axios.get(`/api/v1/profile/${id}`);
-      this.setState({
-        profileData: response.data.data,
-        statusCode: response.data.statusCode,
-      });
+      if (response.data.statusCode === 200) {
+        this.setState({
+          profileData: response.data.data,
+          statusCode: response.data.statusCode,
+        });
+      } else {
+        this.setState({ statusCode: response.data.statusCode });
+      }
     } catch (e) {
-      console.log(e);
+      this.setState({ statusCode: 500 });
     }
   }
 
@@ -36,6 +40,12 @@ class Profile extends React.Component {
     const { profileData, statusCode } = this.state;
     if (!statusCode) {
       return <h3>...Loading</h3>;
+    }
+    if (statusCode === 404) {
+      return <h1>Page Not Found</h1>;
+    }
+    if (statusCode === 500) {
+      return <h1>Server Error</h1>;
     }
     const {
       username,
