@@ -1,4 +1,4 @@
-.serviceCard{
+.serviceCard {
   background: var(--secondery-color);
   width: 43%;
   height: 100px;
@@ -12,20 +12,20 @@
   position: relative;
 }
 
-.serviceCard-container{
+.serviceCard-container {
   width: 100%;
   height: 100%;
   margin: auto;
 }
 
-.serviceCard-image{
+.serviceCard-image {
   width: 100%;
   height: 100%;
   margin: auto;
   display: block;
 }
 
-.serviceCard-title{
+.serviceCard-title {
   font-size: 16px;
   text-align: center;
   position: absolute;
