@@ -7,23 +7,23 @@ import ProfileCard from '../../common/ProfileCard';
 class Profile extends React.Component {
   state = {
     profileData: {},
-    statusCode: '',
   };
 
   async componentDidMount() {
     try {
       const { id } = this.props;
       const response = await axios.get(`/api/v1/profile/${id}`);
-      if (response.data.statusCode === 200) {
+      if (response.data.data) {
         this.setState({
           profileData: response.data.data,
-          statusCode: response.data.statusCode,
         });
       } else {
-        this.setState({ statusCode: response.data.statusCode });
+        const { history } = this.props;
+        history.push('/404');
       }
     } catch (e) {
-      this.setState({ statusCode: 500 });
+      const { history } = this.props;
+      history.push('/500');
     }
   }
 
@@ -37,38 +37,31 @@ class Profile extends React.Component {
   };
 
   render() {
-    const { profileData, statusCode } = this.state;
-    switch (statusCode) {
-      case '':
-        return <h3>...Loading</h3>;
-      case 404:
-        return <h1>Page Not Found</h1>;
-      case 500:
-        return <h1>Server Error</h1>;
-      default: {
-        const {
-          username,
-          service,
-          country,
-          city,
-          hour_rate,
-          description,
-        } = profileData;
-        return (
-          <ProfileCard
-            username={username}
-            service={service}
-            country={country}
-            city={city}
-            hourRate={hour_rate}
-            bio={description}
-            onClickMessage={this.handleMessage}
-            onClickHire={this.handleHire}
-            rate={5}
-          />
-        );
-      }
+    const { profileData } = this.state;
+    if (!profileData.username) {
+      return <h3>...Loading</h3>;
     }
+    const {
+      username,
+      service,
+      country,
+      city,
+      hour_rate,
+      description,
+    } = profileData;
+    return (
+      <ProfileCard
+        username={username}
+        service={service}
+        country={country}
+        city={city}
+        hourRate={hour_rate}
+        bio={description}
+        onClickMessage={this.handleMessage}
+        onClickHire={this.handleHire}
+        rate={5}
+      />
+    );
   }
 }
 
