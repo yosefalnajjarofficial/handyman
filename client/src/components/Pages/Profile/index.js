@@ -38,36 +38,37 @@ class Profile extends React.Component {
 
   render() {
     const { profileData, statusCode } = this.state;
-    if (!statusCode) {
-      return <h3>...Loading</h3>;
+    switch (statusCode) {
+      case '':
+        return <h3>...Loading</h3>;
+      case 404:
+        return <h1>Page Not Found</h1>;
+      case 500:
+        return <h1>Server Error</h1>;
+      default: {
+        const {
+          username,
+          service,
+          country,
+          city,
+          hour_rate,
+          description,
+        } = profileData;
+        return (
+          <ProfileCard
+            username={username}
+            service={service}
+            country={country}
+            city={city}
+            hourRate={hour_rate}
+            bio={description}
+            onClickMessage={this.handleMessage}
+            onClickHire={this.handleHire}
+            rate={5}
+          />
+        );
+      }
     }
-    if (statusCode === 404) {
-      return <h1>Page Not Found</h1>;
-    }
-    if (statusCode === 500) {
-      return <h1>Server Error</h1>;
-    }
-    const {
-      username,
-      service,
-      country,
-      city,
-      hour_rate,
-      description,
-    } = profileData;
-    return (
-      <ProfileCard
-        username={username}
-        service={service}
-        country={country}
-        city={city}
-        hourRate={hour_rate}
-        bio={description}
-        onClickMessage={this.handleMessage}
-        onClickHire={this.handleHire}
-        rate={5}
-      />
-    );
   }
 }
 
