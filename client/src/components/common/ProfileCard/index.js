@@ -37,8 +37,8 @@ const ProfileCard = ({
       </div>
       <div className="card-btnContainer">
         <div className="stars">
-          {starNumber.map(() => (
-            <Star />
+          {starNumber.map((item, index) => (
+            <Star key={index} />
           ))}
         </div>
         <Button className="card-btn message" onClick={onClickMessage}>
