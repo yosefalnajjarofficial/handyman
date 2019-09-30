@@ -1,0 +1,78 @@
+.parent-card{
+    position: relative;
+    line-height: 1.6;
+    padding-top: 70px;
+}
+
+.card{
+    padding:  0 20px;
+    background: var(--secondery-color);
+}
+
+.card__img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding: 4px;
+    position: absolute;
+    top: 10px;
+    background: #fff;
+}
+
+.card__img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.card__header{
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.rating-container{
+    display: flex;
+    margin-left: 38%;
+}
+
+.card__body{
+    padding: 10px 0;
+}
+
+.card__body h4{
+    color: var(--text-color);
+    font-family: var(--text-font);
+}
+
+.card__body h4 span{
+    font-weight: bold;
+    font-family: var(--head-font);
+    color: #000;
+    font-size: 16px;
+}
+
+.card__status{
+    padding: 0.2rem;
+    display: flex;
+}
+
+.status{
+    width: 5rem;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.pending{
+    background-color: #FED605;
+    color: #000;
+}
+
+.accepted{
+    background-color: #089A16;
+    color:#FFF;
+}
+
+.decliend{
+    background-color: #E52929;
+    color: #FFF;
+}

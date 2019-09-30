@@ -1,0 +1,39 @@
+.btnSide{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 55px;
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--main-color);
+  padding: 3px 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.btnSide span {
+  width: 85%;
+  height: 6px;
+  flex-direction: column;
+  background: var(--secondery-color);
+  margin: auto;
+  border-radius: 5px;
+  transition: all .5s ease-in-out;
+}
+
+.parent .btnSide__first{
+  transform: rotate(45deg);
+  position: relative;
+  top: 17px
+}
+
+.parent .btnSide__second{
+  opacity: 0;
+}
+
+.parent .btnSide__last{
+  transform: rotate(-45deg);
+  position: relative;
+  top: -17px;
+}

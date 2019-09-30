@@ -1,0 +1,38 @@
+.serviceCard {
+  background: var(--secondery-color);
+  width: 43%;
+  height: 100px;
+  margin: 2% 3.5%; 
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+  color:var(--text-color);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  display: inline-block;
+  position: relative;
+}
+
+.serviceCard-container {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+}
+
+.serviceCard-image {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: block;
+}
+
+.serviceCard-title {
+  font-size: 16px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  background: rgba(44, 0, 62, .8);
+  color: var(--secondery-color);
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+}

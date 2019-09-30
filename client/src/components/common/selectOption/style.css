@@ -1,19 +1,19 @@
-.input-label{
+.select__label{
   color: #333;
   display: block;
   font-size: 18px;
   font-family: var(--text-font);
 }
 
-.input-filed{
+.select__tag{
   display: block;
   border: none;
   border-radius: 5px;
-  padding: 10px;
+  padding: 2%;
   outline: none;
-  height: 33px;
+  height: 3rem;
   color: var(--text-color);
-  margin-top: 3px;
+  margin-top: 2%;
   width: 85%;
   background: var(--secondery-color);
 }
