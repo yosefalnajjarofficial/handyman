@@ -1,5 +1,6 @@
 import React from 'react';
 
+import 'react-notifications/lib/notifications.css';
 import './style.css';
 
 function App() {
