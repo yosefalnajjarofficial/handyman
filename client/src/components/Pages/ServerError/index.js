@@ -7,7 +7,11 @@ import './style.css';
 const ServerError = () => {
   return (
     <section>
-      <img src={error500} alt="Server Error 500" className="serverError__img" />
+      <img
+        src={error500}
+        alt="Internal Server Error 500"
+        className="serverError__img"
+      />
       <Link to="/" className="error500__goHome">
         Return to Home Page
       </Link>

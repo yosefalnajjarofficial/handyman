@@ -7,7 +7,11 @@ import './style.css';
 const NotFound = () => {
   return (
     <section>
-      <img src={pageNotFound} alt="Not Found 404" className="notFound__img" />
+      <img
+        src={pageNotFound}
+        alt="Page Not Found 404"
+        className="notFound__img"
+      />
       <Link to="/" className="error404__goHome">
         Return to Home Page
       </Link>
