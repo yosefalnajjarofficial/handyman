@@ -9,26 +9,28 @@ const Home = () => {
   return (
     <section className="home-page">
       <div className="home-page__container">
-        <div className="home-page__image">
-          <img src={electrician} alt="Logo" />
+        <div className="home-page__parentImg">
+          <img
+            src={electrician}
+            alt="Logo"
+            className="home-page__parentImg__img"
+          />
         </div>
-
         <article className="home-page__article">
           <h1 className="home-page__head">Handyman</h1>
           <p className="home-page__pargraph">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit
           </p>
         </article>
-
         <section className="home-page__buttons">
-          <Link to="/">
-            <Button className="first-btn" children="Let's Start" />
+          <Link to="/" className="first-btn">
+            <Button className="first-btn">Let&apos;s Start</Button>
           </Link>
-          <Link to="/login">
-            <Button className="second-btn" children="Login" />
+          <Link to="/login" className="link">
+            <Button className="second-btn">Login</Button>
           </Link>
-          <Link to="/signup">
-            <Button className="last-btn" children="Sign Up" />
+          <Link to="/signup" className="link">
+            <Button className="last-btn">Sign Up</Button>
           </Link>
         </section>
       </div>
