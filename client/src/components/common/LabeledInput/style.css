@@ -1,20 +1,21 @@
 .input-label{
   color: #333;
   display: block;
-  font-size: 18px;
+  font-size: 24px;
   font-family: var(--text-font);
   margin-top: 4%;
 }
 
 .input-filed{
   display: block;
-  border: none;
+  border: none; 
   border-radius: 5px;
   padding: 10px;
   outline: none;
-  height: 33px;
+  height: 60px;
   color: var(--text-color);
-  margin: 2% 0 6% 0;
+  margin: 5% 0 6% 0;
   width: 100%;
   background: var(--secondery-color);
+  font-size: 16px;
 }

@@ -5,9 +5,7 @@ import './style.css';
 
 const LabeldInput = ({
   autoFocus,
-  htmlFor,
   label,
-  id,
   type,
   placeHolder,
   name,
@@ -15,11 +13,11 @@ const LabeldInput = ({
   onChange,
 }) => {
   return (
-    <label htmlFor={htmlFor} className="input-label">
+    <label htmlFor={name} className="input-label">
       {label}
       <input
         autoFocus={autoFocus ? true : ''}
-        id={id}
+        id={name}
         type={type}
         className="input-filed"
         placeholder={placeHolder}

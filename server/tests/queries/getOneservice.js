@@ -9,7 +9,7 @@ test('testing for oneService query', async (t) => {
     await dbBuild();
     await insertFakeData();
     const oneService = await getOneService(1);
-    t.equal(Object.keys(oneService.rows[0]).length, 5, 'should be equal 5');
+    t.equal(Object.keys(oneService.rows[0]).length, 6, 'should be equal 6');
     t.end();
   } catch (err) {
     t.error(err);
