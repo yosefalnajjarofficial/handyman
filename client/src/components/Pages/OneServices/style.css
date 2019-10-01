@@ -1,0 +1,12 @@
+.top-rated-cards {
+  width: 100%;
+  margin: auto;
+  overflow: auto;
+  display: -webkit-box;
+}
+
+.sliderCard {
+  margin: 0 auto !important;
+  max-width: 97% !important;
+  width: 90%;
+}
