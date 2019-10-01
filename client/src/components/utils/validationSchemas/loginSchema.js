@@ -2,7 +2,7 @@ import * as yup from 'yup';
 
 const loginSchema = yup.object({
   email: yup
-    .string('Email should be string only')
+    .string('Email should be a string')
     .email('Email not vaild')
     .required('Email is required'),
   password: yup

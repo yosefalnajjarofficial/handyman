@@ -91,7 +91,7 @@ class Login extends Component {
               <span className="errorMessage">{passwordError}</span>
             )}
             <p className="loginContainer__signup">
-              If you don't have an account{' '}
+              If you don&apos;t have an account
               <Link className="signUpLink" to="/signup">
                 Sign Up
               </Link>
