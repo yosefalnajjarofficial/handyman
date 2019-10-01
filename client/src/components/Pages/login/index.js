@@ -4,11 +4,11 @@ import {
   NotificationContainer,
   NotificationManager,
 } from 'react-notifications';
-
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import loginSchema from '../../utils/validationSchemas/loginSchema';
 import LabeldInput from '../../common/LabeledInput';
 import Button from '../../common/Button';
-import 'react-notifications/lib/notifications.css';
 import './style.css';
 
 class Login extends Component {
@@ -28,6 +28,11 @@ class Login extends Component {
         abortEarly: false,
       });
       await axios.post('/api/v1/login', loginAccount);
+      NotificationManager.success('Log In Successfully');
+      setTimeout(() => {
+        const { history } = this.props;
+        history.push('/');
+      }, 2000);
     } catch (err) {
       if (err.name === 'ValidationError') {
         const errorObj = {};
@@ -49,9 +54,12 @@ class Login extends Component {
   };
 
   render() {
-    const { account, error } = this.state;
+    const {
+      account: { email: emailAccount, password: passwordAccount },
+      error: { email: emailError, password: passwordError },
+    } = this.state;
     return (
-      <form onSubmit={this.handleSubmit} action="">
+      <form>
         <NotificationContainer />
         <div className="loginContainer">
           <div className="loginContainer_input">
@@ -62,30 +70,30 @@ class Login extends Component {
               label="Email"
               id="1"
               type="text"
-              placeHolder="ex.fadi"
+              placeHolder="Ex.fadi@gmail.com"
               name="email"
-              value={account.email}
+              value={emailAccount}
               onChange={this.handleChange}
             />
-            {error.email && <span className="errorMessage">{error.email}</span>}
+            {emailError && <span className="errorMessage">{emailError}</span>}
             <LabeldInput
               htmlFor="password"
               label="Password"
               id="2"
               type="password"
-              placeHolder="*********"
+              placeHolder="********"
               name="password"
-              value={account.password}
+              value={passwordAccount}
               onChange={this.handleChange}
             />
-            {error.password && (
-              <span className="errorMessage">{error.password}</span>
+            {passwordError && (
+              <span className="errorMessage">{passwordError}</span>
             )}
             <p className="loginContainer__signup">
               If you don't have an account{' '}
-              <a className="signUpLink" to="/signup">
+              <Link className="signUpLink" to="/signup">
                 Sign Up
-              </a>
+              </Link>
             </p>
           </div>
           <div className="loginContainer__action">
@@ -98,5 +106,9 @@ class Login extends Component {
     );
   }
 }
+
+Login.propTypes = {
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
+};
 
 export default Login;

@@ -1,4 +1,4 @@
-.loginContainer{
+.loginContainer {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -7,36 +7,36 @@
   width: 80%;
 }
 
-.loginContainer_input{
+.loginContainer_input {
   background-color: #F9F9F9;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   padding: 4%;
 }
 
-.loginContainer__head{
+.loginContainer__head {
   text-align: center;
   color: var(--main-color);
   font-size: 30px;
   margin: 4% 0;
 }
 
-.loginContainer__signup{
+.loginContainer__signup {
   text-align: center;
   margin: 4% 0;
 }
 
-.signUpLink{
+.signUpLink {
   color:#458EFB
 }
 
-.loginContainer__action{
+.loginContainer__action {
   display: flex;
   justify-content: center;
   margin-top: 15%;
 }
 
-.loginContainer__btn{
+.loginContainer__btn {
   font-family: var(--text-font);
   padding: 4% 25%;
   background: #2C003E;
@@ -44,7 +44,7 @@
   font-size: 25px;
 }
 
-.errorMessage{
+.errorMessage {
   color: red;
   font-size: 12px;
 }
