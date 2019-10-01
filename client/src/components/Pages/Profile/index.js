@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import {
-  NotificationContainer,
-  NotificationManager,
-} from 'react-notifications';
+import { NotificationManager } from 'react-notifications';
 
 import ProfileCard from '../../common/ProfileCard';
 
@@ -16,15 +13,16 @@ class Profile extends React.Component {
   async componentDidMount() {
     const { id, history } = this.props;
     try {
-      const response = await axios.get(`/api/v1/profile/${50}`);
+      const response = await axios.get(`/api/v1/profile/${id}`);
       if (response.data.data) {
         this.setState({
           profileData: response.data.data,
         });
       } else {
-        NotificationManager.error('Error message', 'Click me!', 404, () => {
-          alert('callback');
-        });
+        NotificationManager.error('Error', 'Page Not Found');
+        setTimeout(() => {
+          history.push('/404');
+        }, 5000);
       }
     } catch (e) {
       history.push('/500');
@@ -54,20 +52,17 @@ class Profile extends React.Component {
       description,
     } = profileData;
     return (
-      <>
-        <ProfileCard
-          username={username}
-          service={service}
-          country={country}
-          city={city}
-          hourRate={hour_rate}
-          bio={description}
-          onClickMessage={this.handleMessage}
-          onClickHire={this.handleHire}
-          rate={5}
-        />
-        <NotificationContainer />
-      </>
+      <ProfileCard
+        username={username}
+        service={service}
+        country={country}
+        city={city}
+        hourRate={hour_rate}
+        bio={description}
+        onClickMessage={this.handleMessage}
+        onClickHire={this.handleHire}
+        rate={5}
+      />
     );
   }
 }
