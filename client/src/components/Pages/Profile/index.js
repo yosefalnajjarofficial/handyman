@@ -20,9 +20,7 @@ class Profile extends React.Component {
         });
       } else {
         NotificationManager.error('Error', 'Page Not Found');
-        setTimeout(() => {
-          history.push('/404');
-        }, 5000);
+        history.push('/404');
       }
     } catch (e) {
       history.push('/500');
