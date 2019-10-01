@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
-import { NotificationManager } from 'react-notifications';
+import {
+  NotificationContainer,
+  NotificationManager,
+} from 'react-notifications';
 
 import ProfileCard from '../../common/ProfileCard';
 
@@ -19,10 +22,9 @@ class Profile extends React.Component {
           profileData: response.data.data,
         });
       } else {
-        NotificationManager.error('Error message', 'Click me!', 5000),
-          () => {
-            history.push('/404');
-          };
+        NotificationManager.error('Error message', 'Click me!', 404, () => {
+          alert('callback');
+        });
       }
     } catch (e) {
       history.push('/500');
@@ -52,17 +54,20 @@ class Profile extends React.Component {
       description,
     } = profileData;
     return (
-      <ProfileCard
-        username={username}
-        service={service}
-        country={country}
-        city={city}
-        hourRate={hour_rate}
-        bio={description}
-        onClickMessage={this.handleMessage}
-        onClickHire={this.handleHire}
-        rate={5}
-      />
+      <>
+        <ProfileCard
+          username={username}
+          service={service}
+          country={country}
+          city={city}
+          hourRate={hour_rate}
+          bio={description}
+          onClickMessage={this.handleMessage}
+          onClickHire={this.handleHire}
+          rate={5}
+        />
+        <NotificationContainer />
+      </>
     );
   }
 }
