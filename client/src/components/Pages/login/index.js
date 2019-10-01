@@ -66,9 +66,7 @@ class Login extends Component {
             <h1 className="loginContainer__head">Log In</h1>
             <LabeldInput
               autoFocus
-              htmlFor="email"
               label="Email"
-              id="1"
               type="text"
               placeHolder="Ex.fadi@gmail.com"
               name="email"
@@ -77,9 +75,7 @@ class Login extends Component {
             />
             {emailError && <span className="errorMessage">{emailError}</span>}
             <LabeldInput
-              htmlFor="password"
               label="Password"
-              id="2"
               type="password"
               placeHolder="********"
               name="password"
