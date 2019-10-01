@@ -3,7 +3,6 @@ import axios from 'axios';
 
 import SearchInput from '../../common/SearchInput';
 import ServiceCard from '../../common/serviceCard';
-import './style.css';
 
 class Services extends Component {
   state = {
@@ -22,8 +21,8 @@ class Services extends Component {
   }
 
   autoComplete = e => {
-    const enterdLetters = e.target.value;
-    const result = enterdLetters.toLowerCase();
+    const enteredLetters = e.target.value;
+    const result = enteredLetters.toLowerCase();
     this.setState({ resultAutoComplete: result });
     console.log(result);
   };

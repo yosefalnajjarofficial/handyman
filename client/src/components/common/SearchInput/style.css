@@ -11,6 +11,7 @@
   padding: 5px 15px;
   border: transparent;
   background-color: var(--secondery-color);
+  outline-color: var(--main-color)
 }
 
 .search-btn {

@@ -16,7 +16,7 @@ test('test get handyman by service-id | route', async (t) => {
         t.error(err);
         t.end();
       } else {
-        t.equal(Object.keys(res.body.data[0]).length, 5, 'should be equal the number of keys');
+        t.equal(Object.keys(res.body.data[0]).length, 6, 'should be equal the number of keys');
         t.end();
       }
     });
