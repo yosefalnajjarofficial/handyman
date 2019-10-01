@@ -1,8 +1,9 @@
-.notFound__img{
+.notFound__img {
     width:100%;
     margin-top:30%;
 }
-.error404__goHome{
+
+.error404__goHome {
     background-color: #01B5FF;
     color: #FFF;
     font-size: 20px;
