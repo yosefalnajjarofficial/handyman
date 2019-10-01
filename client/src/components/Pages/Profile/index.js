@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { NotificationManager } from 'react-notifications';
 
 import ProfileCard from '../../common/ProfileCard';
 
@@ -10,19 +11,20 @@ class Profile extends React.Component {
   };
 
   async componentDidMount() {
+    const { id, history } = this.props;
     try {
-      const { id } = this.props;
-      const response = await axios.get(`/api/v1/profile/${id}`);
+      const response = await axios.get(`/api/v1/profile/${50}`);
       if (response.data.data) {
         this.setState({
           profileData: response.data.data,
         });
       } else {
-        const { history } = this.props;
-        history.push('/404');
+        NotificationManager.error('Error message', 'Click me!', 5000),
+          () => {
+            history.push('/404');
+          };
       }
     } catch (e) {
-      const { history } = this.props;
       history.push('/500');
     }
   }
