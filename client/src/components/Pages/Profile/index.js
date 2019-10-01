@@ -19,7 +19,7 @@ class Profile extends React.Component {
           profileData: response.data.data,
         });
       } else {
-        NotificationManager.error('Error', 'Page Not Found');
+        NotificationManager.error('Error', 'User Not Found');
         history.push('/404');
       }
     } catch (e) {
