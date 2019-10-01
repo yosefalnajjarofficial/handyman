@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {
-  NotificationContainer,
-  NotificationManager,
-} from 'react-notifications';
+import { NotificationManager } from 'react-notifications';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+
 import loginSchema from '../../utils/validationSchemas/loginSchema';
 import LabeldInput from '../../common/LabeledInput';
 import Button from '../../common/Button';
@@ -22,23 +20,22 @@ class Login extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-    const { account: loginAccount } = this.state;
+    const { account } = this.state;
     try {
-      await loginSchema.validate(loginAccount, {
+      await loginSchema.validate(account, {
         abortEarly: false,
       });
-      await axios.post('/api/v1/login', loginAccount);
-      NotificationManager.success('Log In Successfully');
-      setTimeout(() => {
-        const { history } = this.props;
-        history.push('/');
-      }, 2000);
+      await axios.post('/api/v1/login', account);
+      NotificationManager.success('Welcome Back');
+      const { history } = this.props;
+      history.push('/');
     } catch (err) {
       if (err.name === 'ValidationError') {
         const errorObj = {};
         err.inner.forEach(fieldError => {
           errorObj[fieldError.path] = fieldError.message;
         });
+        NotificationManager.error('Check your email or password');
         this.setState({ error: errorObj });
       } else {
         NotificationManager.error(err.response.data.message);
@@ -46,11 +43,8 @@ class Login extends Component {
     }
   };
 
-  handleChange = ({ currentTarget: input }) => {
-    const { account: loginAccount } = this.state;
-    const account = { ...loginAccount };
-    account[input.name] = input.value;
-    this.setState({ account });
+  handleChange = ({ currentTarget: { value, name } }) => {
+    this.setState({ account: { [name]: value } });
   };
 
   render() {
@@ -60,7 +54,6 @@ class Login extends Component {
     } = this.state;
     return (
       <form>
-        <NotificationContainer />
         <div className="loginContainer">
           <div className="loginContainer_input">
             <h1 className="loginContainer__head">Log In</h1>
@@ -68,7 +61,7 @@ class Login extends Component {
               autoFocus
               label="Email"
               type="text"
-              placeHolder="Ex.fadi@gmail.com"
+              placeHolder="Ex. fadi@gmail.com"
               name="email"
               value={emailAccount}
               onChange={this.handleChange}
