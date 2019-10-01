@@ -1,0 +1,16 @@
+.notFound__img{
+    width:100%;
+    margin-top:30%;
+}
+.error404__goHome{
+    background-color: #01B5FF;
+    color: #FFF;
+    font-size: 20px;
+    padding: 3px;
+    border-radius: 10px;
+    display: block;
+    width: 50%;
+    margin: 25px auto;
+    text-align: center;
+    cursor: pointer;
+}
