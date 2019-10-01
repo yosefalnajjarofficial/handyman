@@ -21,7 +21,9 @@ class Login extends Component {
   handleSubmit = async event => {
     event.preventDefault();
     const { account } = this.state;
+
     try {
+      this.setState({ error: {} });
       await loginSchema.validate(account, {
         abortEarly: false,
       });
@@ -37,14 +39,24 @@ class Login extends Component {
         });
         NotificationManager.error('Check your email or password');
         this.setState({ error: errorObj });
-      } else {
+      } else if (err.response.status === 404) {
+        const { history } = this.props;
+        NotificationManager.warning('Page Not Found');
+        history.push('/404');
+      } else if (err.response.data.message) {
         NotificationManager.error(err.response.data.message);
+      } else {
+        const { history } = this.props;
+        history.push('/500');
       }
     }
   };
 
-  handleChange = ({ currentTarget: { value, name } }) => {
-    this.setState({ account: { [name]: value } });
+  handleChange = ({ currentTarget: input }) => {
+    const { account: loginAccount } = this.state;
+    const account = { ...loginAccount };
+    account[input.name] = input.value;
+    this.setState({ account });
   };
 
   render() {
