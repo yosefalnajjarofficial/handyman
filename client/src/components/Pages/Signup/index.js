@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import { NotificationManager as notify } from 'react-notifications';
+import { Link } from 'react-router-dom';
 
 import LabeledInput from '../../common/LabeledInput';
 import Button from '../../common/Button';
@@ -59,7 +61,7 @@ class Signup extends Component {
 
   handleSubmit = async event => {
     event.preventDefault();
-
+    const { history } = this.props;
     const {
       account: { ...signUpAccount },
     } = this.state;
@@ -75,6 +77,8 @@ class Signup extends Component {
           errorObj[fieldError.path] = fieldError.message;
         });
         this.setState({ userValidation: errorObj });
+      } else {
+        history.push('/500');
       }
     }
 
@@ -90,6 +94,8 @@ class Signup extends Component {
             errorObj[fieldError.path] = fieldError.message;
           });
           this.setState({ handymanValidation: errorObj });
+        } else {
+          history.push('/500');
         }
       }
     }
@@ -114,7 +120,8 @@ class Signup extends Component {
           return notify.error(message);
         }
       }
-      return notify.success('account created successfully');
+      notify.success('account created successfully');
+      return history.push('/services');
     }
     return notify.error('invalid inputs');
   };
@@ -244,9 +251,14 @@ class Signup extends Component {
         <Button className="submit--button" onClick={this.handleSubmit}>
           Sign Up
         </Button>
+        <p className="signup-text">
+          already have account? <Link to="/login">login here</Link>
+        </p>
       </form>
     );
   }
 }
-
+Signup.propTypes = {
+  history: PropTypes.objectOf().isRequired,
+};
 export default Signup;
