@@ -275,7 +275,7 @@ class Signup extends Component {
           Sign Up
         </Button>
         <p className="signup-text">
-          {/* already have account? <Link to="/login">login here</Link> */}
+          already have account? <Link to="/login">login here</Link>
         </p>
       </form>
     );
