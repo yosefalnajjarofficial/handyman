@@ -152,8 +152,6 @@ class Signup extends Component {
 
   render() {
     const { userValidation, handymanValidation, account, jobs } = this.state;
-    const {username,email,password,confirmPassword,phone,country,city,isHandyman} = userValidation;
-    const {jobTitle,hourRate,description} = handymanValidation;
     return (
       <form className="signup-form">
         <LabeledInput
@@ -162,10 +160,9 @@ class Signup extends Component {
           placeHolder="ex.mossa"
           name="username"
           onChange={this.handleChange}
-          value={this.}
         />
-        {username && (
-          <span className="username">{username}</span>
+        {userValidation.username && (
+          <span className="username">{userValidation.username}</span>
         )}
         <LabeledInput
           label="Email"
@@ -174,8 +171,8 @@ class Signup extends Component {
           name="email"
           onChange={this.handleChange}
         />
-        {email && (
-          <span className="email">{email}</span>
+        {userValidation.email && (
+          <span className="email">{userValidation.email}</span>
         )}
         <LabeledInput
           label="Phone No."
@@ -184,8 +181,8 @@ class Signup extends Component {
           name="phone"
           onChange={this.handleChange}
         />
-        {phone && (
-          <span className="phone">{phone}</span>
+        {userValidation.phone && (
+          <span className="phone">{userValidation.phone}</span>
         )}
         <LabeledInput
           label="Password"
@@ -194,8 +191,8 @@ class Signup extends Component {
           name="password"
           onChange={this.handleChange}
         />
-        {password && (
-          <span className="password">{password}</span>
+        {userValidation.password && (
+          <span className="password">{userValidation.password}</span>
         )}
         <LabeledInput
           label="Confirm Password"
@@ -204,9 +201,9 @@ class Signup extends Component {
           name="confirmPassword"
           onChange={this.handleChange}
         />
-        {confirmPassword && (
+        {userValidation.confirmPassword && (
           <span className="confirmPassword">
-            {confirmPassword}
+            {userValidation.confirmPassword}
           </span>
         )}
         <LabeledInput
@@ -217,7 +214,7 @@ class Signup extends Component {
           onChange={this.handleChange}
         />
         {userValidation && (
-          <span className="country">{country}</span>
+          <span className="country">{userValidation.country}</span>
         )}
         <LabeledInput
           label="City"
@@ -226,8 +223,8 @@ class Signup extends Component {
           name="city"
           onChange={this.handleChange}
         />
-        {city && (
-          <span className="city">{city}</span>
+        {userValidation.city && (
+          <span className="city">{userValidation.city}</span>
         )}
         <SelectOption
           label="Role"
@@ -250,8 +247,8 @@ class Signup extends Component {
               name="hourRate"
               onChange={this.handleChange}
             />
-            {hourRate && (
-              <span className="hourRate">{hourRate}</span>
+            {handymanValidation.hourRate && (
+              <span className="hourRate">{handymanValidation.hourRate}</span>
             )}
             <TextArea
               label="Bio"
@@ -261,9 +258,9 @@ class Signup extends Component {
               name="description"
               onChange={this.handleChange}
             />
-            {description && (
+            {handymanValidation.description && (
               <span className="description">
-                {description}
+                {handymanValidation.description}
               </span>
             )}
           </React.Fragment>
