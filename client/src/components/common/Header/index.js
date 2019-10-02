@@ -1,22 +1,33 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
+import DrawerToggleButton from '../DrawerToggleButton';
+import SideDrawer from '../SideDrawer';
 import './style.css';
 
-const Header = ({ pageName, onPreviousClick, onDrawerClick }) => {
-  return (
-    <nav className="main-nav">
-      <i className="fas fa-arrow-left" onClick={onPreviousClick}></i>
-      <h2 className="main-nav__heading">{pageName}</h2>
-      <i className="fas fa-bars" onClick={onDrawerClick}></i>
-    </nav>
-  );
-};
+class Header extends Component {
+  state = {
+    clicked: false,
+    pageName: '',
+  };
 
-Header.propTypes = {
-  pageName: PropTypes.string.isRequired,
-  onPreviousClick: PropTypes.func.isRequired,
-  onDrawerClick: PropTypes.func.isRequired,
-};
+  clickedFunc = () => {
+    const { clicked } = this.state;
+    this.setState({ clicked: !clicked });
+  };
+
+  render() {
+    const { clicked, pageName } = this.state;
+    return (
+      <section>
+        <nav className="main-nav">
+          <i className="fas fa-arrow-left"></i>
+          <h2 className="main-nav__heading">{pageName}</h2>
+          <DrawerToggleButton clicked={clicked} onClick={this.clickedFunc} />
+        </nav>
+        <SideDrawer className={clicked ? 'aside' : 'aside hidden'} />
+      </section>
+    );
+  }
+}
 
 export default Header;
