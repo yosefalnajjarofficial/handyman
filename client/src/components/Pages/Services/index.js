@@ -33,7 +33,7 @@ class Services extends Component {
     const { servicesData, resultAutoComplete } = this.state;
     return (
       <section>
-        {servicesData[0] && <h3>...Loading</h3>}
+        {!servicesData[0] && <h3>...Loading</h3>}
         <SearchInput
           name="search"
           placeholder="Search"

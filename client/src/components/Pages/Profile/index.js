@@ -11,7 +11,12 @@ class Profile extends React.Component {
   };
 
   async componentDidMount() {
-    const { id, history } = this.props;
+    const {
+      match: {
+        params: { id },
+      },
+      history,
+    } = this.props;
     try {
       const response = await axios.get(`/api/v1/profile/${id}`);
       if (response.data.data) {
