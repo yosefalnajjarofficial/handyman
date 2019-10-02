@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-const LabeldInput = ({ label, type, placeHolder, name, onChange }) => {
+const LabeldInput = ({ label, type, placeHolder, name, onChange, value }) => {
   return (
     <label htmlFor={name} className="input-label">
       {label}
@@ -14,6 +14,7 @@ const LabeldInput = ({ label, type, placeHolder, name, onChange }) => {
         placeholder={placeHolder}
         name={name}
         onChange={onChange}
+        value={value}
       />
     </label>
   );
@@ -25,6 +26,7 @@ LabeldInput.propTypes = {
   placeHolder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default LabeldInput;
