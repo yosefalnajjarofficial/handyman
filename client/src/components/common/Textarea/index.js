@@ -3,9 +3,17 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-const TextArea = ({ htmlFor, label, placeholder, rows, cols, name, id }) => {
+const TextArea = ({
+  label,
+  placeholder,
+  rows,
+  cols,
+  name,
+  value,
+  onChange,
+}) => {
   return (
-    <label htmlFor={htmlFor} className="label">
+    <label htmlFor={name} className="label">
       {label}
       <textarea
         className="textarea"
@@ -13,7 +21,9 @@ const TextArea = ({ htmlFor, label, placeholder, rows, cols, name, id }) => {
         rows={rows}
         cols={cols}
         name={name}
-        id={id}
+        id={name}
+        value={value}
+        onChange={onChange}
       ></textarea>
     </label>
   );
@@ -25,8 +35,8 @@ TextArea.propTypes = {
   rows: PropTypes.number.isRequired,
   cols: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  htmlFor: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default TextArea;
