@@ -35,6 +35,7 @@ class Hire extends Component {
     event.preventDefault();
     const { contract } = this.state;
     try {
+      this.setState({ error: {} });
       await hireSchema.validate(contract, { abortEarly: false });
       await axios.post('/api/v1/hire', contract);
       NotificationManager.success('Hire submitted successfully');
@@ -51,7 +52,7 @@ class Hire extends Component {
       } else if (err.response.data.message) {
         NotificationManager.error(err.response.data.message);
       } else {
-        NotificationManager.error('Hire submitted successfully');
+        NotificationManager.error('Internal Server Error');
         const { history } = this.props;
         history.push('/500');
       }
