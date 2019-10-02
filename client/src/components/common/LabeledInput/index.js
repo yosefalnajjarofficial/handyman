@@ -3,28 +3,43 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-const LabeldInput = ({ htmlFor, label, id, type, placeHolder, name }) => {
+const LabeldInput = ({
+  autoFocus,
+  label,
+  type,
+  placeHolder,
+  name,
+  value,
+  onChange,
+}) => {
   return (
-    <label htmlFor={htmlFor} className="input-label">
+    <label htmlFor={name} className="input-label">
       {label}
       <input
-        id={id}
+        autoFocus={autoFocus ? true : ''}
+        id={name}
         type={type}
         className="input-filed"
         placeholder={placeHolder}
         name={name}
+        value={value}
+        onChange={onChange}
       />
     </label>
   );
 };
 
 LabeldInput.propTypes = {
-  htmlFor: PropTypes.string.isRequired,
+  autoFocus: PropTypes.bool,
   label: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   placeHolder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
+LabeldInput.defaultProps = {
+  autoFocus: undefined,
+};
 export default LabeldInput;
