@@ -27,19 +27,18 @@ class Services extends Component {
     const enteredLetters = e.target.value;
     const result = enteredLetters.toLowerCase();
     this.setState({ resultAutoComplete: result });
-    console.log(result);
   };
 
   render() {
     const { servicesData, resultAutoComplete } = this.state;
     return (
       <section>
+        {servicesData[0] && <h3>...Loading</h3>}
         <SearchInput
           name="search"
           placeholder="Search"
           onChange={this.autoComplete}
         />
-
         <ul className="card-parent">
           {servicesData.map(element =>
             element.name.toLowerCase().startsWith(resultAutoComplete) ? (
