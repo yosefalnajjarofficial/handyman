@@ -28,7 +28,7 @@ const schema = yup.object().shape({
     .required('required filed'),
   city: yup
     .string('city should be a string')
-    .min(3)
+    .min(3, 'city should be at least 3 characters')
     .required('required filed'),
   isHandyman: yup.boolean().required('required filed'),
 });

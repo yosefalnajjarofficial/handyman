@@ -4,7 +4,7 @@ const validationschema = yup.object().shape({
   jobTitle: yup.number().required(),
   hourRate: yup
     .number('hour rate should be a number')
-    .positive()
+    .positive('should be positive')
     .required('required Filed'),
   description: yup
     .string('description should be a string')

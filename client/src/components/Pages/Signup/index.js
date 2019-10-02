@@ -161,7 +161,9 @@ class Signup extends Component {
           name="username"
           onChange={this.handleChange}
         />
-        <span className="username">{userValidation.username}</span>
+        {userValidation.username && (
+          <span className="username">{userValidation.username}</span>
+        )}
         <LabeledInput
           label="Email"
           type="email"
@@ -169,7 +171,9 @@ class Signup extends Component {
           name="email"
           onChange={this.handleChange}
         />
-        <span className="email">{userValidation.email}</span>
+        {userValidation.email && (
+          <span className="email">{userValidation.email}</span>
+        )}
         <LabeledInput
           label="Phone No."
           type="text"
@@ -177,7 +181,9 @@ class Signup extends Component {
           name="phone"
           onChange={this.handleChange}
         />
-        <span className="phone">{userValidation.phone}</span>
+        {userValidation.phone && (
+          <span className="phone">{userValidation.phone}</span>
+        )}
         <LabeledInput
           label="Password"
           type="password"
@@ -185,7 +191,9 @@ class Signup extends Component {
           name="password"
           onChange={this.handleChange}
         />
-        <span className="password">{userValidation.password}</span>
+        {userValidation.password && (
+          <span className="password">{userValidation.password}</span>
+        )}
         <LabeledInput
           label="Confirm Password"
           type="password"
@@ -193,9 +201,11 @@ class Signup extends Component {
           name="confirmPassword"
           onChange={this.handleChange}
         />
-        <span className="confirmPassword">
-          {userValidation.confirmPassword}
-        </span>
+        {userValidation.confirmPassword && (
+          <span className="confirmPassword">
+            {userValidation.confirmPassword}
+          </span>
+        )}
         <LabeledInput
           label="Country"
           type="text"
@@ -203,7 +213,9 @@ class Signup extends Component {
           name="country"
           onChange={this.handleChange}
         />
-        <span className="country">{userValidation.country}</span>
+        {userValidation && (
+          <span className="country">{userValidation.country}</span>
+        )}
         <LabeledInput
           label="City"
           type="text"
@@ -211,7 +223,9 @@ class Signup extends Component {
           name="city"
           onChange={this.handleChange}
         />
-        <span className="city">{userValidation.city}</span>
+        {userValidation.city && (
+          <span className="city">{userValidation.city}</span>
+        )}
         <SelectOption
           label="Role"
           selectName="isHandyman"
@@ -233,7 +247,9 @@ class Signup extends Component {
               name="hourRate"
               onChange={this.handleChange}
             />
-            <span className="hourRate">{handymanValidation.hourRate}</span>
+            {handymanValidation.hourRate && (
+              <span className="hourRate">{handymanValidation.hourRate}</span>
+            )}
             <TextArea
               label="Bio"
               placeHolder="tell us about your self"
@@ -242,9 +258,11 @@ class Signup extends Component {
               name="description"
               onChange={this.handleChange}
             />
-            <span className="description">
-              {handymanValidation.description}
-            </span>
+            {handymanValidation.description && (
+              <span className="description">
+                {handymanValidation.description}
+              </span>
+            )}
           </React.Fragment>
         ) : null}
 
