@@ -47,7 +47,7 @@ class Hire extends Component {
         err.inner.forEach(fieldError => {
           errorObj[fieldError.path] = fieldError.message;
         });
-        NotificationManager.error('Validation Error');
+        NotificationManager.warning('Validation Error');
         this.setState({ error: errorObj });
       } else if (err.response.data.message) {
         NotificationManager.error(err.response.data.message);
