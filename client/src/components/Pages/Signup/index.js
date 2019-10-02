@@ -59,6 +59,18 @@ class Signup extends Component {
     this.setState({ account });
   };
 
+  handleValidationError = (err, isHandyman) => {
+    const errorObj = {};
+    err.inner.forEach(fieldError => {
+      errorObj[fieldError.path] = fieldError.message;
+    });
+    if (isHandyman) {
+      this.setState({ handymanValidation: errorObj });
+    } else {
+      this.setState({ userValidation: errorObj });
+    }
+  };
+
   handleSubmit = async event => {
     event.preventDefault();
     const { history } = this.props;
@@ -72,11 +84,7 @@ class Signup extends Component {
       });
     } catch (err) {
       if (err.name === 'ValidationError') {
-        const errorObj = {};
-        err.inner.forEach(fieldError => {
-          errorObj[fieldError.path] = fieldError.message;
-        });
-        this.setState({ userValidation: errorObj });
+        this.handleValidationError(err, false);
       } else {
         history.push('/500');
       }
@@ -89,11 +97,7 @@ class Signup extends Component {
         });
       } catch (err) {
         if (err.name === 'ValidationError') {
-          const errorObj = {};
-          err.inner.forEach(fieldError => {
-            errorObj[fieldError.path] = fieldError.message;
-          });
-          this.setState({ handymanValidation: errorObj });
+          this.handleValidationError(err, true);
         } else {
           history.push('/500');
         }
@@ -286,7 +290,9 @@ class Signup extends Component {
     );
   }
 }
+
 Signup.propTypes = {
   history: PropTypes.objectOf().isRequired,
 };
+
 export default Signup;

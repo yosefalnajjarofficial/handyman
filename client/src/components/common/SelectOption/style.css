@@ -1,11 +1,11 @@
-.select__label{
+.select__label {
   color: #333;
   display: block;
   font-size: 18px;
   font-family: var(--text-font);
 }
 
-.select__tag{
+.select__tag {
   display: block;
   border: none;
   border-radius: 5px;
