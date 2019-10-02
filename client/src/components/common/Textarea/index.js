@@ -22,7 +22,7 @@ const TextArea = ({
         cols={cols}
         name={name}
         id={name}
-        onInput={onChange}
+        onChange={onChange}
         value={value}
       ></textarea>
     </label>

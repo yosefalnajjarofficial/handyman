@@ -74,10 +74,12 @@ class Signup extends Component {
     } else {
       this.setState({ userValidation: errorObj });
     }
+    notify.error('invalid inputs');
   };
 
   handleSubmit = async event => {
     event.preventDefault();
+    this.setState({ userValidation: {}, handymanValidation: {} });
     const { history } = this.props;
     const {
       account: { ...signUpAccount },
@@ -132,28 +134,12 @@ class Signup extends Component {
       notify.success('account created successfully');
       return history.push('/services');
     }
-    return notify.error('invalid inputs');
   };
 
   handleChange = ({ currentTarget: input }) => {
     const {
       account: { ...account },
     } = this.state;
-    const {
-      userValidation: { ...userValidation },
-    } = this.state;
-    const {
-      handymanValidation: { ...handymanValidation },
-    } = this.state;
-
-    if (userValidation[input.name]) {
-      delete userValidation[input.name];
-      this.setState({ userValidation });
-    }
-    if (handymanValidation[input.name]) {
-      delete handymanValidation[input.name];
-      this.setState({ handymanValidation });
-    }
 
     account[input.name] = input.value;
     this.setState({ account });
