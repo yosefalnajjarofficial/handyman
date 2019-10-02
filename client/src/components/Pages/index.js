@@ -6,6 +6,7 @@ import ServerError from './ServerError';
 import Profile from './Profile';
 import Services from './Services';
 import Signup from './Signup';
+import OneServices from './OneServices';
 
 export {
   Home,
@@ -16,4 +17,5 @@ export {
   Profile,
   Services,
   Signup,
+  OneServices,
 };

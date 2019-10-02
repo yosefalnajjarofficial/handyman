@@ -22,9 +22,10 @@ class Services extends Component {
       },
       history,
     } = this.props;
-
     try {
-      const services = await axios.get(`api/v1/service/${id}`);
+      console.log(id);
+      const services = await axios.get(`/api/v1/service/${id}`);
+      console.log(services);
       this.setState({ oneServicesData: services.data.data });
       if (!services.data.data[0]) {
         this.setState({ isExist: false });
@@ -44,22 +45,20 @@ class Services extends Component {
           <span>
             <SearchInput name="search" placeholder="Search" />
             <div className="top-rated-cards">
-              {oneServicesData.map(element =>
-                element.name === name ? (
-                  <Link
-                    to={`profile/${element.handyman_id}`}
-                    className="topRated-link"
-                  >
-                    <SliderCard
-                      key={element}
-                      handymanName={element.username}
-                      handymanBio={element.description}
-                      handymanService={element.name}
-                      rate={3}
-                    />
-                  </Link>
-                ) : null
-              )}
+              {oneServicesData.map(element => (
+                <Link
+                  to={`profile/${element.handyman_id}`}
+                  className="topRated-link"
+                >
+                  <SliderCard
+                    key={element}
+                    handymanName={element.username}
+                    handymanBio={element.description}
+                    handymanService={element.name}
+                    rate={3}
+                  />
+                </Link>
+              ))}
             </div>
             <div className="handyman-cards">
               {oneServicesData.map(element =>

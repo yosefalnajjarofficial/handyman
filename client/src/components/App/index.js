@@ -7,6 +7,7 @@ import {
   Login,
   Signup,
   Services,
+  OneServices,
   JobsPage,
   Profile,
   NotFound,
@@ -26,7 +27,15 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/signup" render={props => <Signup {...props} />} />
-          <Route path="/services" render={props => <Services {...props} />} />
+          <Route
+            path="/service/:id"
+            render={props => <OneServices {...props} />}
+          />
+          <Route
+            path="/services"
+            exact
+            render={props => <Services {...props} />}
+          />
           <Route path="/login" render={props => <Login {...props} />} />
           <Route path="/jobs" render={props => <JobsPage {...props} />} />
           <Route path="/profile/:id" render={props => <Profile {...props} />} />
