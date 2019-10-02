@@ -11,7 +11,7 @@ import './style.css';
 class Services extends Component {
   state = {
     oneServicesData: [],
-    name: 'building',
+    name: '',
     isExist: true,
   };
 
