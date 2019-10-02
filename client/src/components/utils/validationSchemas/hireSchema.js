@@ -6,11 +6,17 @@ const hireSchema = yup.object({
     .number('Price should be a number')
     .positive()
     .min(5)
-    .required(),
-  description: yup.string('Description should be string').required(),
-  street: yup.string('Street should be string').required(),
-  buildingNumber: yup.string('Building Number should be string').required(),
-  flatNumber: yup.string('Flat Number should be string').required(),
+    .required('This is required'),
+  description: yup
+    .string('Description should be string')
+    .required('This is required'),
+  street: yup.string('Street should be string').required('This is required'),
+  buildingNumber: yup
+    .string('Building Number should be string')
+    .required('This is required'),
+  flatNumber: yup
+    .string('Flat Number should be string')
+    .required('This is required'),
 });
 
 export default hireSchema;

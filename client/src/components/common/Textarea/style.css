@@ -1,11 +1,11 @@
-.label{
+.label {
   display: block;
   font-family: var(--text-font);
   color: var(--text-color);
   font-size: 24px
 }
 
-.textarea{
+.textarea {
   display: block;
   width: 100%;
   min-height:200px;

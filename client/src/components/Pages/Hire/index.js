@@ -12,7 +12,7 @@ import './style.css';
 class Hire extends Component {
   state = {
     contract: {
-      handymanId: 1,
+      handymanId: this.props.match.params.handymanId,
       deadline: '',
       price: '',
       description: '',
