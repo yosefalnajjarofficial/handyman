@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import SearchInput from '../../common/SearchInput';
 import ServiceCard from '../../common/serviceCard';
@@ -11,12 +12,14 @@ class Services extends Component {
   };
 
   async componentDidMount() {
+    const { history } = this.props;
+
     try {
       const services = await axios.get('api/v1/services');
       const result = services.data.data;
       this.setState({ servicesData: result });
     } catch (err) {
-      console.log(err);
+      history.push('/500');
     }
   }
 
@@ -52,5 +55,9 @@ class Services extends Component {
     );
   }
 }
+
+Services.propTypes = {
+  history: PropTypes.objectOf().isRequired,
+};
 
 export default Services;
