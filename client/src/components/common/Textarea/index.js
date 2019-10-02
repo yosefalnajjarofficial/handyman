@@ -9,8 +9,8 @@ const TextArea = ({
   rows,
   cols,
   name,
-  value,
   onChange,
+  value,
 }) => {
   return (
     <label htmlFor={name} className="label">
@@ -22,8 +22,8 @@ const TextArea = ({
         cols={cols}
         name={name}
         id={name}
-        value={value}
         onChange={onChange}
+        value={value}
       ></textarea>
     </label>
   );
@@ -35,8 +35,8 @@ TextArea.propTypes = {
   rows: PropTypes.number.isRequired,
   cols: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
 };
 
 export default TextArea;

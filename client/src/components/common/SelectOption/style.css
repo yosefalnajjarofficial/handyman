@@ -1,22 +1,19 @@
-.input-label{
+.select__label {
   color: #333;
   display: block;
-  font-size: 24px;
+  font-size: 18px;
   font-family: var(--text-font);
-  width: 85%;
-  margin-top: 4%;
 }
 
-.input-filed{
+.select__tag {
   display: block;
-  border: none; 
+  border: none;
   border-radius: 5px;
-  padding: 10px;
+  padding: 2%;
   outline: none;
-  height: 58px;
+  height: 3rem;
   color: var(--text-color);
-  margin: 5% 0 6% 0;
-  width: 100%;
+  margin-top: 2%;
+  width: 85%;
   background: var(--secondery-color);
-  font-size: 18px;
 }
