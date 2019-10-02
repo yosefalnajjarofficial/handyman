@@ -32,22 +32,27 @@ class Signup extends Component {
     handymanValidation: {},
   };
 
+  componentDidMount = async () => {
+    const {
+      data: { data },
+    } = await axios.get('/api/v1/services');
+    this.setState({ jobs: data });
+  };
+
   changeRole = async e => {
     const {
       account: { ...account },
     } = this.state;
+    const { jobs: data } = this.state;
 
     if (e.target.value === '2') {
-      const {
-        data: { data },
-      } = await axios.get('/api/v1/services');
       account.isHandyman = true;
       account.jobTitle = data[0].id;
-      this.setState({ account, jobs: data });
+      this.setState({ account });
     } else {
       account.isHandyman = false;
       account.jobTitle = null;
-      this.setState({ account, jobs: null });
+      this.setState({ account });
     }
   };
 
@@ -194,7 +199,7 @@ class Signup extends Component {
         <LabeledInput
           label="Password"
           type="password"
-          placeHolder="****************"
+          placeHolder="********"
           name="password"
           value={account.password}
           onChange={this.handleChange}
@@ -205,7 +210,7 @@ class Signup extends Component {
         <LabeledInput
           label="Confirm Password"
           type="password"
-          placeHolder="****************"
+          placeHolder="********"
           name="confirmPassword"
           value={account.confirmPassword}
           onChange={this.handleChange}
