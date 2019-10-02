@@ -30,9 +30,6 @@ class JobPage extends React.Component {
 
   render() {
     const { jobsData, exsitJob } = this.state;
-    if (!exsitJob) {
-      return <h1 className="noJobs">No Jobs</h1>;
-    }
     return (
       <div>
         {!jobsData[0] && exsitJob && <h3>...Loading</h3>}
