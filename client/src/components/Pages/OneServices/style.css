@@ -1,0 +1,24 @@
+.top-rated-cards {
+  width: 100%;
+  margin: auto;
+  overflow: auto;
+  display: -webkit-box;
+}
+
+.topRated-link{
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  width: 100%;
+  display: block;
+}
+
+
+.card-link .card{
+  width: 93%;
+}
+
+.sliderCard {
+  margin: 0 auto !important;
+  max-width: 100% !important;
+  width: 93%;
+} 
