@@ -20,11 +20,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-notifications": "^1.4.3",
-<<<<<<< HEAD
-    "react-router-dom": "^5.1.1",
-=======
     "react-router-dom": "^5.1.0",
->>>>>>> 1a698eaac5b2066ca3f36ff9ba7d1d8dd3943972
     "react-scripts": "3.1.2",
     "yup": "^0.27.0"
   },
