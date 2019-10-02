@@ -1,0 +1,48 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: auto;
+  width: 80%;
+}
+
+.loginContainer_input {
+  border-radius: 5px;
+  padding: 4%;
+}
+
+.loginContainer__head {
+  text-align: center;
+  color: var(--main-color);
+  font-size: 30px;
+  margin: 0 0 20% 0;
+}
+
+.loginContainer__signup {
+  text-align: center;
+  margin: 4% 0;
+}
+
+.signUpLink {
+  color:#458EFB
+}
+
+.loginContainer__action {
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+}
+
+.loginContainer__btn {
+  font-family: var(--text-font);
+  padding: 4% 25%;
+  background: #2C003E;
+  border-radius: 30px;
+  font-size: 25px;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+}
