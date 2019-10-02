@@ -30,41 +30,45 @@ class JobPage extends React.Component {
 
   render() {
     const { jobsData, exsitJob } = this.state;
-    if (!jobsData[0] && exsitJob) {
-      return <h3>...Loading</h3>;
-    }
     if (!exsitJob) {
       return <h1 className="noJobs">No Jobs</h1>;
     }
-    return jobsData.map(job => {
-      const {
-        id,
-        username,
-        description,
-        dead_line,
-        price,
-        status,
-        message,
-        street,
-        building_number,
-        flat_number,
-      } = job;
-      return (
-        <JobCard
-          username={username}
-          description={description}
-          deadLine={dead_line}
-          price={price}
-          status={status}
-          message={message}
-          street={street}
-          buildingNumber={building_number}
-          flatNumber={flat_number}
-          rate={5}
-          key={id}
-        />
-      );
-    });
+    return (
+      <div>
+        {!jobsData[0] && exsitJob && <h3>...Loading</h3>}
+        {!exsitJob && <h1 className="noJobs">No Jobs</h1>}
+        {jobsData[0] &&
+          jobsData.map(job => {
+            const {
+              id,
+              username,
+              description,
+              dead_line,
+              price,
+              status,
+              message,
+              street,
+              building_number,
+              flat_number,
+            } = job;
+            return (
+              <JobCard
+                username={username}
+                description={description}
+                deadLine={dead_line}
+                price={price}
+                status={status}
+                message={message}
+                street={street}
+                buildingNumber={building_number}
+                flatNumber={flat_number}
+                rate={5}
+                key={id}
+              />
+            );
+          })}
+      </div>
+    );
   }
 }
 
