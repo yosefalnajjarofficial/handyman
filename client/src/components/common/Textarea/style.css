@@ -1,13 +1,11 @@
-.label{
+.label {
   display: block;
-  min-height: 200px;
-  width: 90%;
-  margin: 10px 5%;
   font-family: var(--text-font);
-  color: var(--text-color)
+  color: var(--text-color);
+  font-size: 24px
 }
 
-.textarea{
+.textarea {
   display: block;
   width: 100%;
   min-height:200px;
@@ -17,5 +15,6 @@
   padding: 10px;
   border: none;
   background: var(--secondery-color);
-  color: var(--text-color)
+  color: var(--text-color);
+  font-size: 18px;
 }

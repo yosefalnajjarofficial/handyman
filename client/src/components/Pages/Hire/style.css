@@ -1,0 +1,30 @@
+.contract {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 5%;
+}
+
+.contract__input {
+  width: 80%;
+  margin: 5% auto;
+}
+
+.contract__action {
+  display: flex;
+  justify-content: center;
+}
+
+.contract__action--btn {
+  font-family: var(--text-font);
+  padding: 4% 25%;
+  background: #2C003E;
+  border-radius: 30px;
+  font-size: 25px;
+  margin-bottom: 5%;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+}
