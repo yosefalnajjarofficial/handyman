@@ -159,6 +159,7 @@ class Signup extends Component {
           type="text"
           placeHolder="ex.mossa"
           name="username"
+          value={account.username}
           onChange={this.handleChange}
         />
         {userValidation.username && (
@@ -169,6 +170,7 @@ class Signup extends Component {
           type="email"
           placeHolder="ex.mossa@gmail.com"
           name="email"
+          value={account.email}
           onChange={this.handleChange}
         />
         {userValidation.email && (
@@ -179,6 +181,7 @@ class Signup extends Component {
           type="text"
           placeHolder="ex.9705999999"
           name="phone"
+          value={account.phone}
           onChange={this.handleChange}
         />
         {userValidation.phone && (
@@ -189,6 +192,7 @@ class Signup extends Component {
           type="password"
           placeHolder="****************"
           name="password"
+          value={account.password}
           onChange={this.handleChange}
         />
         {userValidation.password && (
@@ -199,6 +203,7 @@ class Signup extends Component {
           type="password"
           placeHolder="****************"
           name="confirmPassword"
+          value={account.confirmPassword}
           onChange={this.handleChange}
         />
         {userValidation.confirmPassword && (
@@ -211,6 +216,7 @@ class Signup extends Component {
           type="text"
           placeHolder="ex.Palestine"
           name="country"
+          value={account.country}
           onChange={this.handleChange}
         />
         {userValidation && (
@@ -221,6 +227,7 @@ class Signup extends Component {
           type="text"
           placeHolder="ex.Jerusalem"
           name="city"
+          value={account.city}
           onChange={this.handleChange}
         />
         {userValidation.city && (
@@ -238,6 +245,7 @@ class Signup extends Component {
               label="Job Title"
               selectName="jobTitle"
               options={jobs}
+              value={account.jobTitle}
               onChange={this.changeJob}
             />
             <LabeledInput
@@ -245,6 +253,7 @@ class Signup extends Component {
               type="text"
               placeHolder="ex.24"
               name="hourRate"
+              value={account.hourRate}
               onChange={this.handleChange}
             />
             {handymanValidation.hourRate && (
@@ -256,6 +265,7 @@ class Signup extends Component {
               rows={5}
               cols={5}
               name="description"
+              value={account.description}
               onChange={this.handleChange}
             />
             {handymanValidation.description && (
@@ -270,7 +280,7 @@ class Signup extends Component {
           Sign Up
         </Button>
         <p className="signup-text">
-          already have account? <Link to="/login">login here</Link>
+          {/* already have account? <Link to="/login">login here</Link> */}
         </p>
       </form>
     );
