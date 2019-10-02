@@ -16,9 +16,15 @@ class Services extends Component {
   };
 
   async componentDidMount() {
-    const { history } = this.props;
+    const {
+      match: {
+        params: { id },
+      },
+      history,
+    } = this.props;
+
     try {
-      const services = await axios.get(`api/v1/service/1`);
+      const services = await axios.get(`api/v1/service/${id}`);
       this.setState({ oneServicesData: services.data.data });
       if (!services.data.data[0]) {
         this.setState({ isExist: false });
