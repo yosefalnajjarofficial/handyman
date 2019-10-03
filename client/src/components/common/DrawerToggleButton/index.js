@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-const DrawerToggleButton = ({ onClick, className }) => {
+const DrawerToggleButton = ({ onClick, clicked }) => {
   return (
-    <section className={className} onClick={onClick}>
+    <section
+      className={clicked ? 'btnSide parent' : 'btnSide'}
+      onClick={onClick}
+    >
       <span className="btnSide__first"></span>
       <span className="btnSide__second"></span>
       <span className="btnSide__last"></span>
@@ -15,7 +18,7 @@ const DrawerToggleButton = ({ onClick, className }) => {
 
 DrawerToggleButton.propTypes = {
   onClick: PropTypes.func.isRequired,
-  className: PropTypes.string.isRequired,
+  clicked: PropTypes.bool.isRequired,
 };
 
 export default DrawerToggleButton;
