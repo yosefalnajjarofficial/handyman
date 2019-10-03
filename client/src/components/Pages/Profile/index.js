@@ -19,7 +19,7 @@ class Profile extends React.Component {
       history,
     } = this.props;
     try {
-      const response = await axios.get(`/api/v1/service/:id/profile/${id}`);
+      const response = await axios.get(`/api/v1/profile/${id}`);
       if (response.data.data) {
         this.setState({
           profileData: response.data.data,
