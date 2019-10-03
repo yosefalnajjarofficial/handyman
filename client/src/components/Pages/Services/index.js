@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import SearchInput from '../../common/SearchInput';
 import ServiceCard from '../../common/serviceCard';
 import Layout from '../../common/Layout';
-import './style.css';
 
 class Services extends Component {
   state = {
@@ -42,7 +41,6 @@ class Services extends Component {
 
   render() {
     const { servicesData, resultAutoComplete } = this.state;
-
     return (
       <Layout onBackClick={this.handleBackClick}>
         <section className="layout">

@@ -9,7 +9,10 @@ class Layout extends Component {
   render() {
     return (
       <div>
-        <Header onBackClick={this.props.onBackClick} />
+        <Header
+          onBackClick={this.props.onBackClick}
+          isLoggedIn={this.props.isLoggedIn}
+        />
         {this.props.children}
         <Footer />
       </div>
