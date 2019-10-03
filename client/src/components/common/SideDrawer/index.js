@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './style.css';
 
 const SideDrawer = ({ loggedIn, className }) => {
-  const notLoggedItems = ['Home', 'Services', 'Sign Up', 'Log In'];
+  const notLoggedItems = ['Home', 'Services', 'signup', 'login'];
   const loggedItems = [
     <img
       src="https://png.pngtree.com/element_our/png/20181206/users-vector-icon-png_260862.jpg"
@@ -21,12 +22,12 @@ const SideDrawer = ({ loggedIn, className }) => {
 
   const sideDrawerItems = array =>
     array.map(element => (
-      <a
-        href={typeof element === 'object' ? 'profile' : element}
+      <Link
+        to="{typeof element === 'object' ? 'profile' : element}"
         key={element.toString()}
       >
         <li>{element}</li>
-      </a>
+      </Link>
     ));
 
   return (
