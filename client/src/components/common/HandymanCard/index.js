@@ -8,17 +8,23 @@ import './style.css';
 const HandymanCard = ({
   imageSrc,
   imageAlt,
+  handymanId,
   HandymanName,
   handymanService,
   handymanBio,
   messageHandler,
-  hireHandler,
+  onHireClick,
+  onCardClick,
   rate,
 }) => {
   const starsNo = Array(rate).fill();
+
   return (
     <div className="card">
-      <div className="card__image-container">
+      <div
+        className="card__image-container"
+        onClick={() => onCardClick(handymanId)}
+      >
         <img
           className="card_image"
           src={
@@ -28,7 +34,7 @@ const HandymanCard = ({
         />
       </div>
       <div className="card__content">
-        <div className="card__header">
+        <div className="card__header" onClick={() => onCardClick(handymanId)}>
           <div>
             <h2 className="card--name">{HandymanName}</h2>
             <span className="card--service">{handymanService}</span>
@@ -39,9 +45,11 @@ const HandymanCard = ({
             ))}
           </div>
         </div>
-        <p className="card--bio">{handymanBio}</p>
+        <p className="card--bio" onClick={() => onCardClick(handymanId)}>
+          {handymanBio}
+        </p>
         <div className="card__button-container">
-          <Button className="hire--btn" onClick={hireHandler}>
+          <Button className="hire--btn" onClick={() => onHireClick(handymanId)}>
             Hire
           </Button>
           <Button className="message--btn" onClick={messageHandler}>

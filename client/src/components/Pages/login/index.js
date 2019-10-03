@@ -4,6 +4,7 @@ import { NotificationManager } from 'react-notifications';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import Layout from '../../common/Layout';
 import loginSchema from '../../utils/validationSchemas/loginSchema';
 import LabeldInput from '../../common/LabeledInput';
 import Button from '../../common/Button';
@@ -29,8 +30,9 @@ class Login extends Component {
       });
       await axios.post('/api/v1/login', account);
       NotificationManager.success('Welcome Back');
+      this.props.handleLogIn();
       const { history } = this.props;
-      history.push('/');
+      history.push('/services');
     } catch (err) {
       if (err.name === 'ValidationError') {
         const errorObj = {};
@@ -54,7 +56,7 @@ class Login extends Component {
 
   handleChange = ({ currentTarget: input }) => {
     const { account: loginAccount } = this.state;
-    const account = { ...loginAccount }
+    const account = { ...loginAccount };
     account[input.name] = input.value;
     this.setState({ account });
   };
@@ -65,45 +67,50 @@ class Login extends Component {
       error: { email: emailError, password: passwordError },
     } = this.state;
     return (
-      <form>
-        <div className="loginContainer">
-          <div className="loginContainer_input">
-            <h1 className="loginContainer__head">Log In</h1>
-            <LabeldInput
-              autoFocus
-              label="Email"
-              type="text"
-              placeHolder="Ex. fadi@gmail.com"
-              name="email"
-              value={emailAccount}
-              onChange={this.handleChange}
-            />
-            {emailError && <span className="errorMessage">{emailError}</span>}
-            <LabeldInput
-              label="Password"
-              type="password"
-              placeHolder="********"
-              name="password"
-              value={passwordAccount}
-              onChange={this.handleChange}
-            />
-            {passwordError && (
-              <span className="errorMessage">{passwordError}</span>
-            )}
-            <p className="loginContainer__signup">
-              If you don&apos;t have an account
-              <Link className="signUpLink" to="/signup">
-                Sign Up
-              </Link>
-            </p>
+      <Layout>
+        <form className="layout">
+          <div className="loginContainer">
+            <div className="loginContainer_input">
+              <h1 className="loginContainer__head">Log In</h1>
+              <LabeldInput
+                autoFocus
+                label="Email"
+                type="text"
+                placeHolder="Ex. fadi@gmail.com"
+                name="email"
+                value={emailAccount}
+                onChange={this.handleChange}
+              />
+              {emailError && <span className="errorMessage">{emailError}</span>}
+              <LabeldInput
+                label="Password"
+                type="password"
+                placeHolder="********"
+                name="password"
+                value={passwordAccount}
+                onChange={this.handleChange}
+              />
+              {passwordError && (
+                <span className="errorMessage">{passwordError}</span>
+              )}
+              <p className="loginContainer__signup">
+                If you don&apos;t have an account
+                <Link className="signUpLink" to="/signup">
+                  Sign Up
+                </Link>
+              </p>
+            </div>
+            <div className="loginContainer__action">
+              <Button
+                className="loginContainer__btn"
+                onClick={this.handleSubmit}
+              >
+                Log In
+              </Button>
+            </div>
           </div>
-          <div className="loginContainer__action">
-            <Button className="loginContainer__btn" onClick={this.handleSubmit}>
-              Log In
-            </Button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </Layout>
     );
   }
 }

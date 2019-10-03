@@ -74,6 +74,7 @@
   color: var(--secondery-color);
   width: 35%;
   font-size: 15px;
+  z-index: 99999;
 }
 
 .card__button-container{

@@ -23,7 +23,7 @@ const SideDrawer = ({ loggedIn, className }) => {
   const sideDrawerItems = array =>
     array.map(element => (
       <Link
-        to="{typeof element === 'object' ? 'profile' : element}"
+        to={typeof element === 'object' ? 'profile' : element}
         key={element.toString()}
       >
         <li>{element}</li>

@@ -1,8 +1,9 @@
 .select__label {
   color: #333;
   display: block;
-  font-size: 18px;
+  font-size: 24px;
   font-family: var(--text-font);
+  margin: 4% 0;
 }
 
 .select__tag {
@@ -16,4 +17,5 @@
   margin-top: 2%;
   width: 85%;
   background: var(--secondery-color);
+  font-size: 18px;
 }

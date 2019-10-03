@@ -6,3 +6,4 @@ exports.addJob = require('./postJob');
 exports.services = require('./getServices');
 exports.oneService = require('./getOneService');
 exports.login = require('./login');
+exports.isAuth = require('./auth');

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { NotificationManager } from 'react-notifications';
 
+import Layout from '../../common/Layout';
 import ProfileCard from '../../common/ProfileCard';
 
 class Profile extends React.Component {
@@ -11,7 +12,12 @@ class Profile extends React.Component {
   };
 
   async componentDidMount() {
-    const { id, history } = this.props;
+    const {
+      match: {
+        params: { id },
+      },
+      history,
+    } = this.props;
     try {
       const response = await axios.get(`/api/v1/profile/${id}`);
       if (response.data.data) {
@@ -29,7 +35,7 @@ class Profile extends React.Component {
 
   handleHire = () => {
     const { history } = this.props;
-    history.push('/hire');
+    history.push('/hire', { handymanId: 1 });
   };
 
   handleMessage = () => {
@@ -50,17 +56,21 @@ class Profile extends React.Component {
       description,
     } = profileData;
     return (
-      <ProfileCard
-        username={username}
-        service={service}
-        country={country}
-        city={city}
-        hourRate={hour_rate}
-        bio={description}
-        onClickMessage={this.handleMessage}
-        onClickHire={this.handleHire}
-        rate={5}
-      />
+      <Layout>
+        <div className="layout">
+          <ProfileCard
+            username={username}
+            service={service}
+            country={country}
+            city={city}
+            hourRate={hour_rate}
+            bio={description}
+            onClickMessage={this.handleMessage}
+            onClickHire={this.handleHire}
+            rate={5}
+          />
+        </div>
+      </Layout>
     );
   }
 }
