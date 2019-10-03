@@ -23,7 +23,7 @@ const Home = () => {
           </p>
         </article>
         <section className="home-page__buttons">
-          <Link to="/" className="first-btn">
+          <Link to="/services" className="first-btn">
             <Button className="first-btn">Let&apos;s Start</Button>
           </Link>
           <Link to="/login" className="link">

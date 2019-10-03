@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import SearchInput from '../../common/SearchInput';
 import ServiceCard from '../../common/serviceCard';
+import Layout from '../../common/Layout';
+import './style.css';
 
 class Services extends Component {
   state = {
@@ -29,28 +31,42 @@ class Services extends Component {
     this.setState({ resultAutoComplete: result });
   };
 
+  handleClick = id => {
+    const { history } = this.props;
+    history.push(`/service/${id}`);
+  };
+
+  handleBackClick = () => {
+    this.props.history.goBack();
+  };
+
   render() {
     const { servicesData, resultAutoComplete } = this.state;
+
     return (
-      <section>
-        {!servicesData[0] && <h3>...Loading</h3>}
-        <SearchInput
-          name="search"
-          placeholder="Search"
-          onChange={this.autoComplete}
-        />
-        <ul className="card-parent">
-          {servicesData.map(element =>
-            element.name.toLowerCase().startsWith(resultAutoComplete) ? (
-              <ServiceCard
-                serviceName={element.name}
-                serviceImage="https://static.wixstatic.com/media/496ffb_8b6064c94518461aaee56a4a17408300.jpg"
-                key={element.name}
-              />
-            ) : null
-          )}
-        </ul>
-      </section>
+      <Layout onBackClick={this.handleBackClick}>
+        <section className="layout">
+          {!servicesData[0] && <h3>...Loading</h3>}
+          <SearchInput
+            name="search"
+            placeholder="Search"
+            onChange={this.autoComplete}
+          />
+          <ul className="card-parent">
+            {servicesData.map(element =>
+              element.name.toLowerCase().startsWith(resultAutoComplete) ? (
+                <ServiceCard
+                  onServiceClick={this.handleClick}
+                  serviceId={element.id}
+                  serviceName={element.name}
+                  serviceImage="https://static.wixstatic.com/media/496ffb_8b6064c94518461aaee56a4a17408300.jpg"
+                  key={element.name}
+                />
+              ) : null
+            )}
+          </ul>
+        </section>
+      </Layout>
     );
   }
 }

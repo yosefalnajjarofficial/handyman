@@ -7,6 +7,7 @@ import Profile from './Profile';
 import Services from './Services';
 import Signup from './Signup';
 import OneServices from './OneServices';
+import Hire from './Hire';
 
 export {
   Home,
@@ -18,4 +19,5 @@ export {
   Services,
   Signup,
   OneServices,
+  Hire,
 };

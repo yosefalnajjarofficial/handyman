@@ -1,11 +1,14 @@
 import * as yup from 'yup';
 
 const hireSchema = yup.object({
-  deadline: yup.date('Deadline Should be a valid date').min(new Date()),
+  deadline: yup
+    .date('Deadline Should be a valid date')
+    .min(new Date())
+    .required('This is required'),
   price: yup
     .number('Price should be a number')
-    .positive()
-    .min(5)
+    .positive('Price should be a number')
+    .min(5, 'Price should be more than 5')
     .required('This is required'),
   description: yup
     .string('Description should be string')

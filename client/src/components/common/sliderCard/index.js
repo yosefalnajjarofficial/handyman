@@ -7,17 +7,21 @@ import './style.css';
 
 const SliderCard = ({
   onSliderCardClick,
+  handymanId,
   handymanName,
   handymanService,
   handymanBio,
   onMessageButtonClick,
-  onHireButtonClick,
+  onHireClick,
   rate,
 }) => {
   const starNumber = Array(rate).fill(1);
   return (
-    <div className="sliderCard" onClick={onSliderCardClick}>
-      <div className="sliderCard-container">
+    <div className="sliderCard">
+      <div
+        className="sliderCard-container"
+        onClick={() => onSliderCardClick(handymanId)}
+      >
         <img
           className="sliderCard-image"
           src="https://image.flaticon.com/icons/svg/307/307892.svg"
@@ -25,7 +29,10 @@ const SliderCard = ({
         />
       </div>
       <div className="sliderCard-content">
-        <div className="sliderCard-info">
+        <div
+          className="sliderCard-info"
+          onClick={() => onSliderCardClick(handymanId)}
+        >
           <h1 className="sliderCard-title">{handymanName}</h1>
           <span className="sliderCard-service">{handymanService}</span>
           <p className="sliderCard-bio">{handymanBio}</p>
@@ -46,7 +53,7 @@ const SliderCard = ({
             </Button>
             <Button
               className="sliderCard-btn sliderCard-hire"
-              onClick={onHireButtonClick}
+              onClick={() => onHireClick(handymanId)}
             >
               Hire
             </Button>

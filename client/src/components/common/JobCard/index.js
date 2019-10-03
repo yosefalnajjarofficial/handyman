@@ -27,7 +27,7 @@ const JobCard = ({
 
         <section className="card__header">
           <h3 className="card__header--username">{username}</h3>
-          <div className="rating-container">
+          <div className="rating__container">
             {starNumber.map(() => (
               <Star />
             ))}

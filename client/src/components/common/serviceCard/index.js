@@ -3,9 +3,14 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-const ServiceCard = ({ serviceName, onServiceClick, serviceImage }) => {
+const ServiceCard = ({
+  serviceId,
+  serviceName,
+  onServiceClick,
+  serviceImage,
+}) => {
   return (
-    <div className="serviceCard" onClick={onServiceClick}>
+    <div className="serviceCard" onClick={() => onServiceClick(serviceId)}>
       <div className="serviceCard-container">
         <img
           className="serviceCard-image"

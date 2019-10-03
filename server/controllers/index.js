@@ -11,7 +11,7 @@ router.post('/login', login);
 router.post('/signup', signup);
 router.get('/services', services);
 router.get('/service/:id', oneService);
-router.get('/profile/:id', profile);
+router.get('/service/:id/profile/:id', profile);
 router.post('/signup', signup);
 router.use(unlockCookie);
 router.get('/jobs', userJobs);
