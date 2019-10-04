@@ -8,7 +8,6 @@ class Header extends Component {
   state = {
     clicked: false,
     pageName: '',
-    isLoggedIn: true,
   };
 
   clickedFunc = () => {
@@ -17,7 +16,8 @@ class Header extends Component {
   };
 
   render() {
-    const { clicked, pageName, isLoggedIn } = this.state;
+    const { isAuth } = this.props;
+    const { clicked, pageName } = this.state;
     return (
       <section>
         <nav className="main-nav">
@@ -28,7 +28,7 @@ class Header extends Component {
         <SideDrawer
           onBackClick={this.props.onBackClick}
           className={clicked ? 'aside' : 'aside hidden'}
-          loggedIn={isLoggedIn}
+          loggedIn={isAuth}
         />
       </section>
     );
