@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import { NotificationManager } from 'react-notifications';
 
-import Layout from '../../common/Layout';
 import ProfileCard from '../../common/ProfileCard';
 
 class Profile extends React.Component {
@@ -56,21 +55,19 @@ class Profile extends React.Component {
       description,
     } = profileData;
     return (
-      <Layout>
-        <div className="layout">
-          <ProfileCard
-            username={username}
-            service={service}
-            country={country}
-            city={city}
-            hourRate={hour_rate}
-            bio={description}
-            onClickMessage={this.handleMessage}
-            onClickHire={this.handleHire}
-            rate={5}
-          />
-        </div>
-      </Layout>
+      <div className="layout">
+        <ProfileCard
+          username={username}
+          service={service}
+          country={country}
+          city={city}
+          hourRate={hour_rate}
+          bio={description}
+          onClickMessage={this.handleMessage}
+          onClickHire={this.handleHire}
+          rate={5}
+        />
+      </div>
     );
   }
 }

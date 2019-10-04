@@ -14,10 +14,8 @@ const SideDrawer = ({ loggedIn, className }) => {
     />,
     'home',
     'services',
-    'profile',
-    'messages',
     'jobs',
-    'logOut',
+    'logout',
   ];
 
   const sideDrawerItems = array =>
