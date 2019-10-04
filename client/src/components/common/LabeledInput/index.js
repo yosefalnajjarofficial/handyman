@@ -30,10 +30,8 @@ const LabeldInput = ({
 };
 
 LabeldInput.propTypes = {
-  autoFocus: PropTypes.string.isRequired,
-  htmlFor: PropTypes.string.isRequired,
+  autoFocus: PropTypes.bool,
   label: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   placeHolder: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -41,4 +39,7 @@ LabeldInput.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
+LabeldInput.defaultProps = {
+  autoFocus: undefined,
+};
 export default LabeldInput;

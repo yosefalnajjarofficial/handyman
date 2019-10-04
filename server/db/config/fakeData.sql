@@ -5,7 +5,16 @@ VALUES ('mossa','skdrow@gmail.com',11111111,'$2b$10$M860UeVT4eD5dgCm8pbK6uFxrrL.
 
 INSERT INTO users (username,email,phone,password,country,city,is_handyman) VALUES ('fadi','fadi123222@gmail.com',22222222,'$2b$10$ln/KSWd8dPCllY.EkqCM1ObIyFSiLDnwU9L2zfsa8.bCqhM1HWhLG','palestine','gaza',false);
 
-INSERT INTO services (name) VALUES ('builder');
+INSERT INTO services (name) VALUES ('build');
+INSERT INTO services (name) VALUES ('Blacksmith');
+INSERT INTO services (name) VALUES ('House cleaning');
+INSERT INTO services (name) VALUES ('Wall paint');
+INSERT INTO services (name) VALUES ('Plumbing');
+INSERT INTO services (name) VALUES ('Mechanics');
+INSERT INTO services (name) VALUES ('electrical engineer');
+INSERT INTO services (name) VALUES ('cars wacookies vs stateshing');
+INSERT INTO services (name) VALUES ('Pest and rodent control');
+INSERT INTO services (name) VALUES ('Freight');
 
 INSERT INTO handyman (handyman_id, job_title,hour_rate,description) 
 VALUES (1,1,15,'good builder');

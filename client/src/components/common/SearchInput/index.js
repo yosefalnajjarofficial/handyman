@@ -12,6 +12,7 @@ const SearchInput = ({ onChange, placeholder, name }) => {
         className="search-input"
         placeholder={placeholder}
         onChange={onChange}
+        autoComplete="off"
       />
       <i className="fas fa-search search-btn"></i>
     </form>

@@ -3,6 +3,7 @@
   display: block;
   font-size: 24px;
   font-family: var(--text-font);
+  width: 100%;
   margin-top: 4%;
 }
 
@@ -12,10 +13,10 @@
   border-radius: 5px;
   padding: 10px;
   outline: none;
-  height: 60px;
+  height: 58px;
   color: var(--text-color);
   margin: 5% 0 6% 0;
   width: 100%;
   background: var(--secondery-color);
-  font-size: 16px;
+  font-size: 18px;
 }

@@ -1,9 +1,6 @@
 .btnSide{
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 60px;
-  height: 55px;
+  width: 45px;
+  height: 40px;
   display: flex;
   flex-wrap: wrap;
   background: var(--main-color);
@@ -25,7 +22,7 @@
 .parent .btnSide__first{
   transform: rotate(45deg);
   position: relative;
-  top: 17px
+  top: 11px
 }
 
 .parent .btnSide__second{
@@ -35,5 +32,5 @@
 .parent .btnSide__last{
   transform: rotate(-45deg);
   position: relative;
-  top: -17px;
+  top: -8px;
 }
