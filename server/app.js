@@ -13,7 +13,7 @@ app.set('port', port);
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(join(__dirname, '..', 'client', 'public')));
+app.use(express.static(join(__dirname, '..', 'client', 'build')));
 app.use('/api/v1', router);
 
 app.get('*', (req, res) => {
