@@ -17,6 +17,8 @@ class JobPage extends React.Component {
     try {
       const response = await axios.get('/api/v1/jobs');
       if (response.data.data[0]) {
+        // this can throw an error and indicate that there was no res
+        // should : response.data.data && response.data.data[0]
         this.setState({
           jobsData: response.data.data,
         });

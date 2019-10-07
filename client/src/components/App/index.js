@@ -76,6 +76,7 @@ class App extends Component {
                 <Route
                   path="/service/:id"
                   render={props => <OneServices {...props} />}
+                  // oneServices?
                 />
                 <Route
                   path="/profile/:id"
