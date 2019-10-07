@@ -45,7 +45,7 @@ class App extends Component {
   };
 
   handleLogOut = () => {
-    this.setState({ isAuth: false });
+    this.setState({ isAuth: false }); // not really working doesnt have a route
   };
 
   render() {
@@ -76,7 +76,7 @@ class App extends Component {
                 <Route
                   path="/service/:id"
                   render={props => <OneServices {...props} />}
-                  // oneServices?
+                  // oneServices? typo
                 />
                 <Route
                   path="/profile/:id"

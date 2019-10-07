@@ -40,6 +40,7 @@ class JobPage extends React.Component {
         {jobsData[0] &&
           jobsData.map(job => {
             const {
+              // alias snake case stuff, ok nvm.. destructure :)
               id,
               username,
               description,
@@ -63,6 +64,7 @@ class JobPage extends React.Component {
                 buildingNumber={building_number}
                 flatNumber={flat_number}
                 rate={5}
+                // ^^^^ hardcoded, should always do default props, leads to less code editing for going production
                 key={id}
               />
             );

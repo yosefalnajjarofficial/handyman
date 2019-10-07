@@ -2,3 +2,7 @@ common components not consistent in naming
 signup route done twice in routes
 queries group them in one file/folder not salata
 unnessecary test utils
+we should minimize props that are required and maybe use a default props.. they are too much
+selectOptions and SelectOptions in common components?????
+BACK BUTTON
+back button in homepage visible

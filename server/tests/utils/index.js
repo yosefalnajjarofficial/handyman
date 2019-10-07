@@ -13,3 +13,5 @@ tape('type of algorithim used in hash passwords function', async (t) => {
     t.end();
   }
 });
+
+// COMPLETELY UNNESSECARY

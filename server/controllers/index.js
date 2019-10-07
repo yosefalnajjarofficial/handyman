@@ -12,7 +12,7 @@ router.post('/signup', signup);
 router.get('/services', services);
 router.get('/service/:id', oneService);
 router.get('/profile/:id', profile);
-router.post('/signup', signup);
+router.post('/signup', signup); // repeated signup
 router.use(unlockCookie);
 router.get('/isAuth', isAuth);
 router.get('/jobs', userJobs);
