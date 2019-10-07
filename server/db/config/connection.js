@@ -17,7 +17,6 @@ switch (process.env.NODE_ENV) {
     throw new Error('Database Url Not Found!');
 }
 
-console.log(process.env.NODE_ENV, 1111111111, dbUrl);
 const options = {
   connectionString: dbUrl,
   ssl: true,
