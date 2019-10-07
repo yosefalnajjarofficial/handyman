@@ -11,6 +11,7 @@ CREATE TABLE users(
   country VARCHAR(255) NOT NULL,
   city VARCHAR(255) NOT NULL,
   is_handyman BOOLEAN NOT NULL
+  -- hmmmm, why is this? already referenced below
 );
 
 CREATE TABLE services(
