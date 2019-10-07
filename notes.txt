@@ -6,3 +6,11 @@ we should minimize props that are required and maybe use a default props.. they 
 selectOptions and SelectOptions in common components?????
 BACK BUTTON
 back button in homepage visible
+lots of bem editing 
+destructuring 
+drawer/slider needs alot of bug fixing related to routes and redirecting
+sql query table aliasing????
+get tests folder out of server bc they dont have any actual functionality in the server work!
+BEM NAMING 
+consistency in using the long or short version of react fragment
+consistency in importing in an index and then exporting or getting it directly from the file

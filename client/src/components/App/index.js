@@ -25,6 +25,7 @@ import 'react-notifications/lib/notifications.css';
 import './style.css';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
+import Layout from '../common/Layout';
 
 class App extends Component {
   state = {
@@ -54,11 +55,10 @@ class App extends Component {
       <div className="App">
         <NotificationContainer />
         <Router>
-          {isAuth === null ? (
-            <h1>loading ...</h1>
-          ) : !isAuth ? (
-            <>
-              <Header isAuth={isAuth} />
+          <Layout>
+            {isAuth === null ? (
+              <h1>loading ...</h1>
+            ) : !isAuth ? (
               <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/signup" render={props => <Signup {...props} />} />
@@ -85,39 +85,41 @@ class App extends Component {
                 <Route exact path="/500" component={ServerError} />
                 <Route path="*" render={() => <Redirect to="/login" />} />
               </Switch>
-              <Footer />
-            </>
-          ) : (
-            <>
-              <Header isAuth={isAuth} />
-              <Switch>
-                <Route
-                  path="/"
-                  exact
-                  render={props => <Services {...props} />}
-                />
-                <Route
-                  path="/services"
-                  exact
-                  render={props => <Services {...props} />}
-                />
-                <Route
-                  path="/service/:id"
-                  render={props => <OneServices {...props} />}
-                />
-                <Route
-                  path="/profile/:id"
-                  render={props => <Profile {...props} />}
-                />
-                <Route path="/jobs" render={props => <JobsPage {...props} />} />
-                <Route path="/hire" render={props => <Hire {...props} />} />
-                <Route exact path="/500" component={ServerError} />
-                <Route exact path="/404" component={NotFound} />
-                <Route path="*" render={() => <Redirect to="/services" />} />
-              </Switch>
-              <Footer />
-            </>
-          )}
+            ) : (
+              <>
+                <Header isAuth={isAuth} />
+                <Switch>
+                  <Route
+                    path="/"
+                    exact
+                    render={props => <Services {...props} />}
+                  />
+                  <Route
+                    path="/services"
+                    exact
+                    render={props => <Services {...props} />}
+                  />
+                  <Route
+                    path="/service/:id"
+                    render={props => <OneServices {...props} />}
+                  />
+                  <Route
+                    path="/profile/:id"
+                    render={props => <Profile {...props} />}
+                  />
+                  <Route
+                    path="/jobs"
+                    render={props => <JobsPage {...props} />}
+                  />
+                  <Route path="/hire" render={props => <Hire {...props} />} />
+                  <Route exact path="/500" component={ServerError} />
+                  <Route exact path="/404" component={NotFound} />
+                  <Route path="*" render={() => <Redirect to="/services" />} />
+                </Switch>
+                <Footer />
+              </>
+            )}
+          </Layout>
         </Router>
       </div>
     );

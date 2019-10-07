@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { NotificationManager } from 'react-notifications';
 
-import Layout from '../../common/Layout';
+import Layout from '../../common/Layout'; // unused layout
 import JobCard from '../../common/JobCard';
 import './style.css';
 

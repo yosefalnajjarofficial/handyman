@@ -16,6 +16,7 @@ class Header extends Component {
   };
 
   render() {
+    // more destructuring
     const { isAuth } = this.props;
     const { clicked, pageName } = this.state;
     return (
@@ -34,5 +35,7 @@ class Header extends Component {
     );
   }
 }
+
+// missing props validation
 
 export default Header;
