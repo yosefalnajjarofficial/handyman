@@ -26,4 +26,6 @@ VALIDATION MESSAGES REWRITEEEEEEEEEEEEEEEEEEEEEEEE
 PRESENT 404 page when they edit the  url
 username unique? db 
 router refactor
+react proptypes
+console errors
 (...readme)
