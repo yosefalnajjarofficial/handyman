@@ -291,6 +291,7 @@ class Signup extends Component {
 
 Signup.propTypes = {
   history: PropTypes.objectOf().isRequired,
+  handleLogIn: PropTypes.objectOf().isRequired,
 };
 
 export default Signup;
