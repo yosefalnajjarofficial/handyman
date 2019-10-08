@@ -43,14 +43,14 @@ class App extends Component {
     this.setState({ isAuth: true });
   };
 
-  handleLogOut = () => {
+  handleLogout = () => {
     this.setState({ isAuth: false });
   };
 
   render() {
     const { isAuth } = this.state;
     return (
-      <div className="App">
+      <>
         <NotificationContainer />
         <Router>
           <Layout>
@@ -92,22 +92,27 @@ class App extends Component {
               ) : (
                 <>
                   <Route
-                    path="/"
                     exact
+                    path="/"
                     render={() => <Redirect to="/services" />}
                   />
                   <Route
+                    exact
                     path="/jobs"
                     render={props => <JobsPage {...props} />}
                   />
-                  <Route path="/hire" render={props => <Hire {...props} />} />
-                  <Route path="*" render={() => <Redirect to="/404" />} />
+                  <Route
+                    exact
+                    path="/hire"
+                    render={props => <Hire {...props} />}
+                  />
+                  <Route path="*" render={() => <Redirect to="/services" />} />
                 </>
               )}
             </Switch>
           </Layout>
         </Router>
-      </div>
+      </>
     );
   }
 }
