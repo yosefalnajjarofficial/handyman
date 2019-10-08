@@ -69,9 +69,14 @@ SliderCard.propTypes = {
   handymanName: PropTypes.string.isRequired,
   handymanService: PropTypes.string.isRequired,
   handymanBio: PropTypes.string.isRequired,
-  onMessageButtonClick: PropTypes.func.isRequired,
-  onHireButtonClick: PropTypes.func.isRequired,
-  rate: PropTypes.number.isRequired,
+  onMessageButtonClick: PropTypes.func,
+  onHireClick: PropTypes.func,
+  rate: PropTypes.number,
+};
+SliderCard.defaultProps = {
+  rate: 1,
+  onMessageButtonClick: () => {},
+  onHireClick: () => {},
 };
 
 export default SliderCard;

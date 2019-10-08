@@ -36,7 +36,7 @@ const JobCard = ({
 
         <div className="card__body">
           <h4>
-            <span>Description:</span> {description}{' '}
+            <span>Description:</span> {description}
           </h4>
           <h4>
             <span>Time:</span> {deadLine}
@@ -51,7 +51,7 @@ const JobCard = ({
           {message ? <h4>Message :{message}</h4> : null}
           <h4 className="card__status">
             <h4>
-              <span>Status:</span>{' '}
+              <span>Status:</span>
             </h4>
             <h4 className={`status ${status}`}> {status}</h4>
           </h4>
