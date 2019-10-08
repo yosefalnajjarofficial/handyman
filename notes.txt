@@ -5,7 +5,6 @@ unnessecary test utils
 we should minimize props that are required and maybe use a default props.. they are too much
 selectOptions and SelectOptions in common components?????
 BACK BUTTON
-back button in homepage visible
 lots of bem editing 
 destructuring 
 drawer/slider needs alot of bug fixing related to routes and redirecting
@@ -14,3 +13,17 @@ get tests folder out of server bc they dont have any actual functionality in the
 BEM NAMING 
 consistency in using the long or short version of react fragment
 consistency in importing in an index and then exporting or getting it directly from the file
+lorem text
+back button in homepage visible
+footer up in the air/fix home css
+images for services
+loading isn't descriptive
+messages button doesnt work, inform the user its under construction
+all placeholders need review/rewrite
+phone no validation, is wrong/doesnt match placeholder
+signup should sent cookie for login
+VALIDATION MESSAGES REWRITEEEEEEEEEEEEEEEEEEEEEEEE
+PRESENT 404 page when they edit the  url
+username unique? db 
+router refactor
+(...readme)
