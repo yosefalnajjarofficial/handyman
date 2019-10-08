@@ -20,6 +20,7 @@ import {
   NotFound,
   ServerError,
   Hire,
+  Logout,
 } from '../Pages/index';
 import 'react-notifications/lib/notifications.css';
 import './style.css';
@@ -60,7 +61,8 @@ class App extends Component {
             <>
               <Header isAuth={isAuth} />
               <Switch>
-                <Route path="/" exact component={Home} />
+                <Route exact path="/" component={Home} />
+                <Route path="/home" component={Home} />
                 <Route path="/signup" render={props => <Signup {...props} />} />
                 <Route
                   path="/login"
@@ -107,6 +109,13 @@ class App extends Component {
                 <Route
                   path="/profile/:id"
                   render={props => <Profile {...props} />}
+                />
+
+                <Route
+                  path="/logout"
+                  render={props => (
+                    <Logout {...props} handleLogOut={this.handleLogOut} />
+                  )}
                 />
                 <Route path="/jobs" render={props => <JobsPage {...props} />} />
                 <Route path="/hire" render={props => <Hire {...props} />} />
