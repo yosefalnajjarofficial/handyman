@@ -149,138 +149,136 @@ class Signup extends Component {
   render() {
     const { userValidation, handymanValidation, account, jobs } = this.state;
     return (
-      <Layout>
-        <form className="signup-form">
-          <LabeledInput
-            label="Username"
-            type="text"
-            placeHolder="ex.mossa"
-            name="username"
-            value={account.username}
-            onChange={this.handleChange}
-          />
-          {userValidation.username && (
-            <span className="username">{userValidation.username}</span>
-          )}
-          <LabeledInput
-            label="Email"
-            type="email"
-            placeHolder="ex.mossa@gmail.com"
-            name="email"
-            value={account.email}
-            onChange={this.handleChange}
-          />
-          {userValidation.email && (
-            <span className="email">{userValidation.email}</span>
-          )}
-          <LabeledInput
-            label="Phone No."
-            type="text"
-            placeHolder="ex.9705999999"
-            name="phone"
-            value={account.phone}
-            onChange={this.handleChange}
-          />
-          {userValidation.phone && (
-            <span className="phone">{userValidation.phone}</span>
-          )}
-          <LabeledInput
-            label="Password"
-            type="password"
-            placeHolder="********"
-            name="password"
-            value={account.password}
-            onChange={this.handleChange}
-          />
-          {userValidation.password && (
-            <span className="password">{userValidation.password}</span>
-          )}
-          <LabeledInput
-            label="Confirm Password"
-            type="password"
-            placeHolder="********"
-            name="confirmPassword"
-            value={account.confirmPassword}
-            onChange={this.handleChange}
-          />
-          {userValidation.confirmPassword && (
-            <span className="confirmPassword">
-              {userValidation.confirmPassword}
-            </span>
-          )}
-          <LabeledInput
-            label="Country"
-            type="text"
-            placeHolder="ex.Palestine"
-            name="country"
-            value={account.country}
-            onChange={this.handleChange}
-          />
-          {userValidation && (
-            <span className="country">{userValidation.country}</span>
-          )}
-          <LabeledInput
-            label="City"
-            type="text"
-            placeHolder="ex.Jerusalem"
-            name="city"
-            value={account.city}
-            onChange={this.handleChange}
-          />
-          {userValidation.city && (
-            <span className="city">{userValidation.city}</span>
-          )}
-          <SelectOption
-            label="Role"
-            selectName="isHandyman"
-            options={[{ id: 1, name: 'client' }, { id: 2, name: 'handyman' }]}
-            onChange={this.changeRole}
-          />
-          {account.isHandyman ? (
-            <React.Fragment>
-              <SelectOption
-                label="Job Title"
-                selectName="jobTitle"
-                options={jobs}
-                value={account.jobTitle}
-                onChange={this.changeJob}
-              />
-              <LabeledInput
-                label="Hour Rate"
-                type="text"
-                placeHolder="ex.24"
-                name="hourRate"
-                value={account.hourRate}
-                onChange={this.handleChange}
-              />
-              {handymanValidation.hourRate && (
-                <span className="hourRate">{handymanValidation.hourRate}</span>
-              )}
-              <TextArea
-                label="Bio"
-                placeHolder="tell us about your self"
-                rows={5}
-                cols={5}
-                name="description"
-                value={account.description}
-                onChange={this.handleChange}
-              />
-              {handymanValidation.description && (
-                <span className="description">
-                  {handymanValidation.description}
-                </span>
-              )}
-            </React.Fragment>
-          ) : null}
+      <form className="signup-form">
+        <LabeledInput
+          label="Username"
+          type="text"
+          placeHolder="ex.mossa"
+          name="username"
+          value={account.username}
+          onChange={this.handleChange}
+        />
+        {userValidation.username && (
+          <span className="username">{userValidation.username}</span>
+        )}
+        <LabeledInput
+          label="Email"
+          type="email"
+          placeHolder="ex.mossa@gmail.com"
+          name="email"
+          value={account.email}
+          onChange={this.handleChange}
+        />
+        {userValidation.email && (
+          <span className="email">{userValidation.email}</span>
+        )}
+        <LabeledInput
+          label="Phone No."
+          type="text"
+          placeHolder="ex.9705999999"
+          name="phone"
+          value={account.phone}
+          onChange={this.handleChange}
+        />
+        {userValidation.phone && (
+          <span className="phone">{userValidation.phone}</span>
+        )}
+        <LabeledInput
+          label="Password"
+          type="password"
+          placeHolder="********"
+          name="password"
+          value={account.password}
+          onChange={this.handleChange}
+        />
+        {userValidation.password && (
+          <span className="password">{userValidation.password}</span>
+        )}
+        <LabeledInput
+          label="Confirm Password"
+          type="password"
+          placeHolder="********"
+          name="confirmPassword"
+          value={account.confirmPassword}
+          onChange={this.handleChange}
+        />
+        {userValidation.confirmPassword && (
+          <span className="confirmPassword">
+            {userValidation.confirmPassword}
+          </span>
+        )}
+        <LabeledInput
+          label="Country"
+          type="text"
+          placeHolder="ex.Palestine"
+          name="country"
+          value={account.country}
+          onChange={this.handleChange}
+        />
+        {userValidation && (
+          <span className="country">{userValidation.country}</span>
+        )}
+        <LabeledInput
+          label="City"
+          type="text"
+          placeHolder="ex.Jerusalem"
+          name="city"
+          value={account.city}
+          onChange={this.handleChange}
+        />
+        {userValidation.city && (
+          <span className="city">{userValidation.city}</span>
+        )}
+        <SelectOption
+          label="Role"
+          selectName="isHandyman"
+          options={[{ id: 1, name: 'client' }, { id: 2, name: 'handyman' }]}
+          onChange={this.changeRole}
+        />
+        {account.isHandyman ? (
+          <React.Fragment>
+            <SelectOption
+              label="Job Title"
+              selectName="jobTitle"
+              options={jobs}
+              value={account.jobTitle}
+              onChange={this.changeJob}
+            />
+            <LabeledInput
+              label="Hour Rate"
+              type="text"
+              placeHolder="ex.24"
+              name="hourRate"
+              value={account.hourRate}
+              onChange={this.handleChange}
+            />
+            {handymanValidation.hourRate && (
+              <span className="hourRate">{handymanValidation.hourRate}</span>
+            )}
+            <TextArea
+              label="Bio"
+              placeHolder="tell us about your self"
+              rows={5}
+              cols={5}
+              name="description"
+              value={account.description}
+              onChange={this.handleChange}
+            />
+            {handymanValidation.description && (
+              <span className="description">
+                {handymanValidation.description}
+              </span>
+            )}
+          </React.Fragment>
+        ) : null}
 
-          <Button className="submit--button" onClick={this.handleSubmit}>
-            Sign Up
-          </Button>
-          <p className="signup-text">
-            already have account? <Link to="/login">login here</Link>
-          </p>
-        </form>
-      </Layout>
+        <Button className="submit--button" onClick={this.handleSubmit}>
+          Sign Up
+        </Button>
+        <p className="signup-text">
+          already have account? <Link to="/login">login here</Link>
+        </p>
+      </form>
     );
   }
 }

@@ -22,9 +22,8 @@ import {
   Hire,
 } from '../Pages/index';
 import 'react-notifications/lib/notifications.css';
+import Layout from '../common/Layout';
 import './style.css';
-import Header from '../common/Header';
-import Footer from '../common/Footer';
 
 class App extends Component {
   state = {
@@ -40,7 +39,7 @@ class App extends Component {
     }
   }
 
-  handleLogIn = () => {
+  handleLogin = () => {
     this.setState({ isAuth: true });
   };
 
@@ -54,69 +53,59 @@ class App extends Component {
       <div className="App">
         <NotificationContainer />
         <Router>
-          {isAuth === null ? (
-            <h1>loading ...</h1>
-          ) : !isAuth ? (
-            <>
-              <Header isAuth={isAuth} />
-              <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/signup" render={props => <Signup {...props} />} />
-                <Route
-                  path="/login"
-                  render={props => (
-                    <Login {...props} handleLogIn={this.handleLogIn} />
-                  )}
-                />
-                <Route
-                  path="/services"
-                  exact
-                  render={props => <Services {...props} />}
-                />
-                <Route
-                  path="/service/:id"
-                  render={props => <OneServices {...props} />}
-                />
-                <Route
-                  path="/profile/:id"
-                  render={props => <Profile {...props} />}
-                />
-                <Route exact path="/500" component={ServerError} />
-                <Route path="*" render={() => <Redirect to="/login" />} />
-              </Switch>
-              <Footer />
-            </>
-          ) : (
-            <>
-              <Header isAuth={isAuth} />
-              <Switch>
-                <Route
-                  path="/"
-                  exact
-                  render={props => <Services {...props} />}
-                />
-                <Route
-                  path="/services"
-                  exact
-                  render={props => <Services {...props} />}
-                />
-                <Route
-                  path="/service/:id"
-                  render={props => <OneServices {...props} />}
-                />
-                <Route
-                  path="/profile/:id"
-                  render={props => <Profile {...props} />}
-                />
-                <Route path="/jobs" render={props => <JobsPage {...props} />} />
-                <Route path="/hire" render={props => <Hire {...props} />} />
-                <Route exact path="/500" component={ServerError} />
-                <Route exact path="/404" component={NotFound} />
-                <Route path="*" render={() => <Redirect to="/services" />} />
-              </Switch>
-              <Footer />
-            </>
-          )}
+          <Layout>
+            <Switch>
+              <Route
+                path="/services"
+                exact
+                render={props => <Services {...props} />}
+              />
+              <Route
+                path="/service/:id"
+                render={props => <OneServices {...props} />}
+              />
+              <Route
+                path="/profile/:id"
+                render={props => <Profile {...props} />}
+              />
+              <Route exact path="/500" component={ServerError} />
+              <Route exact path="/404" component={NotFound} />
+              {isAuth === null ? (
+                <h1>loading ...</h1>
+              ) : !isAuth ? (
+                <>
+                  <Route exact path="/" component={Home} />
+                  <Route
+                    path="/signup"
+                    render={props => <Signup {...props} />}
+                  />
+                  <Route
+                    path="/login"
+                    render={props => (
+                      <Login {...props} handleLogin={this.handleLogin} />
+                    )}
+                  />
+                  <Route path="/hire" render={() => <Redirect to="/login" />} />
+                  <Route path="/jobs" render={() => <Redirect to="/login" />} />
+                  <Route path="*" render={() => <Redirect to="/" />} />
+                </>
+              ) : (
+                <>
+                  <Route
+                    path="/"
+                    exact
+                    render={() => <Redirect to="/services" />}
+                  />
+                  <Route
+                    path="/jobs"
+                    render={props => <JobsPage {...props} />}
+                  />
+                  <Route path="/hire" render={props => <Hire {...props} />} />
+                  <Route path="*" render={() => <Redirect to="/404" />} />
+                </>
+              )}
+            </Switch>
+          </Layout>
         </Router>
       </div>
     );
