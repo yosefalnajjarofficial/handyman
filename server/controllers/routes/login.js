@@ -26,6 +26,7 @@ module.exports = async (req, res, next) => {
       throw new Error('incorrect username or password');
     }
   } catch (e) {
+    // why username if you are signing in with email
     if (e.name === 'validationError' || e.message === 'incorrect username or password') {
       res.status(400).send({
         message: e.message,

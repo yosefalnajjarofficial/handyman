@@ -6,6 +6,7 @@ import './style.css';
 const SearchInput = ({ onChange, placeholder, name }) => {
   return (
     <form className="searchForm">
+      {/* bem name */}
       <input
         type="search"
         name={name}

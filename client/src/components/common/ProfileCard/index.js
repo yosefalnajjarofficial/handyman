@@ -16,6 +16,7 @@ const ProfileCard = ({
   onClickHire,
   rate,
 }) => {
+  // BEMMMMMMMMMMM
   const starNumber = Array(rate).fill(1);
   return (
     <div className="card">

@@ -1,5 +1,5 @@
 const { verfiyToken } = require('../utils/cookie');
-
+// name of this file not descriptive
 exports.unlockCookie = async (req, res, next) => {
   if (req.cookies.jwt) {
     try {
