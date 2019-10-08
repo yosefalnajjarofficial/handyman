@@ -25,6 +25,7 @@ import 'react-notifications/lib/notifications.css';
 import './style.css';
 import Header from '../common/Header';
 import Footer from '../common/Footer';
+import Loader from '../common/Loader';
 
 class App extends Component {
   state = {
@@ -55,7 +56,7 @@ class App extends Component {
         <NotificationContainer />
         <Router>
           {isAuth === null ? (
-            <h1>loading ...</h1>
+            <Loader />
           ) : !isAuth ? (
             <>
               <Header isAuth={isAuth} />

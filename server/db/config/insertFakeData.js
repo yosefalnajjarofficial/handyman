@@ -9,3 +9,4 @@ const insertFakeData = () => {
 };
 
 module.exports = insertFakeData;
+insertFakeData();
