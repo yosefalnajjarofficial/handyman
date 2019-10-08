@@ -6,6 +6,7 @@ import {
   Route,
   Switch,
   Redirect,
+  withRouter,
 } from 'react-router-dom';
 import axios from 'axios';
 
@@ -49,11 +50,12 @@ class App extends Component {
 
   render() {
     const { isAuth } = this.state;
+    const LayoutWithRouter = withRouter(Layout);
     return (
       <>
         <NotificationContainer />
         <Router>
-          <Layout>
+          <LayoutWithRouter>
             <Switch>
               <Route
                 path="/services"
@@ -110,7 +112,7 @@ class App extends Component {
                 </>
               )}
             </Switch>
-          </Layout>
+          </LayoutWithRouter>
         </Router>
       </>
     );
