@@ -1,23 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Header from '../Header';
 import Footer from '../Footer';
 
-class Layout extends Component {
-  state = {};
-
-  render() {
-    return (
-      <div>
-        <Header
-          onBackClick={this.props.onBackClick}
-          isLoggedIn={this.props.isLoggedIn}
-        />
-        {this.props.children}
-        <Footer />
-      </div>
-    );
-  }
-}
+const Layout = ({
+  onBackClick,
+  isLoggedIn,
+  children,
+  location: { pathname },
+}) =>
+  pathname === '/' || pathname === '/login' ? (
+    children
+  ) : (
+    <div>
+      <Header onBackClick={onBackClick} isLoggedIn={isLoggedIn} />
+      {children}
+      <Footer />
+    </div>
+  );
 
 export default Layout;

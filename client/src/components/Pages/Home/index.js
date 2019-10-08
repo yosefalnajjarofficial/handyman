@@ -5,7 +5,7 @@ import Button from '../../common/Button';
 import electrician from '../../../assets/electrician (1).png';
 import './style.css';
 
-const Home = () => {
+const Home = ({ handleOutOfHome }) => {
   return (
     <section className="home-page">
       <div className="home-page__container">
@@ -24,13 +24,19 @@ const Home = () => {
         </article>
         <section className="home-page__buttons">
           <Link to="/services" className="first-btn">
-            <Button className="first-btn">Let&apos;s Start</Button>
+            <Button className="first-btn" onClick={handleOutOfHome}>
+              Let&apos;s Start
+            </Button>
           </Link>
           <Link to="/login" className="link">
-            <Button className="second-btn">Login</Button>
+            <Button className="second-btn" onClick={handleOutOfHome}>
+              Login
+            </Button>
           </Link>
           <Link to="/signup" className="link">
-            <Button className="last-btn">Sign Up</Button>
+            <Button className="last-btn" onClick={handleOutOfHome}>
+              Sign Up
+            </Button>
           </Link>
         </section>
       </div>

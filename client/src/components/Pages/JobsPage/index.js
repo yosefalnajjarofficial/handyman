@@ -31,6 +31,7 @@ class JobPage extends React.Component {
 
   render() {
     const { jobsData, exsitJob } = this.state;
+    console.log(this.props);
     return (
       <div className="layout">
         {!jobsData[0] && exsitJob && <h3>...Loading</h3>}
