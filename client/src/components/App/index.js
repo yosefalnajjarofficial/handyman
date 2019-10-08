@@ -61,7 +61,12 @@ class App extends Component {
               <Header isAuth={isAuth} />
               <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/signup" render={props => <Signup {...props} />} />
+                <Route
+                  path="/signup"
+                  render={props => (
+                    <Signup {...props} handleLogIn={this.handleLogIn} />
+                  )}
+                />
                 <Route
                   path="/login"
                   render={props => (

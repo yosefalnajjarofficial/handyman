@@ -118,8 +118,11 @@ class Signup extends Component {
       Object.keys(handymanValidation).length === 0
     ) {
       const { account } = this.state;
+      const { handleLogIn } = this.props;
       try {
+        // this.props.isAuth = true;
         await axios.post('/api/v1/signup', account);
+        handleLogIn();
       } catch (err) {
         if (err.response.data.message) {
           let { message } = err.response.data;
@@ -148,6 +151,7 @@ class Signup extends Component {
 
   render() {
     const { userValidation, handymanValidation, account, jobs } = this.state;
+    console.log(this.props);
     return (
       <Layout>
         <form className="signup-form">
