@@ -19,6 +19,7 @@ class Services extends Component {
   cancel = null;
 
   async componentDidMount() {
+    const { history } = this.props;
     this.isMount = true;
     try {
       const {
@@ -26,7 +27,7 @@ class Services extends Component {
       } = await axios.get('api/v1/services');
       if (this.isMount) this.setState({ servicesData: data });
     } catch (err) {
-      console.log('request cancelled!');
+      history.push('/500');
     }
   }
 
