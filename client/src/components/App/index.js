@@ -43,8 +43,14 @@ class App extends Component {
 
   loggedRoutes = () => [
     <Route exact path="/" render={() => <Redirect to="/services" />} />,
+    <Route exact path="/home" render={() => <Redirect to="/services" />} />,
     <Route exact path="/jobs" render={props => <JobsPage {...props} />} />,
     <Route exact path="/hire" render={props => <Hire {...props} />} />,
+    <Route
+      exact
+      path="/logout"
+      render={props => <Logout {...props} handleLogout={this.handleLogout} />}
+    />,
     <Route path="*" render={() => <Redirect to="/404" />} />,
   ];
 
@@ -80,11 +86,12 @@ class App extends Component {
 
   render() {
     const LayoutWithRouter = withRouter(Layout);
+    const { isAuth } = this.state;
     return (
       <>
         <NotificationContainer />
         <Router>
-          <LayoutWithRouter handleLogout={this.handleLogout}>
+          <LayoutWithRouter isAuth={isAuth}>
             <Switch>
               <Route
                 path="/services"
