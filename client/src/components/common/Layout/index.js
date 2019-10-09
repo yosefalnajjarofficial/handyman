@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Header from '../Header';
 import Footer from '../Footer';
@@ -18,5 +19,13 @@ const Layout = ({
       <Footer />
     </div>
   );
+
+Layout.propTypes = {
+  onBackClick: PropTypes.func.isRequired,
+  isLoggedIn: PropTypes.func.isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default Layout;
