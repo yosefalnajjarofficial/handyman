@@ -16,7 +16,6 @@ class Services extends Component {
 
   isMount = false;
 
-  cancel = null;
 
   async componentDidMount() {
     const { history } = this.props;
