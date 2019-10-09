@@ -4,6 +4,7 @@ import axios from 'axios';
 import SearchInput from '../../common/SearchInput';
 import HandymanCard from '../../common/HandymanCard';
 import SliderCard from '../../common/sliderCard';
+import Loader from '../../common/Loader';
 import './style.css';
 
 class Services extends Component {
@@ -45,7 +46,7 @@ class Services extends Component {
     const { oneServicesData, name, isExist } = this.state;
     return (
       <section className="layout">
-        {!oneServicesData[0] && isExist && <h3>...Loading</h3>}
+        {!oneServicesData[0] && isExist && <Loader />}
         {!isExist && <h1>No handymans for this services at yet </h1>}
         {oneServicesData[0] && (
           <span>
