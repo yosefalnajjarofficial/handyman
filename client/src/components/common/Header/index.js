@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import DrawerToggleButton from '../DrawerToggleButton';
 import SideDrawer from '../SideDrawer';
@@ -16,17 +17,16 @@ class Header extends Component {
   };
 
   render() {
-    const { isAuth } = this.props;
+    const { isAuth, onBackClick } = this.props;
     const { clicked, pageName } = this.state;
     return (
       <section>
         <nav className="main-nav">
-          <i className="fas fa-arrow-left"></i>
+          <i className="fas fa-arrow-left" onClick={onBackClick}></i>
           <h2 className="main-nav__heading">{pageName}</h2>
           <DrawerToggleButton clicked={clicked} onClick={this.clickedFunc} />
         </nav>
         <SideDrawer
-          onBackClick={this.props.onBackClick}
           className={clicked ? 'aside' : 'aside hidden'}
           loggedIn={isAuth}
         />
@@ -34,5 +34,10 @@ class Header extends Component {
     );
   }
 }
+
+Header.propTypes = {
+  isAuth: PropTypes.bool.isRequired,
+  onBackClick: PropTypes.func.isRequired,
+};
 
 export default Header;

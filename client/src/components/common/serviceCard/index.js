@@ -10,7 +10,11 @@ const ServiceCard = ({
   serviceImage,
 }) => {
   return (
-    <div className="serviceCard" onClick={() => onServiceClick(serviceId)}>
+    <div
+      className="serviceCard"
+      role="button"
+      onClick={() => onServiceClick(serviceId)}
+    >
       <div className="serviceCard-container">
         <img
           className="serviceCard-image"
@@ -25,6 +29,7 @@ const ServiceCard = ({
 
 ServiceCard.propTypes = {
   serviceName: PropTypes.string.isRequired,
+  serviceId: PropTypes.number.isRequired,
   onServiceClick: PropTypes.func.isRequired,
   serviceImage: PropTypes.string.isRequired,
 };
