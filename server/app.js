@@ -24,6 +24,7 @@ app.get('*', (req, res) => {
 });
 
 app.use((err, req, res, next) => {
+  // eslint-disable-next-line no-console
   console.log(req.path, err);
   res.status(500).send({ message: 'Internal Server Error', statusCode: 500 });
 });

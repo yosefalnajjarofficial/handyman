@@ -70,7 +70,9 @@ class Services extends Component {
 }
 
 Services.propTypes = {
-  history: PropTypes.objectOf().isRequired,
+  history: PropTypes.shape({
+    goBack: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default Services;

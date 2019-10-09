@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import Header from '../Header';
 import Footer from '../Footer';
 
 const Layout = ({
   history: { goBack },
-  isLoggedIn,
+  isAuth,
   children,
   location: { pathname },
 }) =>
@@ -13,7 +14,7 @@ const Layout = ({
     children
   ) : (
     <div>
-      <Header onBackClick={goBack} isLoggedIn={isLoggedIn} />
+      <Header onBackClick={goBack} isAuth={isAuth} />
       {children}
       <Footer />
     </div>
@@ -26,6 +27,7 @@ Layout.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
-  isLoggedIn: PropTypes.bool.isRequired,
+  children: PropTypes.arrayOf().isRequired,
+  isAuth: PropTypes.bool.isRequired,
 };
 export default Layout;

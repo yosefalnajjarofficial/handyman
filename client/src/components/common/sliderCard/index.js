@@ -42,8 +42,8 @@ const SliderCard = ({
         <div className="sliderCard-callToAction">
           <div>
             <div className="rating-container">
-              {starNumber.map(() => (
-                <Star />
+              {starNumber.map((element, index) => (
+                <Star key={index} />
               ))}
             </div>
 
@@ -71,9 +71,14 @@ SliderCard.propTypes = {
   handymanName: PropTypes.string.isRequired,
   handymanService: PropTypes.string.isRequired,
   handymanBio: PropTypes.string.isRequired,
-  onMessageButtonClick: PropTypes.func.isRequired,
-  onHireClick: PropTypes.func.isRequired,
-  rate: PropTypes.number.isRequired,
+  onMessageButtonClick: PropTypes.func,
+  onHireClick: PropTypes.func,
+  rate: PropTypes.number,
+};
+SliderCard.defaultProps = {
+  rate: 1,
+  onMessageButtonClick: () => {},
+  onHireClick: () => {},
 };
 
 export default SliderCard;

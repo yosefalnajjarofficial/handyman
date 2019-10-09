@@ -8,7 +8,7 @@ import './style.css';
 class Header extends Component {
   state = {
     clicked: false,
-    pageName: '',
+    pageName: ' ',
   };
 
   clickedFunc = () => {
@@ -22,7 +22,11 @@ class Header extends Component {
     return (
       <section>
         <nav className="main-nav">
-          <i className="fas fa-arrow-left" onClick={onBackClick}></i>
+          <i
+            role="button"
+            className="fas fa-arrow-left"
+            onClick={onBackClick}
+          ></i>
           <h2 className="main-nav__heading">{pageName}</h2>
           <DrawerToggleButton clicked={clicked} onClick={this.clickedFunc} />
         </nav>
@@ -34,7 +38,6 @@ class Header extends Component {
     );
   }
 }
-
 Header.propTypes = {
   isAuth: PropTypes.bool.isRequired,
   onBackClick: PropTypes.func.isRequired,

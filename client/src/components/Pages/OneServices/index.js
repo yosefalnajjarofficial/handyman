@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import SearchInput from '../../common/SearchInput';
 import HandymanCard from '../../common/HandymanCard';
@@ -10,7 +11,6 @@ import './style.css';
 class Services extends Component {
   state = {
     oneServicesData: [],
-    name: '',
     isExist: true,
   };
 
@@ -99,5 +99,15 @@ class Services extends Component {
     );
   }
 }
+Services.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default Services;
