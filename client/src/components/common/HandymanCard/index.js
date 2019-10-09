@@ -41,7 +41,7 @@ const HandymanCard = ({
           </div>
           <div className="card--stars">
             {starsNo.map((element, index) => (
-              <Star key={number} />
+              <Star key={index} />
             ))}
           </div>
         </div>
