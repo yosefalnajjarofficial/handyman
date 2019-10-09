@@ -73,7 +73,7 @@ class Signup extends Component {
     } else {
       this.setState({ userValidation: errorObj });
     }
-    notify.error('invalid inputs');
+    notify.error('please fill all inputs');
   };
 
   handleSubmit = async event => {
@@ -154,81 +154,93 @@ class Signup extends Component {
         <LabeledInput
           label="Username"
           type="text"
-          placeHolder="ex.mossa"
+          placeHolder="enter your username"
           name="username"
           value={account.username}
           onChange={this.handleChange}
         />
         {userValidation.username && (
-          <span className="username">{userValidation.username}</span>
+          <span className="username err-msg">
+            {userValidation.username ? 'please Enter your username' : ''}
+          </span>
         )}
         <LabeledInput
           label="Email"
           type="email"
-          placeHolder="ex.mossa@gmail.com"
+          placeHolder="enter your email"
           name="email"
           value={account.email}
           onChange={this.handleChange}
         />
         {userValidation.email && (
-          <span className="email">{userValidation.email}</span>
+          <span className="email err-msg">
+            {userValidation.email ? 'please enter you email' : ''}
+          </span>
         )}
         <LabeledInput
           label="Phone No."
           type="text"
-          placeHolder="ex.9705999999"
+          placeHolder="enter your Phone number"
           name="phone"
           value={account.phone}
           onChange={this.handleChange}
         />
         {userValidation.phone && (
-          <span className="phone">{userValidation.phone}</span>
+          <span className="phone err-msg">
+            {userValidation.phone ? 'enter valid phone number please !!' : ''}
+          </span>
         )}
         <LabeledInput
           label="Password"
           type="password"
-          placeHolder="********"
+          placeHolder="enter your password"
           name="password"
           value={account.password}
           onChange={this.handleChange}
         />
         {userValidation.password && (
-          <span className="password">{userValidation.password}</span>
+          <span className="password">
+            {userValidation.password ? 'please enter your password !!!' : ''}
+          </span>
         )}
         <LabeledInput
           label="Confirm Password"
           type="password"
-          placeHolder="********"
+          placeHolder="confirm password"
           name="confirmPassword"
           value={account.confirmPassword}
           onChange={this.handleChange}
         />
         {userValidation.confirmPassword && (
-          <span className="confirmPassword">
-            {userValidation.confirmPassword}
+          <span className="confirmPassword err-msg">
+            {userValidation.confirmPassword ? 'the password must be match' : ''}
           </span>
         )}
         <LabeledInput
           label="Country"
           type="text"
-          placeHolder="ex.Palestine"
+          placeHolder="enter your country"
           name="country"
           value={account.country}
           onChange={this.handleChange}
         />
         {userValidation && (
-          <span className="country">{userValidation.country}</span>
+          <span className="country err-msg">
+            {userValidation.country ? 'please enter your country !!!' : ''}
+          </span>
         )}
         <LabeledInput
           label="City"
           type="text"
-          placeHolder="ex.Jerusalem"
+          placeHolder="enter your city"
           name="city"
           value={account.city}
           onChange={this.handleChange}
         />
         {userValidation.city && (
-          <span className="city">{userValidation.city}</span>
+          <span className="city err-msg">
+            {userValidation.city ? 'please enter your city ' : ''}
+          </span>
         )}
         <SelectOption
           label="Role"
@@ -248,13 +260,15 @@ class Signup extends Component {
             <LabeledInput
               label="Hour Rate"
               type="text"
-              placeHolder="ex.24"
+              placeHolder="enter hr's rate"
               name="hourRate"
               value={account.hourRate}
               onChange={this.handleChange}
             />
             {handymanValidation.hourRate && (
-              <span className="hourRate">{handymanValidation.hourRate}</span>
+              <span className="hourRate err-msg">
+                {handymanValidation.hourRate ? 'please enter valid rate' : ''}
+              </span>
             )}
             <TextArea
               label="Bio"
@@ -266,8 +280,10 @@ class Signup extends Component {
               onChange={this.handleChange}
             />
             {handymanValidation.description && (
-              <span className="description">
-                {handymanValidation.description}
+              <span className="description err-msg">
+                {handymanValidation.description
+                  ? 'you might prefer add some info'
+                  : ''}
               </span>
             )}
           </React.Fragment>
