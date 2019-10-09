@@ -43,9 +43,4 @@ Header.propTypes = {
   onBackClick: PropTypes.func.isRequired,
 };
 
-Header.propTypes = {
-  isAuth: PropTypes.bool.isRequired,
-  onBackClick: PropTypes.func.isRequired,
-};
-
 export default Header;
