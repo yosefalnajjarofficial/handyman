@@ -40,7 +40,7 @@ const HandymanCard = ({
             <span className="card--service">{handymanService}</span>
           </div>
           <div className="card--stars">
-            {starsNo.map((element, number) => (
+            {starsNo.map((element, index) => (
               <Star key={number} />
             ))}
           </div>
