@@ -90,7 +90,7 @@ class App extends Component {
       <>
         <NotificationContainer />
         <Router>
-          <LayoutWithRouter onBackClick="goBack">
+          <LayoutWithRouter>
             <Switch>
               <Route
                 path="/services"
