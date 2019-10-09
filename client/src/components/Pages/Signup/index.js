@@ -135,6 +135,7 @@ class Signup extends Component {
       notify.success('account created successfully');
       return history.push('/services');
     }
+    return true;
   };
 
   handleChange = ({ currentTarget: input }) => {

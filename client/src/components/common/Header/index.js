@@ -22,12 +22,15 @@ class Header extends Component {
     return (
       <section>
         <nav className="main-nav">
-          <i className="fas fa-arrow-left"></i>
+          <i
+            className="fas fa-arrow-left"
+            onClick={onBackClick}
+            role="button"
+          ></i>
           <h2 className="main-nav__heading">{pageName}</h2>
           <DrawerToggleButton clicked={clicked} onClick={this.clickedFunc} />
         </nav>
         <SideDrawer
-          onBackClick={onBackClick}
           className={clicked ? 'aside' : 'aside hidden'}
           loggedIn={isAuth}
         />
@@ -35,6 +38,11 @@ class Header extends Component {
     );
   }
 }
+Header.propTypes = {
+  isAuth: PropTypes.bool.isRequired,
+  onBackClick: PropTypes.func.isRequired,
+};
+
 Header.propTypes = {
   isAuth: PropTypes.bool.isRequired,
   onBackClick: PropTypes.func.isRequired,
