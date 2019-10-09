@@ -83,7 +83,7 @@ class App extends Component {
       <>
         <NotificationContainer />
         <Router>
-          <LayoutWithRouter>
+          <LayoutWithRouter onBackClick="goBack">
             <Switch>
               <Route
                 path="/services"
