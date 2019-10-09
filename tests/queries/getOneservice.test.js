@@ -1,8 +1,8 @@
 const test = require('tape');
 
-const dbBuild = require('../../db/config/build');
-const insertFakeData = require('../../db/config/insertFakeData');
-const { getOneService } = require('../../db/queries/getOneService');
+const dbBuild = require('../../server/db/config/build');
+const insertFakeData = require('../../server/db/config/insertFakeData');
+const { getOneService } = require('../../server/db/queries/getOneService');
 
 test('testing for oneService query', async (t) => {
   try {

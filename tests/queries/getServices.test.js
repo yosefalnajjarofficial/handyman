@@ -1,6 +1,6 @@
 const test = require('tape');
 
-const { getServices } = require('../../db/queries/getServices');
+const { getServices } = require('../../server/db/queries/getServices');
 
 test('testing for getServices query database', async (t) => {
   const services = await getServices();

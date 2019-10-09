@@ -4,7 +4,7 @@
   "description": "## Prototype Link: [Here](https://www.figma.com/proto/bE8eAbNWZAv7i0O78jKiHK/Untitled?node-id=382%3A4&scaling=scale-down)",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test node ./server/tests | tap-spec",
+    "test": "NODE_ENV=test node ./tests | tap-spec",
     "start": "NODE_ENV=production node ./server/",
     "dev": "NODE_ENV=development nodemon ./server",
     "heroku-postbuild": "cd client && npm i && npm run build"

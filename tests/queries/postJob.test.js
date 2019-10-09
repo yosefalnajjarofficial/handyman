@@ -1,8 +1,8 @@
 const tape = require('tape');
 
-const dbBuild = require('../../db/config/build');
-const insertFakeData = require('../../db/config/insertFakeData');
-const { postJob } = require('../../db/queries/postJob');
+const dbBuild = require('../../server/db/config/build');
+const insertFakeData = require('../../server/db/config/insertFakeData');
+const { postJob } = require('../../server/db/queries/postJob');
 
 tape('test adding the job contract', async (t) => {
   const expected = 2;

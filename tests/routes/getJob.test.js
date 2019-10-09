@@ -1,9 +1,9 @@
 const test = require('tape');
 const supertest = require('supertest');
 
-const app = require('../../app');
-const dbBuild = require('../../db/config/build.js');
-const insertFakeData = require('../../db/config/insertFakeData');
+const app = require('../../server/app');
+const dbBuild = require('../../server/db/config/build');
+const insertFakeData = require('../../server/db/config/insertFakeData');
 
 exports.getJob = test('testing for route /jobs at GET method', async (t) => {
   await dbBuild();

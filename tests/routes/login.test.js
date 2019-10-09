@@ -1,6 +1,6 @@
 const tape = require('tape');
 const request = require('supertest');
-const app = require('../../app');
+const app = require('../../server/app');
 
 tape('login route', (t) => {
   const user = {
