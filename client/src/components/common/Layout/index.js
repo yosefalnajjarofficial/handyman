@@ -3,22 +3,12 @@ import React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 
-const Layout = ({
-  onBackClick,
-  isLoggedIn,
-  children,
-  location: { pathname },
-  handleLogout,
-}) =>
+const Layout = ({ onBackClick, isAuth, children, location: { pathname } }) =>
   pathname === '/' || pathname === '/login' || pathname === '/signup' ? (
     children
   ) : (
     <div>
-      <Header
-        handleLogout={handleLogout}
-        onBackClick={onBackClick}
-        isLoggedIn={isLoggedIn}
-      />
+      <Header onBackClick={onBackClick} isAuth={isAuth} />
       {children}
       <Footer />
     </div>
