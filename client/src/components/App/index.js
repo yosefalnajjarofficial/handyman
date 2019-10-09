@@ -55,6 +55,12 @@ class App extends Component {
       key={8}
       render={props => <JobsPage {...props} />}
     />,
+    <Route
+      exact
+      key={12}
+      path="/logout"
+      render={props => <Logout {...props} handleLogout={this.handleLogout} />}
+    />,
     <Route exact path="/hire" key={9} render={props => <Hire {...props} />} />,
     <Route path="*" key={10} render={() => <Redirect to="/404" />} />,
   ];

@@ -17,14 +17,14 @@ class Header extends Component {
   };
 
   render() {
-    const { isAuth, onBackClick } = this.props;
+    const { isAuth, onBackClick, home } = this.props;
     const { clicked, pageName } = this.state;
     return (
       <section>
         <nav className="main-nav">
           <i
             role="button"
-            className="fas fa-arrow-left"
+            className={`fas fa-arrow-left ${home ? 'hide' : ''}`}
             onClick={onBackClick}
           ></i>
           <h2 className="main-nav__heading">{pageName}</h2>
@@ -32,15 +32,19 @@ class Header extends Component {
         </nav>
         <SideDrawer
           className={clicked ? 'aside' : 'aside hidden'}
-          loggedIn={isAuth}
+          isAuth={isAuth}
         />
       </section>
     );
   }
 }
 Header.propTypes = {
-  isAuth: PropTypes.bool.isRequired,
+  isAuth: PropTypes.oneOf([true, false, null]),
   onBackClick: PropTypes.func.isRequired,
+  home: PropTypes.bool.isRequired,
+};
+Header.defaultProps = {
+  isAuth: null,
 };
 
 export default Header;

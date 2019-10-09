@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './style.css';
 
-const SideDrawer = ({ loggedIn, className }) => {
+const SideDrawer = ({ isAuth, className }) => {
   const notLoggedItems = ['Home', 'Services', 'signup', 'login'];
   const loggedItems = [
     <img
@@ -31,7 +31,7 @@ const SideDrawer = ({ loggedIn, className }) => {
   return (
     <aside className={className}>
       <ul className="ul">
-        {loggedIn
+        {isAuth
           ? sideDrawerItems(loggedItems)
           : sideDrawerItems(notLoggedItems)}
       </ul>
@@ -40,8 +40,11 @@ const SideDrawer = ({ loggedIn, className }) => {
 };
 
 SideDrawer.propTypes = {
-  loggedIn: PropTypes.bool.isRequired,
+  isAuth: PropTypes.oneOf([true, false, null]),
   className: PropTypes.string.isRequired,
+};
+SideDrawer.defaultProps = {
+  isAuth: null,
 };
 
 export default SideDrawer;

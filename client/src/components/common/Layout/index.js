@@ -14,12 +14,18 @@ const Layout = ({
     children
   ) : (
     <div>
-      <Header onBackClick={goBack} isAuth={isAuth} />
+      <Header
+        onBackClick={goBack}
+        isAuth={isAuth}
+        home={pathname === '/services'}
+      />
       {children}
       <Footer />
     </div>
   );
-
+Layout.defaultProps = {
+  isAuth: null,
+};
 Layout.propTypes = {
   history: PropTypes.shape({
     goBack: PropTypes.func.isRequired,
@@ -27,7 +33,6 @@ Layout.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
-  children: PropTypes.arrayOf().isRequired,
-  isAuth: PropTypes.bool.isRequired,
+  isAuth: PropTypes.oneOf([true, false, null]),
 };
 export default Layout;

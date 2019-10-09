@@ -11,26 +11,33 @@ class Profile extends React.Component {
     profileData: {},
   };
 
+  isMount = false;
+
   async componentDidMount() {
+    this.isMount = true;
     const {
       match: {
         params: { id },
       },
-      history,
+      history: { push },
     } = this.props;
     try {
       const response = await axios.get(`/api/v1/profile/${id}`);
-      if (response.data.data) {
+      if (response.data.data && this.isMount) {
         this.setState({
           profileData: response.data.data,
         });
       } else {
         NotificationManager.error('Error', 'User Not Found');
-        history.push('/404');
+        push('/404');
       }
     } catch (e) {
-      history.push('/500');
+      push('/500');
     }
+  }
+
+  componentWillUnmount() {
+    this.isMount = false;
   }
 
   handleHire = () => {
@@ -74,7 +81,14 @@ class Profile extends React.Component {
 }
 
 Profile.propTypes = {
-  id: PropTypes.number.isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default Profile;
