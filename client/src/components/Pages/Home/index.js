@@ -19,7 +19,7 @@ const Home = () => {
         <article className="home-page__article">
           <h1 className="home-page__head">Handyman</h1>
           <p className="home-page__pargraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            Find professional person you need to help you finish your work
           </p>
         </article>
         <section className="home-page__buttons">
