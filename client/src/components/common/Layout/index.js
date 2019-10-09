@@ -23,10 +23,9 @@ Layout.propTypes = {
   history: PropTypes.shape({
     goBack: PropTypes.func.isRequired,
   }).isRequired,
-  location: PropTypes.objectOf({
+  location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
   }).isRequired,
-  children: PropTypes.arrayOf().isRequired,
   isLoggedIn: PropTypes.bool.isRequired,
 };
 export default Layout;

@@ -19,6 +19,7 @@ const SliderCard = ({
   return (
     <div className="sliderCard">
       <div
+        role="button"
         className="sliderCard-container"
         onClick={() => onSliderCardClick(handymanId)}
       >
@@ -30,6 +31,7 @@ const SliderCard = ({
       </div>
       <div className="sliderCard-content">
         <div
+          role="button"
           className="sliderCard-info"
           onClick={() => onSliderCardClick(handymanId)}
         >
@@ -70,7 +72,7 @@ SliderCard.propTypes = {
   handymanService: PropTypes.string.isRequired,
   handymanBio: PropTypes.string.isRequired,
   onMessageButtonClick: PropTypes.func.isRequired,
-  onHireButtonClick: PropTypes.func.isRequired,
+  onHireClick: PropTypes.func.isRequired,
   rate: PropTypes.number.isRequired,
 };
 

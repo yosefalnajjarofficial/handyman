@@ -43,7 +43,7 @@ class Services extends Component {
   };
 
   render() {
-    const { oneServicesData, name, isExist } = this.state;
+    const { oneServicesData, isExist } = this.state;
     return (
       <section className="layout">
         {!oneServicesData[0] && isExist && <Loader />}
@@ -52,32 +52,46 @@ class Services extends Component {
           <span>
             <SearchInput name="search" placeholder="Search" />
             <div className="top-rated-cards">
-              {oneServicesData.map(element => (
-                <SliderCard
-                  key={element}
-                  handymanId={element.handyman_id}
-                  handymanName={element.username}
-                  handymanBio={element.description}
-                  handymanService={element.name}
-                  onSliderCardClick={this.handleClick}
-                  onHireClick={this.handleHireClick}
-                  rate={5}
-                />
-              ))}
+              {oneServicesData.map(
+                ({
+                  handyman_id: id,
+                  username,
+                  description,
+                  name: serviceName,
+                }) => (
+                  <SliderCard
+                    key={`SliderCard${id}`}
+                    handymanId={id}
+                    handymanName={username}
+                    handymanBio={description}
+                    handymanService={serviceName}
+                    onSliderCardClick={this.handleClick}
+                    onHireClick={this.handleHireClick}
+                    rate={5}
+                  />
+                )
+              )}
             </div>
             <div className="handyman-cards">
-              {oneServicesData.map(element => (
-                <HandymanCard
-                  key={element}
-                  handymanId={element.handyman_id}
-                  HandymanName={element.username}
-                  handymanBio={element.description}
-                  handymanService={element.name}
-                  onCardClick={this.handleClick}
-                  onHireClick={this.handleHireClick}
-                  rate={3}
-                />
-              ))}
+              {oneServicesData.map(
+                ({
+                  handyman_id: id,
+                  username,
+                  description,
+                  name: serviceName,
+                }) => (
+                  <HandymanCard
+                    key={`HandymanCard${id}`}
+                    handymanId={id}
+                    HandymanName={username}
+                    handymanBio={description}
+                    handymanService={serviceName}
+                    onCardClick={this.handleClick}
+                    onHireClick={this.handleHireClick}
+                    rate={3}
+                  />
+                )
+              )}
             </div>
           </span>
         )}
