@@ -124,7 +124,7 @@ class Signup extends Component {
         await axios.post('/api/v1/signup', account);
         handleLogIn();
       } catch (err) {
-        if (err.response.data.message) {
+        if (err.response && err.response.data.message) {
           let { message } = err.response.data;
 
           if (message.includes('unique')) {
