@@ -40,8 +40,8 @@ const SliderCard = ({
         <div className="sliderCard-callToAction">
           <div>
             <div className="rating-container">
-              {starNumber.map(() => (
-                <Star />
+              {starNumber.map((element, index) => (
+                <Star key={index} />
               ))}
             </div>
 
