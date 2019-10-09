@@ -23,9 +23,15 @@ class Header extends Component {
       <section>
         <nav className="main-nav">
           <i
+<<<<<<< HEAD
             className="fas fa-arrow-left"
             onClick={onBackClick}
             role="button"
+=======
+            role="button"
+            className="fas fa-arrow-left"
+            onClick={onBackClick}
+>>>>>>> 3f34267e59273a0e3fd0eacc84946d875eb9b24e
           ></i>
           <h2 className="main-nav__heading">{pageName}</h2>
           <DrawerToggleButton clicked={clicked} onClick={this.clickedFunc} />

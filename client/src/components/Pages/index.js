@@ -8,6 +8,7 @@ import Services from './Services';
 import Signup from './Signup';
 import OneServices from './OneServices';
 import Hire from './Hire';
+import Logout from './Logout';
 
 export {
   Home,
@@ -20,4 +21,5 @@ export {
   Signup,
   OneServices,
   Hire,
+  Logout,
 };
