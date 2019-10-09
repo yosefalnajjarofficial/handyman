@@ -20,8 +20,7 @@ module.exports = async (req, res, next) => {
     let addedHandyman = '';
     if (isHandyman) {
       user.id = addedUser.id;
-      const result = await addHandyman(user);
-      [addedHandyman] = result.rows;
+      addedHandyman = (await addHandyman(user)).rows[0];
       delete addedHandyman.handyman_id;
     }
 

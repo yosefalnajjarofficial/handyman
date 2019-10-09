@@ -3,8 +3,6 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { NotificationManager as notify } from 'react-notifications';
 import { Link } from 'react-router-dom';
-
-import Layout from '../../common/Layout';
 import LabeledInput from '../../common/LabeledInput';
 import Button from '../../common/Button';
 import SelectOption from '../../common/SelectOption';
@@ -120,7 +118,6 @@ class Signup extends Component {
       const { account } = this.state;
       const { handleLogIn } = this.props;
       try {
-        // this.props.isAuth = true;
         await axios.post('/api/v1/signup', account);
         handleLogIn();
       } catch (err) {
