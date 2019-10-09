@@ -16,7 +16,7 @@ const LabeledInput = ({
     <label htmlFor={name} className="input-label">
       {label}
       <input
-        autoFocus={autoFocus ? true : ''}
+        tabIndex={autoFocus ? 0 : -1}
         id={name}
         type={type}
         className="input-filed"
