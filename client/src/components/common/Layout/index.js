@@ -5,7 +5,7 @@ import Footer from '../Footer';
 
 const Layout = ({
   history: { goBack },
-  isLoggedIn,
+  isAuth,
   children,
   location: { pathname },
 }) =>
@@ -13,7 +13,7 @@ const Layout = ({
     children
   ) : (
     <div>
-      <Header onBackClick={goBack} isLoggedIn={isLoggedIn} />
+      <Header onBackClick={goBack} isAuth={isAuth} />
       {children}
       <Footer />
     </div>
@@ -27,6 +27,6 @@ Layout.propTypes = {
     pathname: PropTypes.string.isRequired,
   }).isRequired,
   children: PropTypes.arrayOf().isRequired,
-  isLoggedIn: PropTypes.bool.isRequired,
+  isAuth: PropTypes.bool.isRequired,
 };
 export default Layout;
