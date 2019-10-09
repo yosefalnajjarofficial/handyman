@@ -3,8 +3,6 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { NotificationManager as notify } from 'react-notifications';
 import { Link } from 'react-router-dom';
-
-import Layout from '../../common/Layout';
 import LabeledInput from '../../common/LabeledInput';
 import Button from '../../common/Button';
 import SelectOption from '../../common/SelectOption';
@@ -118,10 +116,12 @@ class Signup extends Component {
       Object.keys(handymanValidation).length === 0
     ) {
       const { account } = this.state;
+      const { handleLogIn } = this.props;
       try {
         await axios.post('/api/v1/signup', account);
+        handleLogIn();
       } catch (err) {
-        if (err.response.data.message) {
+        if (err.response && err.response.data.message) {
           let { message } = err.response.data;
 
           if (message.includes('unique')) {
@@ -285,6 +285,7 @@ class Signup extends Component {
 
 Signup.propTypes = {
   history: PropTypes.objectOf().isRequired,
+  handleLogIn: PropTypes.objectOf().isRequired,
 };
 
 export default Signup;
