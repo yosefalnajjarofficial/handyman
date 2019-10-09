@@ -3,6 +3,7 @@ import axios from 'axios';
 import { NotificationManager } from 'react-notifications';
 import PropTypes from 'prop-types';
 
+import Loader from '../../common/Loader';
 import JobCard from '../../common/JobCard';
 import './style.css';
 
@@ -33,7 +34,7 @@ class JobPage extends React.Component {
     const { jobsData, exsitJob } = this.state;
     return (
       <div className="layout">
-        {!jobsData[0] && exsitJob && <h3>...Loading</h3>}
+        {!jobsData[0] && exsitJob && <Loader />}
         {!exsitJob && <h1 className="noJobs">No Jobs</h1>}
         {jobsData[0] &&
           jobsData.map(job => {

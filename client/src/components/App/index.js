@@ -23,6 +23,7 @@ import {
 } from '../Pages/index';
 import 'react-notifications/lib/notifications.css';
 import Layout from '../common/Layout';
+import Loader from '../common/Loader';
 import './style.css';
 
 class App extends Component {
@@ -51,7 +52,7 @@ class App extends Component {
     <Route path="*" key={10} render={() => <Redirect to="/404" />} />,
   ];
 
-  unloggedRoutes = () => [
+  unLoggedRoutes = () => [
     <Route exact strict path="/" component={Home} key={1} />,
     <Route
       key={6}
@@ -66,8 +67,8 @@ class App extends Component {
 
   restOfRoutes = () => {
     const { isAuth } = this.state;
-    if (isAuth === null) return <h1>loading ...</h1>;
-    if (!isAuth) return this.unloggedRoutes();
+    if (isAuth === null) return <Loader />;
+    if (!isAuth) return this.unLoggedRoutes();
     return this.loggedRoutes();
   };
 
