@@ -13,8 +13,15 @@
 }
 
 .signup-form .input-filed {
+    font-weight: thin;
     width: 100%
 }
+.signup-form .input-filed:focus{
+    border: 1px solid #2c003e;
+    font-size: 20px;
+    
+}
+
 
 .signup-form .select__container {
     width: 100%;
@@ -40,4 +47,9 @@
 
 .signup-text a {
     color: #458EFB
+}
+
+.err-msg {
+    color: red;
+    font-family:  Helvetica, sans-serif; 
 }
