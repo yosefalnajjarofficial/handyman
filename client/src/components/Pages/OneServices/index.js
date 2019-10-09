@@ -10,7 +10,6 @@ import './style.css';
 class Services extends Component {
   state = {
     oneServicesData: [],
-    name: '',
     isExist: true,
   };
 
@@ -43,7 +42,7 @@ class Services extends Component {
   };
 
   render() {
-    const { oneServicesData, name, isExist } = this.state;
+    const { oneServicesData, isExist } = this.state;
     return (
       <section className="layout">
         {!oneServicesData[0] && isExist && <h3>...Loading</h3>}
