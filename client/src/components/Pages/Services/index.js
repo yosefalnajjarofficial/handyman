@@ -6,6 +6,8 @@ import SearchInput from '../../common/SearchInput';
 import ServiceCard from '../../common/serviceCard';
 import Loader from '../../common/Loader';
 
+import servicePic from '../../utils/servicesPics';
+
 class Services extends Component {
   state = {
     servicesData: [],
@@ -56,7 +58,7 @@ class Services extends Component {
                 onServiceClick={this.handleClick}
                 serviceId={element.id}
                 serviceName={element.name}
-                serviceImage="https://static.wixstatic.com/media/496ffb_8b6064c94518461aaee56a4a17408300.jpg"
+                serviceImage={servicePic(element.name)}
                 key={element.name}
               />
             ) : null

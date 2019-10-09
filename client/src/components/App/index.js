@@ -53,7 +53,10 @@ class App extends Component {
       path="/login"
       render={props => <Login {...props} handleLogin={this.handleLogin} />}
     />,
-    <Route path="/signup" render={props => <Signup {...props} />} />,
+    <Route
+      path="/signup"
+      render={props => <Signup {...props} handleLogin={this.handleLogin} />}
+    />,
     <Route path="/hire" render={() => <Redirect to="/login" />} />,
     <Route path="/jobs" render={() => <Redirect to="/login" />} />,
     <Route path="*" render={() => <Redirect to="/" />} />,
