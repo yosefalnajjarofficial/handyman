@@ -9,7 +9,7 @@ const Layout = ({
   children,
   location: { pathname },
 }) =>
-  pathname === '/' || pathname === '/login' ? (
+  pathname === '/' || pathname === '/login' || pathname === '/signup' ? (
     children
   ) : (
     <div>

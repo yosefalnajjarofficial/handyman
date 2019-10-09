@@ -43,7 +43,7 @@ class App extends Component {
     <Route exact path="/" render={() => <Redirect to="/services" />} />,
     <Route exact path="/jobs" render={props => <JobsPage {...props} />} />,
     <Route exact path="/hire" render={props => <Hire {...props} />} />,
-    <Route path="*" render={() => <Redirect to="/services" />} />,
+    <Route path="*" render={() => <Redirect to="/404" />} />,
   ];
 
   unloggedRoutes = () => [
