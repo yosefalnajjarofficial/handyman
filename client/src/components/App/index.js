@@ -43,7 +43,7 @@ class App extends Component {
     <Route exact path="/" render={() => <Redirect to="/services" />} />,
     <Route exact path="/jobs" render={props => <JobsPage {...props} />} />,
     <Route exact path="/hire" render={props => <Hire {...props} />} />,
-    <Route path="*" render={() => <Redirect to="/services" />} />,
+    <Route path="*" render={() => <Redirect to="/404" />} />,
   ];
 
   unloggedRoutes = () => [
@@ -79,7 +79,7 @@ class App extends Component {
       <>
         <NotificationContainer />
         <Router>
-          <LayoutWithRouter>
+          <LayoutWithRouter onBackClick="goBack">
             <Switch>
               <Route
                 path="/services"

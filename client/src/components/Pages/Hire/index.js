@@ -43,8 +43,6 @@ class Hire extends Component {
       history.push('/jobs');
     } catch (err) {
       if (err.name === 'ValidationError') {
-        console.log({ ...err });
-
         const errorObj = {};
         err.inner.forEach(fieldError => {
           errorObj[fieldError.path] = fieldError.message;

@@ -16,17 +16,19 @@ class Header extends Component {
   };
 
   render() {
-    const { isAuth } = this.props;
+    const {
+      isAuth,
+      onBackClick: { goBack },
+    } = this.props;
     const { clicked, pageName } = this.state;
     return (
       <section>
         <nav className="main-nav">
-          <i className="fas fa-arrow-left"></i>
+          <i className="fas fa-arrow-left" onClick={goBack}></i>
           <h2 className="main-nav__heading">{pageName}</h2>
           <DrawerToggleButton clicked={clicked} onClick={this.clickedFunc} />
         </nav>
         <SideDrawer
-          onBackClick={this.props.onBackClick}
           className={clicked ? 'aside' : 'aside hidden'}
           loggedIn={isAuth}
         />
