@@ -89,8 +89,8 @@ class App extends Component {
     const { isAuth } = this.state;
     return (
       <>
+        <NotificationContainer />
         <Router>
-          <NotificationContainer />
           <LayoutWithRouter isAuth={isAuth}>
             <Switch>
               <Route
