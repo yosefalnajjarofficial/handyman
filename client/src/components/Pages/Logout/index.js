@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 
 import logout from '../../utils/logout';
 
-const Logout = ({ handleLogOut }) => {
+const Logout = ({ handleLogout }) => {
   logout(); // Send a logout get request
-  handleLogOut(); // Change the auth state
+  handleLogout(); // Change the auth state
   return <Redirect to="/home" />; // Go home
 };
 
 Logout.propTypes = {
-  handleLogOut: PropTypes.func.isRequired,
+  handleLogout: PropTypes.func.isRequired,
 };
 
 export default Logout;
