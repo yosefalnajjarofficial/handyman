@@ -21,7 +21,7 @@ class Login extends Component {
   handleSubmit = async event => {
     event.preventDefault();
     const { account } = this.state;
-
+    const { handleLogin } = this.props;
     try {
       this.setState({ error: {} });
       await loginSchema.validate(account, {
@@ -29,7 +29,7 @@ class Login extends Component {
       });
       await axios.post('/api/v1/login', account);
       NotificationManager.success('Welcome Back');
-      this.props.handleLogin();
+      handleLogin();
       const { history } = this.props;
       history.push('/services');
     } catch (err) {
@@ -111,6 +111,7 @@ class Login extends Component {
 
 Login.propTypes = {
   history: PropTypes.objectOf(PropTypes.any).isRequired,
+  handleLogin: PropTypes.func.isRequired,
 };
 
 export default Login;

@@ -24,7 +24,7 @@ app.get('*', (req, res) => {
   res.sendFile(join(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
-app.use((err, req, res, next) => {
+app.use((err, req, res, _next) => {
   // eslint-disable-next-line no-console
   console.log(req.path, err);
   res.status(500).send({ message: 'Internal Server Error', statusCode: 500 });
