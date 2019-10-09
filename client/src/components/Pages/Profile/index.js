@@ -4,6 +4,7 @@ import axios from 'axios';
 import { NotificationManager } from 'react-notifications';
 
 import ProfileCard from '../../common/ProfileCard';
+import Loader from '../../common/Loader';
 
 class Profile extends React.Component {
   state = {
@@ -44,7 +45,7 @@ class Profile extends React.Component {
   render() {
     const { profileData } = this.state;
     if (!profileData.username) {
-      return <h3>...Loading</h3>;
+      return <Loader />;
     }
     const {
       username,

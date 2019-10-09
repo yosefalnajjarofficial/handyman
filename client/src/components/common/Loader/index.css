@@ -1,0 +1,12 @@
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader__wheel {
+  font-size: 100px;
+  color: var(--main-color);
+}

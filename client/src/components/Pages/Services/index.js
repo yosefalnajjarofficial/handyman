@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 import SearchInput from '../../common/SearchInput';
 import ServiceCard from '../../common/serviceCard';
+import Loader from '../../common/Loader';
 
 class Services extends Component {
   state = {
@@ -42,7 +43,7 @@ class Services extends Component {
     const { servicesData, resultAutoComplete } = this.state;
     return (
       <section className="layout" onBackClick={this.handleBackClick}>
-        {!servicesData[0] && <h3>...Loading</h3>}
+        {!servicesData[0] && <Loader />}
         <SearchInput
           name="search"
           placeholder="Search"
