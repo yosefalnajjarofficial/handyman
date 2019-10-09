@@ -81,7 +81,7 @@ class App extends Component {
       <>
         <NotificationContainer />
         <Router>
-          <LayoutWithRouter>
+          <LayoutWithRouter handleLogout={this.handleLogout}>
             <Switch>
               <Route
                 path="/services"

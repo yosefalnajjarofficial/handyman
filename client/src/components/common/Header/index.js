@@ -16,7 +16,7 @@ class Header extends Component {
   };
 
   render() {
-    const { isAuth } = this.props;
+    const { isAuth, handleLogout } = this.props;
     const { clicked, pageName } = this.state;
     return (
       <section>
@@ -29,6 +29,7 @@ class Header extends Component {
           onBackClick={this.props.onBackClick}
           className={clicked ? 'aside' : 'aside hidden'}
           loggedIn={isAuth}
+          handleLogout={handleLogout}
         />
       </section>
     );

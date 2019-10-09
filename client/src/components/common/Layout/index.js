@@ -8,12 +8,17 @@ const Layout = ({
   isLoggedIn,
   children,
   location: { pathname },
+  handleLogout,
 }) =>
   pathname === '/' || pathname === '/login' || pathname === '/signup' ? (
     children
   ) : (
     <div>
-      <Header onBackClick={onBackClick} isLoggedIn={isLoggedIn} />
+      <Header
+        handleLogout={handleLogout}
+        onBackClick={onBackClick}
+        isLoggedIn={isLoggedIn}
+      />
       {children}
       <Footer />
     </div>

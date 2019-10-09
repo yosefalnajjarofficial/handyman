@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './style.css';
 
-const SideDrawer = ({ loggedIn, className }) => {
+const SideDrawer = ({ loggedIn, className, handleLogout }) => {
   const notLoggedItems = ['Home', 'Services', 'signup', 'login'];
   const loggedItems = [
     <img
