@@ -1,24 +1,39 @@
-*{
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
-:root{
+:root {
   --head-font: 'Roboto', sans-serif;
   --text-font: 'Crimson Text', serif;
-  --main-color: #2C003E;
-  --secondery-color: #EFEFEF;
-  --msg-btn: #F7E273;
+  --main-color: #2c003e;
+  --secondery-color: #efefef;
+  --msg-btn: #f7e273;
   --text-color: #343434;
 }
 
 .layout {
   min-height: calc(100vh - 85px);
   overflow: hidden;
+}
+
+.notification-success {
+  background-color: #5cb85c;
+}
+
+.notification-error {
+  background-color: #d9534f;
+}
+
+.message {
+  color: #fff;
+  font-weight: 700;
+  background: transparent;
+  text-transform: capitalize;
 }

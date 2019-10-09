@@ -47,7 +47,11 @@ class Services extends Component {
     return (
       <section className="layout">
         {!oneServicesData[0] && isExist && <Loader />}
-        {!isExist && <h1>No handymans for this services at yet </h1>}
+        {!isExist && (
+          <h1 className="layout__text">
+            No handymen for this services at yet{' '}
+          </h1>
+        )}
         {oneServicesData[0] && (
           <span>
             <SearchInput name="search" placeholder="Search" />

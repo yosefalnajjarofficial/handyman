@@ -5,15 +5,23 @@
   display: -webkit-box;
 }
 
-.topRated-link{
+.topRated-link {
   margin: 0 auto !important;
   max-width: 100% !important;
   width: 100%;
   display: block;
 }
 
-
-.card-link .card{
+.card-link .card {
   width: 93%;
 }
 
+.layout__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #242424;
+  text-transform: capitalize;
+  font-size: 26px;
+}
