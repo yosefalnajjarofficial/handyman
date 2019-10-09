@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { NotificationManager as notify } from 'react-notifications';
 import { Link } from 'react-router-dom';
 
-import Layout from '../../common/Layout';
 import LabeledInput from '../../common/LabeledInput';
 import Button from '../../common/Button';
 import SelectOption from '../../common/SelectOption';
@@ -135,6 +134,7 @@ class Signup extends Component {
       notify.success('account created successfully');
       return history.push('/services');
     }
+    return true;
   };
 
   handleChange = ({ currentTarget: input }) => {
