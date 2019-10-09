@@ -8,7 +8,7 @@ import './style.css';
 class Header extends Component {
   state = {
     clicked: false,
-    pageName: '',
+    pageName: ' ',
   };
 
   clickedFunc = () => {
