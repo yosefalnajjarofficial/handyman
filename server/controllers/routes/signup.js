@@ -34,14 +34,14 @@ module.exports = async (req, res, next) => {
 
     if (addedHandyman) addedUser = { ...addedUser, ...addedHandyman };
     res.send({ data: addedUser, statusCode: 200 });
-  } catch (e) {
-    if (e.name === 'ValidationError' || e.code === '23505') {
+  } catch (err) {
+    if (err.name === 'ValidationError' || err.code === '23505') {
       res.status(400).send({
-        message: e.message,
+        message: err.message,
         statusCode: 400,
       });
     } else {
-      next(e);
+      next(err);
     }
   }
 };
