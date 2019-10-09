@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import DrawerToggleButton from '../DrawerToggleButton';
 import SideDrawer from '../SideDrawer';
 import './style.css';
@@ -36,6 +37,7 @@ class Header extends Component {
 }
 Header.propTypes = {
   isAuth: PropTypes.bool.isRequired,
+  onBackClick: PropTypes.func.isRequired,
 };
 
 export default Header;
