@@ -4,24 +4,32 @@ import { NotificationManager } from 'react-notifications';
 import PropTypes from 'prop-types';
 
 import hireSchema from '../../utils/validationSchemas/hireSchema';
-import LabeldInput from '../../common/LabeledInput';
+import LabeledInput from '../../common/LabeledInput';
 import TextArea from '../../common/Textarea';
 import Button from '../../common/Button';
 import './style.css';
 
 class Hire extends Component {
-  state = {
-    contract: {
-      handymanId: this.props.location.state.handymanId,
-      deadline: '',
-      price: '',
-      description: '',
-      street: '',
-      buildingNumber: '',
-      flatNumber: '',
-    },
-    error: {},
-  };
+  constructor(props) {
+    super(props);
+    const {
+      location: {
+        state: { handymanId },
+      },
+    } = this.props;
+    this.state = {
+      contract: {
+        handymanId,
+        deadline: '',
+        price: '',
+        description: '',
+        street: '',
+        buildingNumber: '',
+        flatNumber: '',
+      },
+      error: {},
+    };
+  }
 
   handleChange = ({ currentTarget: input }) => {
     const {
@@ -81,7 +89,7 @@ class Hire extends Component {
     return (
       <div className="contract layout">
         <div className="contract__input">
-          <LabeldInput
+          <LabeledInput
             label="Deadline"
             type="date"
             placeHolder="Ex. 17/11/2019"
@@ -92,7 +100,7 @@ class Hire extends Component {
           {deadlineError && (
             <span className="errorMessage">{deadlineError}</span>
           )}
-          <LabeldInput
+          <LabeledInput
             label="Price"
             type="text"
             placeHolder="Ex. 50$"
@@ -101,7 +109,7 @@ class Hire extends Component {
             onChange={this.handleChange}
           />
           {priceError && <span className="errorMessage">{priceError}</span>}
-          <LabeldInput
+          <LabeledInput
             label="Street"
             type="text"
             placeHolder="Ex. Tal Elhawa"
@@ -110,7 +118,7 @@ class Hire extends Component {
             onChange={this.handleChange}
           />
           {streetError && <span className="errorMessage">{streetError}</span>}
-          <LabeldInput
+          <LabeledInput
             label="Building Number"
             type="text"
             placeHolder="Ex. 3D25F"
@@ -121,7 +129,7 @@ class Hire extends Component {
           {buildingNumberError && (
             <span className="errorMessage">{buildingNumberError}</span>
           )}
-          <LabeldInput
+          <LabeledInput
             label="Flat Number"
             type="text"
             placeHolder="Ex. 52"
@@ -157,6 +165,11 @@ class Hire extends Component {
 
 Hire.propTypes = {
   history: PropTypes.objectOf(PropTypes.any).isRequired,
+  location: PropTypes.shape({
+    state: PropTypes.shape({
+      handymanId: PropTypes.number.isRequired,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default Hire;

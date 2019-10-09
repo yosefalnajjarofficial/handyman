@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './style.css';
 
-const LabeldInput = ({
+const LabeledInput = ({
   autoFocus,
   label,
   type,
@@ -29,7 +29,7 @@ const LabeldInput = ({
   );
 };
 
-LabeldInput.propTypes = {
+LabeledInput.propTypes = {
   autoFocus: PropTypes.bool,
   label: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
@@ -39,7 +39,7 @@ LabeldInput.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-LabeldInput.defaultProps = {
+LabeledInput.defaultProps = {
   autoFocus: undefined,
 };
-export default LabeldInput;
+export default LabeledInput;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import SearchInput from '../../common/SearchInput';
 import HandymanCard from '../../common/HandymanCard';
@@ -10,7 +11,6 @@ import './style.css';
 class Services extends Component {
   state = {
     oneServicesData: [],
-    name: '',
     isExist: true,
   };
 
@@ -43,7 +43,7 @@ class Services extends Component {
   };
 
   render() {
-    const { oneServicesData, name, isExist } = this.state;
+    const { oneServicesData, isExist } = this.state;
     return (
       <section className="layout">
         {!oneServicesData[0] && isExist && <Loader />}
@@ -56,32 +56,46 @@ class Services extends Component {
           <span>
             <SearchInput name="search" placeholder="Search" />
             <div className="top-rated-cards">
-              {oneServicesData.map(element => (
-                <SliderCard
-                  key={element}
-                  handymanId={element.handyman_id}
-                  handymanName={element.username}
-                  handymanBio={element.description}
-                  handymanService={element.name}
-                  onSliderCardClick={this.handleClick}
-                  onHireClick={this.handleHireClick}
-                  rate={5}
-                />
-              ))}
+              {oneServicesData.map(
+                ({
+                  handyman_id: id,
+                  username,
+                  description,
+                  name: serviceName,
+                }) => (
+                  <SliderCard
+                    key={`SliderCard${id}`}
+                    handymanId={id}
+                    handymanName={username}
+                    handymanBio={description}
+                    handymanService={serviceName}
+                    onSliderCardClick={this.handleClick}
+                    onHireClick={this.handleHireClick}
+                    rate={5}
+                  />
+                )
+              )}
             </div>
             <div className="handyman-cards">
-              {oneServicesData.map(element => (
-                <HandymanCard
-                  key={element}
-                  handymanId={element.handyman_id}
-                  HandymanName={element.username}
-                  handymanBio={element.description}
-                  handymanService={element.name}
-                  onCardClick={this.handleClick}
-                  onHireClick={this.handleHireClick}
-                  rate={3}
-                />
-              ))}
+              {oneServicesData.map(
+                ({
+                  handyman_id: id,
+                  username,
+                  description,
+                  name: serviceName,
+                }) => (
+                  <HandymanCard
+                    key={`HandymanCard${id}`}
+                    handymanId={id}
+                    HandymanName={username}
+                    handymanBio={description}
+                    handymanService={serviceName}
+                    onCardClick={this.handleClick}
+                    onHireClick={this.handleHireClick}
+                    rate={3}
+                  />
+                )
+              )}
             </div>
           </span>
         )}
@@ -89,5 +103,15 @@ class Services extends Component {
     );
   }
 }
+Services.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
+};
 
 export default Services;

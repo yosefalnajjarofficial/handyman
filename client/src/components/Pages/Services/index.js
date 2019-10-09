@@ -14,16 +14,24 @@ class Services extends Component {
     resultAutoComplete: '',
   };
 
+  isMount = false;
+
+
   async componentDidMount() {
     const { history } = this.props;
-
+    this.isMount = true;
     try {
-      const services = await axios.get('api/v1/services');
-      const result = services.data.data;
-      this.setState({ servicesData: result });
+      const {
+        data: { data },
+      } = await axios.get('api/v1/services');
+      if (this.isMount) this.setState({ servicesData: data });
     } catch (err) {
       history.push('/500');
     }
+  }
+
+  async componentWillUnmount() {
+    this.isMount = false;
   }
 
   autoComplete = e => {
@@ -37,14 +45,10 @@ class Services extends Component {
     history.push(`/service/${id}`);
   };
 
-  handleBackClick = () => {
-    this.props.history.goBack();
-  };
-
   render() {
     const { servicesData, resultAutoComplete } = this.state;
     return (
-      <section className="layout" onBackClick={this.handleBackClick}>
+      <section className="layout">
         {!servicesData[0] && <Loader />}
         <SearchInput
           name="search"
@@ -70,7 +74,9 @@ class Services extends Component {
 }
 
 Services.propTypes = {
-  history: PropTypes.objectOf().isRequired,
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default Services;

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import loginSchema from '../../utils/validationSchemas/loginSchema';
-import LabeldInput from '../../common/LabeledInput';
+import LabeledInput from '../../common/LabeledInput';
 import Button from '../../common/Button';
 import './style.css';
 
@@ -70,7 +70,7 @@ class Login extends Component {
         <div className="loginContainer">
           <div className="loginContainer_input">
             <h1 className="loginContainer__head">Log In</h1>
-            <LabeldInput
+            <LabeledInput
               autoFocus
               label="Email"
               type="text"
@@ -80,7 +80,7 @@ class Login extends Component {
               onChange={this.handleChange}
             />
             {emailError && <span className="errorMessage">{emailError}</span>}
-            <LabeldInput
+            <LabeledInput
               label="Password"
               type="password"
               placeHolder="********"

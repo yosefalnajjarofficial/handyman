@@ -42,31 +42,44 @@ class App extends Component {
   }
 
   loggedRoutes = () => [
-    <Route exact path="/" render={() => <Redirect to="/services" />} />,
-    <Route exact path="/home" render={() => <Redirect to="/services" />} />,
-    <Route exact path="/jobs" render={props => <JobsPage {...props} />} />,
-    <Route exact path="/hire" render={props => <Hire {...props} />} />,
+    <Route exact path="/" key={7} render={() => <Redirect to="/services" />} />,
     <Route
       exact
+      path="/home"
+      key={11}
+      render={() => <Redirect to="/services" />}
+    />,
+    <Route
+      exact
+      path="/jobs"
+      key={8}
+      render={props => <JobsPage {...props} />}
+    />,
+    <Route
+      exact
+      key={12}
       path="/logout"
       render={props => <Logout {...props} handleLogout={this.handleLogout} />}
     />,
-    <Route path="*" render={() => <Redirect to="/404" />} />,
+    <Route exact path="/hire" key={9} render={props => <Hire {...props} />} />,
+    <Route path="*" key={10} render={() => <Redirect to="/404" />} />,
   ];
 
   unLoggedRoutes = () => [
-    <Route exact strict path="/" component={Home} />,
+    <Route exact strict path="/" component={Home} key={1} />,
     <Route
+      key={6}
       path="/login"
       render={props => <Login {...props} handleLogin={this.handleLogin} />}
     />,
     <Route
       path="/signup"
+      key={2}
       render={props => <Signup {...props} handleLogin={this.handleLogin} />}
     />,
-    <Route path="/hire" render={() => <Redirect to="/login" />} />,
-    <Route path="/jobs" render={() => <Redirect to="/login" />} />,
-    <Route path="*" render={() => <Redirect to="/" />} />,
+    <Route path="/hire" key={3} render={() => <Redirect to="/login" />} />,
+    <Route path="/jobs" key={4} render={() => <Redirect to="/login" />} />,
+    <Route path="*" key={5} render={() => <Redirect to="/" />} />,
   ];
 
   restOfRoutes = () => {

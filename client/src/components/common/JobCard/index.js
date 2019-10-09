@@ -22,21 +22,21 @@ const JobCard = ({
     <section className="parent-card">
       <div className="card">
         <section className="card__img">
-          <img className src={handymanImg} alt="handyman" />
+          <img src={handymanImg} alt="handyman" />
         </section>
 
         <section className="card__header">
           <h3 className="card__header--username">{username}</h3>
           <div className="rating__container">
-            {starNumber.map(() => (
-              <Star />
+            {starNumber.map((element, index) => (
+              <Star key={index} />
             ))}
           </div>
         </section>
 
         <div className="card__body">
           <h4>
-            <span>Description:</span> {description}{' '}
+            <span>Description:</span> {description}
           </h4>
           <h4>
             <span>Time:</span> {deadLine}
@@ -49,12 +49,12 @@ const JobCard = ({
             {street} / {buildingNumber} / {flatNumber}
           </h4>
           {message ? <h4>Message :{message}</h4> : null}
-          <h4 className="card__status">
+          <div className="card__status">
             <h4>
-              <span>Status:</span>{' '}
+              <span>Status:</span>
             </h4>
             <h4 className={`status ${status}`}> {status}</h4>
-          </h4>
+          </div>
         </div>
       </div>
     </section>
@@ -66,7 +66,7 @@ JobCard.propTypes = {
   description: PropTypes.string.isRequired,
   deadLine: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  status: PropTypes.string.isRequired,
+  status: PropTypes.string,
   message: PropTypes.string,
   street: PropTypes.string.isRequired,
   buildingNumber: PropTypes.number.isRequired,
@@ -75,6 +75,7 @@ JobCard.propTypes = {
 };
 JobCard.defaultProps = {
   message: null,
+  status: 'pending',
 };
 
 export default JobCard;

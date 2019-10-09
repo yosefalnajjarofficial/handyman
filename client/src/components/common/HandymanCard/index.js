@@ -40,8 +40,8 @@ const HandymanCard = ({
             <span className="card--service">{handymanService}</span>
           </div>
           <div className="card--stars">
-            {starsNo.map(number => (
-              <Star key={number} />
+            {starsNo.map((element, index) => (
+              <Star key={index} />
             ))}
           </div>
         </div>
@@ -66,14 +66,18 @@ HandymanCard.propTypes = {
   HandymanName: PropTypes.string.isRequired,
   handymanService: PropTypes.string.isRequired,
   handymanBio: PropTypes.string.isRequired,
-  hireHandler: PropTypes.func.isRequired,
-  messageHandler: PropTypes.func.isRequired,
-  rate: PropTypes.number.isRequired,
+  onHireClick: PropTypes.func.isRequired,
+  onCardClick: PropTypes.func,
+  messageHandler: PropTypes.func,
+  rate: PropTypes.number,
 };
 
 HandymanCard.defaultProps = {
   imageAlt: null,
   imageSrc: null,
+  rate: 1,
+  messageHandler: () => {},
+  onCardClick: () => {},
 };
 
 export default HandymanCard;

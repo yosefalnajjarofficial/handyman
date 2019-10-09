@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { NotificationManager } from 'react-notifications';
+import PropTypes from 'prop-types';
 
 import Loader from '../../common/Loader';
 import JobCard from '../../common/JobCard';
@@ -69,5 +70,10 @@ class JobPage extends React.Component {
     );
   }
 }
+JobPage.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 export default JobPage;
