@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React, { Component } from 'react';
 import { NotificationContainer } from 'react-notifications';
 import {
@@ -40,6 +39,32 @@ class App extends Component {
     }
   }
 
+  loggedRoutes = () => [
+    <Route exact path="/" render={() => <Redirect to="/services" />} />,
+    <Route exact path="/jobs" render={props => <JobsPage {...props} />} />,
+    <Route exact path="/hire" render={props => <Hire {...props} />} />,
+    <Route path="*" render={() => <Redirect to="/services" />} />,
+  ];
+
+  unloggedRoutes = () => [
+    <Route exact strict path="/" component={Home} />,
+    <Route
+      path="/login"
+      render={props => <Login {...props} handleLogin={this.handleLogin} />}
+    />,
+    <Route path="/signup" render={props => <Signup {...props} />} />,
+    <Route path="/hire" render={() => <Redirect to="/login" />} />,
+    <Route path="/jobs" render={() => <Redirect to="/login" />} />,
+    <Route path="*" render={() => <Redirect to="/" />} />,
+  ];
+
+  restOfRoutes = () => {
+    const { isAuth } = this.state;
+    if (isAuth === null) return <h1>loading ...</h1>;
+    if (!isAuth) return this.unloggedRoutes();
+    return this.loggedRoutes();
+  };
+
   handleLogin = () => {
     this.setState({ isAuth: true });
   };
@@ -49,7 +74,6 @@ class App extends Component {
   };
 
   render() {
-    const { isAuth } = this.state;
     const LayoutWithRouter = withRouter(Layout);
     return (
       <>
@@ -72,45 +96,7 @@ class App extends Component {
               />
               <Route exact path="/500" component={ServerError} />
               <Route exact path="/404" component={NotFound} />
-              {isAuth === null ? (
-                <h1>loading ...</h1>
-              ) : !isAuth ? (
-                <>
-                  <Route exact path="/" component={Home} />
-                  <Route
-                    path="/signup"
-                    render={props => <Signup {...props} />}
-                  />
-                  <Route
-                    path="/login"
-                    render={props => (
-                      <Login {...props} handleLogin={this.handleLogin} />
-                    )}
-                  />
-                  <Route path="/hire" render={() => <Redirect to="/login" />} />
-                  <Route path="/jobs" render={() => <Redirect to="/login" />} />
-                  <Route path="*" render={() => <Redirect to="/" />} />
-                </>
-              ) : (
-                <>
-                  <Route
-                    exact
-                    path="/"
-                    render={() => <Redirect to="/services" />}
-                  />
-                  <Route
-                    exact
-                    path="/jobs"
-                    render={props => <JobsPage {...props} />}
-                  />
-                  <Route
-                    exact
-                    path="/hire"
-                    render={props => <Hire {...props} />}
-                  />
-                  <Route path="*" render={() => <Redirect to="/services" />} />
-                </>
-              )}
+              {this.restOfRoutes()}
             </Switch>
           </LayoutWithRouter>
         </Router>
