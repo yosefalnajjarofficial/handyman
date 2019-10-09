@@ -41,25 +41,25 @@ class JobPage extends React.Component {
               id,
               username,
               description,
-              dead_line,
+              deadline,
               price,
               status,
               message,
               street,
-              building_number,
-              flat_number,
+              building_number: buildingNumber,
+              flat_number: flatNumber,
             } = job;
             return (
               <JobCard
                 username={username}
                 description={description}
-                deadLine={dead_line}
+                deadLine={deadline}
                 price={price}
                 status={status}
                 message={message}
                 street={street}
-                buildingNumber={building_number}
-                flatNumber={flat_number}
+                buildingNumber={buildingNumber}
+                flatNumber={flatNumber}
                 rate={5}
                 key={id}
               />

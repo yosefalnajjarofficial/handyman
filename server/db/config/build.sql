@@ -20,7 +20,7 @@ CREATE TABLE services(
 
 CREATE TABLE handyman(
   handyman_id INTEGER PRIMARY KEY REFERENCES users(id),
-  job_title INTEGER REFERENCES services(id),
+  job_id INTEGER REFERENCES services(id),
   hour_rate INTEGER NOT NULL,
   description TEXT NOT NULL
 );
@@ -30,12 +30,12 @@ CREATE TABLE jobs(
   client_id INTEGER REFERENCES users(id), 
   handyman_id INTEGER REFERENCES handyman(handyman_id), 
   description TEXT NOT NULL, 
-  dead_line DATE NOT NULL, 
+  deadline DATE NOT NULL, 
   price INTEGER NOT NULL, 
   status VARCHAR(255) NOT NULL, 
   message TEXT, 
   street VARCHAR(255) NOT NULL, 
-  building_number INTEGER NOT NULL, 
+  building_number VARCHAR(255) NOT NULL, 
   flat_number VARCHAR(255) NOT NULL
 );
 
