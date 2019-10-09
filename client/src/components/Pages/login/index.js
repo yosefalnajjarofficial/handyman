@@ -29,7 +29,7 @@ class Login extends Component {
       });
       await axios.post('/api/v1/login', account);
       NotificationManager.success('Welcome Back');
-      this.props.handleLogIn();
+      this.props.handleLogin();
       const { history } = this.props;
       history.push('/services');
     } catch (err) {
