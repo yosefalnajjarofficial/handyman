@@ -1,8 +1,8 @@
 const test = require('tape');
 
-const dbBuild = require('../../db/config/build.js');
-const insertFakeData = require('../../db/config/insertFakeData');
-const { getJobs } = require('../../db/queries/getJobs');
+const dbBuild = require('../../server/db/config/build');
+const insertFakeData = require('../../server/db/config/insertFakeData');
+const { getJobs } = require('../../server/db/queries/getJobs');
 
 exports.getJobsQuery = test('testing for the length of jobs information from database', async (t) => {
   try {

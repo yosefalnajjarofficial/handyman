@@ -1,8 +1,8 @@
 const tape = require('tape');
 
-const build = require('../../db/config/build');
-const insertFakeData = require('../../db/config/insertFakeData');
-const { getUserByEmail } = require('../../db/queries/getUserByEmail');
+const build = require('../../server/db/config/build');
+const insertFakeData = require('../../server/db/config/insertFakeData');
+const { getUserByEmail } = require('../../server/db/queries/getUserByEmail');
 
 tape('search user by email', async (t) => {
   try {

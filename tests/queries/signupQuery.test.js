@@ -1,9 +1,9 @@
 const tape = require('tape');
 
-const build = require('../../db/config/build');
-const fakeData = require('../../db/config/insertFakeData');
-const { addUser } = require('../../db/queries/addUser');
-const { addHandyman } = require('../../db/queries/addHandyman');
+const build = require('../../server/db/config/build');
+const fakeData = require('../../server/db/config/insertFakeData');
+const { addUser } = require('../../server/db/queries/addUser');
+const { addHandyman } = require('../../server/db/queries/addHandyman');
 
 tape('add a user to table users', async (t) => {
   await build();

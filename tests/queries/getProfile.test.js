@@ -1,8 +1,8 @@
 const test = require('tape');
 
-const dbBuild = require('../../db/config/build.js');
-const insertFakeData = require('../../db/config/insertFakeData');
-const { getProfile } = require('../../db/queries/getProfile');
+const dbBuild = require('../../server/db/config/build');
+const insertFakeData = require('../../server/db/config/insertFakeData');
+const { getProfile } = require('../../server/db/queries/getProfile');
 
 exports.getProfile = test('testing for getProfile query database', async (t) => {
   try {

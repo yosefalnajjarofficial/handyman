@@ -1,7 +1,7 @@
 const tape = require('tape');
 const request = require('supertest');
 
-const app = require('../../app');
+const app = require('../../server/app');
 
 tape('Test Hire route', async (t) => {
   const jobContract = {
