@@ -151,7 +151,6 @@ class Signup extends Component {
 
   render() {
     const { userValidation, handymanValidation, account, jobs } = this.state;
-    console.log(this.props);
     return (
       <Layout>
         <form className="signup-form">
