@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import './style.css';
 
-const SideDrawer = ({ loggedIn, className, handleLogout }) => {
+const SideDrawer = ({ loggedIn, className }) => {
   const notLoggedItems = ['Home', 'Services', 'signup', 'login'];
   const loggedItems = [
     <img
@@ -21,7 +21,7 @@ const SideDrawer = ({ loggedIn, className, handleLogout }) => {
   const sideDrawerItems = array =>
     array.map(element => (
       <Link
-        to={typeof element === 'object' ? 'profile' : element}
+        to={typeof element === 'object' ? '/profile' : `/${element}`}
         key={element.toString()}
       >
         <li>{element}</li>
