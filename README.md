@@ -4,10 +4,6 @@
 
 ![alt text](https://imgur.com/bHxmvrR.png)
 
-## Table of Contents
-
-[TOC]
-
 ## Problem :warning:
 
 People were tired of asking the same questions when they need a handyman to help them achieving something. Each time people need electrician, mechanic, farmer, etc. they waste a lot of time searching and asking about quality, pricing, and other details. Sometimes they have bad service because of bad quality.
@@ -182,8 +178,15 @@ To contribute our project, follow these instructions:
 ## Resources :books:
 
 https://reactjs.org/docs/getting-started.html
+
 https://expressjs.com
+
 https://www.npmjs.com/package/react-notifications
+
 https://www.npmjs.com/package/jsonwebtoken
+
 https://www.npmjs.com/package/bcrypt
+
 https://github.com/axios/axios
+
+
