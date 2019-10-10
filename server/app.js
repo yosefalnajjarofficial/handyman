@@ -1,8 +1,6 @@
 const { join } = require('path');
 
 const express = require('express');
-const morgan = require('morgan');
-
 const cookieParser = require('cookie-parser');
 
 const router = require('./controllers');
@@ -16,7 +14,8 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(join(__dirname, '..', 'client', 'build')));
-if (process.env.NODE_ENV === 'development') app.use(morgan('dev'));
+if (process.env.NODE_ENV === 'development') app.use(require('morgan')('dev'));
+
 app.use('/api/v1', router);
 
 app.get('*', (req, res) => {
